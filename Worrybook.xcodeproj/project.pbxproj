@@ -1,0 +1,859 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D03516525CB2B5D00B660A4 /* WorryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D03516425CB2B5D00B660A4 /* WorryViewModel.swift */; };
+		0D03516D25CB2B9300B660A4 /* WorryTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D03516C25CB2B9300B660A4 /* WorryTypeViewModel.swift */; };
+		0D03518025CB384600B660A4 /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D03517F25CB384600B660A4 /* MenuContentView.swift */; };
+		0D03518525CB385A00B660A4 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D03518425CB385A00B660A4 /* MenuView.swift */; };
+		0D14C4D625AD0FAA00FAB2E6 /* WorrybookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C4D525AD0FAA00FAB2E6 /* WorrybookApp.swift */; };
+		0D14C4D825AD0FAA00FAB2E6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C4D725AD0FAA00FAB2E6 /* HomeView.swift */; };
+		0D14C4DA25AD0FAC00FAB2E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D14C4D925AD0FAC00FAB2E6 /* Assets.xcassets */; };
+		0D14C4DD25AD0FAC00FAB2E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D14C4DC25AD0FAC00FAB2E6 /* Preview Assets.xcassets */; };
+		0D14C4E825AD0FAD00FAB2E6 /* WorrybookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C4E725AD0FAD00FAB2E6 /* WorrybookTests.swift */; };
+		0D14C4F325AD0FAD00FAB2E6 /* WorrybookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C4F225AD0FAD00FAB2E6 /* WorrybookUITests.swift */; };
+		0D21247D25B4F339009039FF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D21247C25B4F339009039FF /* StringExtension.swift */; };
+		0D2440CF25C22188003FF569 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2440CE25C22188003FF569 /* ColorHelper.swift */; };
+		0D5EA7C825D7FFC700729385 /* BrowseRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */; };
+		0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7D125D7FFE400729385 /* CreateRefocusView.swift */; };
+		0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7D625D7FFFF00729385 /* RefocusListRow.swift */; };
+		0D5EA7E725D811E000729385 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7E625D811E000729385 /* Category.swift */; };
+		0D5EA7EC25D8159500729385 /* BrowseCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7EB25D8159500729385 /* BrowseCategoriesView.swift */; };
+		0D5EA7F125D815A700729385 /* CreateCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7F025D815A700729385 /* CreateCategoryView.swift */; };
+		0D5EA7F625D815C900729385 /* CategoryListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7F525D815C900729385 /* CategoryListRow.swift */; };
+		0D5EA7FE25D8161000729385 /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7FD25D8161000729385 /* CategoriesController.swift */; };
+		0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */; };
+		0D91BB0325D058960063AC00 /* GratitudeDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */; };
+		0D94F55725D06367008380B3 /* CreateGratitudeDiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94F55625D06367008380B3 /* CreateGratitudeDiaryEntryView.swift */; };
+		0D94F55F25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94F55E25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift */; };
+		0DA4DEE925B4AAB800A74129 /* WorryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4DEE825B4AAB800A74129 /* WorryType.swift */; };
+		0DB2F59B25B4E30D00D85384 /* DetailWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2F59A25B4E30D00D85384 /* DetailWorryView.swift */; };
+		0DB2F5A025B4E5C000D85384 /* WorryListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2F59F25B4E5C000D85384 /* WorryListRow.swift */; };
+		0DC68ECE25D818EF00DCDABC /* TechniquesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */; };
+		0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ED225D8190C00DCDABC /* Technique.swift */; };
+		0DC68ED825D8198E00DCDABC /* BrowseTechniquesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */; };
+		0DC68EDD25D819DB00DCDABC /* TechniqueListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68EDC25D819DB00DCDABC /* TechniqueListRow.swift */; };
+		0DC68EE225D81A1300DCDABC /* CreateTechniqueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68EE125D81A1300DCDABC /* CreateTechniqueView.swift */; };
+		0DC68EE825D81DD200DCDABC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68EE725D81DD200DCDABC /* SettingsView.swift */; };
+		0DC68EED25D81DE200DCDABC /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68EEC25D81DE200DCDABC /* SettingsController.swift */; };
+		0DC68EF225D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68EF125D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift */; };
+		0DC68F0325D94B7700DCDABC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68F0225D94B7700DCDABC /* AboutView.swift */; };
+		0DD3E9B325B35BCF003B3A50 /* Worry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD3E9B225B35BCF003B3A50 /* Worry.swift */; };
+		0DE78F8625CF14BC0027B121 /* Refocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78F8525CF14BC0027B121 /* Refocus.swift */; };
+		0DE78F9325D024740027B121 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78F9225D024740027B121 /* DateHelper.swift */; };
+		0DE78FAE25D036170027B121 /* BrowseGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FAD25D036170027B121 /* BrowseGratitudeView.swift */; };
+		0DE78FB625D0368F0027B121 /* WorryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FB525D0368F0027B121 /* WorryController.swift */; };
+		0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FBA25D0379A0027B121 /* RefocusController.swift */; };
+		0DE78FC325D0392C0027B121 /* GratitudeDiaryListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FC225D0392C0027B121 /* GratitudeDiaryListRow.swift */; };
+		0DE78FC825D039680027B121 /* DetailGratitudeDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FC725D039680027B121 /* DetailGratitudeDiaryView.swift */; };
+		0DF3B9F425B0E4F30014D04C /* CreateWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3B9F325B0E4F30014D04C /* CreateWorryView.swift */; };
+		0DF3B9FC25B342F10014D04C /* BrowseWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3B9FB25B342F00014D04C /* BrowseWorryView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D14C4E425AD0FAD00FAB2E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D14C4CA25AD0FAA00FAB2E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D14C4D125AD0FAA00FAB2E6;
+			remoteInfo = WorryBook;
+		};
+		0D14C4EF25AD0FAD00FAB2E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D14C4CA25AD0FAA00FAB2E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D14C4D125AD0FAA00FAB2E6;
+			remoteInfo = WorryBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D03516425CB2B5D00B660A4 /* WorryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryViewModel.swift; sourceTree = "<group>"; };
+		0D03516C25CB2B9300B660A4 /* WorryTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryTypeViewModel.swift; sourceTree = "<group>"; };
+		0D03517F25CB384600B660A4 /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
+		0D03518425CB385A00B660A4 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		0D14C4D225AD0FAA00FAB2E6 /* Worrybook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Worrybook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D14C4D525AD0FAA00FAB2E6 /* WorrybookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorrybookApp.swift; sourceTree = "<group>"; };
+		0D14C4D725AD0FAA00FAB2E6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0D14C4D925AD0FAC00FAB2E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D14C4DC25AD0FAC00FAB2E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0D14C4DE25AD0FAC00FAB2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D14C4E325AD0FAD00FAB2E6 /* WorrybookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorrybookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D14C4E725AD0FAD00FAB2E6 /* WorrybookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorrybookTests.swift; sourceTree = "<group>"; };
+		0D14C4E925AD0FAD00FAB2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D14C4EE25AD0FAD00FAB2E6 /* WorrybookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorrybookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D14C4F225AD0FAD00FAB2E6 /* WorrybookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorrybookUITests.swift; sourceTree = "<group>"; };
+		0D14C4F425AD0FAD00FAB2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D21247C25B4F339009039FF /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		0D2440CE25C22188003FF569 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseRefocusView.swift; sourceTree = "<group>"; };
+		0D5EA7D125D7FFE400729385 /* CreateRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRefocusView.swift; sourceTree = "<group>"; };
+		0D5EA7D625D7FFFF00729385 /* RefocusListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusListRow.swift; sourceTree = "<group>"; };
+		0D5EA7E625D811E000729385 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		0D5EA7EB25D8159500729385 /* BrowseCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCategoriesView.swift; sourceTree = "<group>"; };
+		0D5EA7F025D815A700729385 /* CreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryView.swift; sourceTree = "<group>"; };
+		0D5EA7F525D815C900729385 /* CategoryListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRow.swift; sourceTree = "<group>"; };
+		0D5EA7FD25D8161000729385 /* CategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
+		0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryEntry.swift; sourceTree = "<group>"; };
+		0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryController.swift; sourceTree = "<group>"; };
+		0D94F55625D06367008380B3 /* CreateGratitudeDiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGratitudeDiaryEntryView.swift; sourceTree = "<group>"; };
+		0D94F55E25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerBorderTextFieldExtension.swift; sourceTree = "<group>"; };
+		0DA4DEE825B4AAB800A74129 /* WorryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryType.swift; sourceTree = "<group>"; };
+		0DB2F59A25B4E30D00D85384 /* DetailWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorryView.swift; sourceTree = "<group>"; };
+		0DB2F59F25B4E5C000D85384 /* WorryListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryListRow.swift; sourceTree = "<group>"; };
+		0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniquesController.swift; sourceTree = "<group>"; };
+		0DC68ED225D8190C00DCDABC /* Technique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technique.swift; sourceTree = "<group>"; };
+		0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTechniquesView.swift; sourceTree = "<group>"; };
+		0DC68EDC25D819DB00DCDABC /* TechniqueListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniqueListRow.swift; sourceTree = "<group>"; };
+		0DC68EE125D81A1300DCDABC /* CreateTechniqueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTechniqueView.swift; sourceTree = "<group>"; };
+		0DC68EE725D81DD200DCDABC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0DC68EEC25D81DE200DCDABC /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		0DC68EF125D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryCategorisationAndRefocusView.swift; sourceTree = "<group>"; };
+		0DC68F0225D94B7700DCDABC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		0DD3E9B225B35BCF003B3A50 /* Worry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worry.swift; sourceTree = "<group>"; };
+		0DE78F8525CF14BC0027B121 /* Refocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refocus.swift; sourceTree = "<group>"; };
+		0DE78F9225D024740027B121 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		0DE78FAD25D036170027B121 /* BrowseGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseGratitudeView.swift; sourceTree = "<group>"; };
+		0DE78FB525D0368F0027B121 /* WorryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryController.swift; sourceTree = "<group>"; };
+		0DE78FBA25D0379A0027B121 /* RefocusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusController.swift; sourceTree = "<group>"; };
+		0DE78FC225D0392C0027B121 /* GratitudeDiaryListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryListRow.swift; sourceTree = "<group>"; };
+		0DE78FC725D039680027B121 /* DetailGratitudeDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGratitudeDiaryView.swift; sourceTree = "<group>"; };
+		0DF3B9F325B0E4F30014D04C /* CreateWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorryView.swift; sourceTree = "<group>"; };
+		0DF3B9FB25B342F00014D04C /* BrowseWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseWorryView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D14C4CF25AD0FAA00FAB2E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D14C4E025AD0FAD00FAB2E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D14C4EB25AD0FAD00FAB2E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D03517E25CB383800B660A4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0D03517F25CB384600B660A4 /* MenuContentView.swift */,
+				0D03518425CB385A00B660A4 /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		0D14C4C925AD0FAA00FAB2E6 = {
+			isa = PBXGroup;
+			children = (
+				0D14C4D425AD0FAA00FAB2E6 /* Worrybook */,
+				0D14C4E625AD0FAD00FAB2E6 /* WorrybookTests */,
+				0D14C4F125AD0FAD00FAB2E6 /* WorrybookUITests */,
+				0D14C4D325AD0FAA00FAB2E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D14C4D325AD0FAA00FAB2E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D14C4D225AD0FAA00FAB2E6 /* Worrybook.app */,
+				0D14C4E325AD0FAD00FAB2E6 /* WorrybookTests.xctest */,
+				0D14C4EE25AD0FAD00FAB2E6 /* WorrybookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D14C4D425AD0FAA00FAB2E6 /* Worrybook */ = {
+			isa = PBXGroup;
+			children = (
+				0DE78F9725D02E5E0027B121 /* Controllers */,
+				0D2440CD25C2217B003FF569 /* Helpers */,
+				0DD641EB25C216D0008BEDF3 /* Services */,
+				0D21247B25B4F328009039FF /* Extensions */,
+				0DF3B9EF25B0E4320014D04C /* ViewModels */,
+				0DF3B9EE25B0E4220014D04C /* Views */,
+				0DF3B9ED25B0E4170014D04C /* Models */,
+				0D14C4D525AD0FAA00FAB2E6 /* WorrybookApp.swift */,
+				0D14C4D725AD0FAA00FAB2E6 /* HomeView.swift */,
+				0D14C4D925AD0FAC00FAB2E6 /* Assets.xcassets */,
+				0D14C4DE25AD0FAC00FAB2E6 /* Info.plist */,
+				0D14C4DB25AD0FAC00FAB2E6 /* Preview Content */,
+			);
+			path = Worrybook;
+			sourceTree = "<group>";
+		};
+		0D14C4DB25AD0FAC00FAB2E6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0D14C4DC25AD0FAC00FAB2E6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0D14C4E625AD0FAD00FAB2E6 /* WorrybookTests */ = {
+			isa = PBXGroup;
+			children = (
+				0D14C4E725AD0FAD00FAB2E6 /* WorrybookTests.swift */,
+				0D14C4E925AD0FAD00FAB2E6 /* Info.plist */,
+			);
+			path = WorrybookTests;
+			sourceTree = "<group>";
+		};
+		0D14C4F125AD0FAD00FAB2E6 /* WorrybookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0D14C4F225AD0FAD00FAB2E6 /* WorrybookUITests.swift */,
+				0D14C4F425AD0FAD00FAB2E6 /* Info.plist */,
+			);
+			path = WorrybookUITests;
+			sourceTree = "<group>";
+		};
+		0D21247B25B4F328009039FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0D21247C25B4F339009039FF /* StringExtension.swift */,
+				0D94F55E25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0D2440CD25C2217B003FF569 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D2440CE25C22188003FF569 /* ColorHelper.swift */,
+				0DE78F9225D024740027B121 /* DateHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0D5EA7E125D80CA000729385 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0D5EA7EB25D8159500729385 /* BrowseCategoriesView.swift */,
+				0D5EA7F025D815A700729385 /* CreateCategoryView.swift */,
+				0D5EA7F525D815C900729385 /* CategoryListRow.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		0D5EA7E225D80CA600729385 /* Techniques */ = {
+			isa = PBXGroup;
+			children = (
+				0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */,
+				0DC68EDC25D819DB00DCDABC /* TechniqueListRow.swift */,
+				0DC68EE125D81A1300DCDABC /* CreateTechniqueView.swift */,
+			);
+			path = Techniques;
+			sourceTree = "<group>";
+		};
+		0D91BAFC25D056B40063AC00 /* Gratitude */ = {
+			isa = PBXGroup;
+			children = (
+				0DE78FAD25D036170027B121 /* BrowseGratitudeView.swift */,
+				0DE78FC225D0392C0027B121 /* GratitudeDiaryListRow.swift */,
+				0DE78FC725D039680027B121 /* DetailGratitudeDiaryView.swift */,
+				0D94F55625D06367008380B3 /* CreateGratitudeDiaryEntryView.swift */,
+			);
+			path = Gratitude;
+			sourceTree = "<group>";
+		};
+		0DC68EE625D81DC300DCDABC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0DC68EE725D81DD200DCDABC /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0DC68F0125D94B6C00DCDABC /* About */ = {
+			isa = PBXGroup;
+			children = (
+				0DC68F0225D94B7700DCDABC /* AboutView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		0DD641EB25C216D0008BEDF3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0DE78F9725D02E5E0027B121 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0DE78FB525D0368F0027B121 /* WorryController.swift */,
+				0DE78FBA25D0379A0027B121 /* RefocusController.swift */,
+				0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */,
+				0D5EA7FD25D8161000729385 /* CategoriesController.swift */,
+				0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */,
+				0DC68EEC25D81DE200DCDABC /* SettingsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0DE78F9B25D035300027B121 /* Worry */ = {
+			isa = PBXGroup;
+			children = (
+				0DF3B9F325B0E4F30014D04C /* CreateWorryView.swift */,
+				0DF3B9FB25B342F00014D04C /* BrowseWorryView.swift */,
+				0DB2F59A25B4E30D00D85384 /* DetailWorryView.swift */,
+				0DB2F59F25B4E5C000D85384 /* WorryListRow.swift */,
+				0DC68EF125D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift */,
+			);
+			path = Worry;
+			sourceTree = "<group>";
+		};
+		0DE78FA425D035CC0027B121 /* Refocus */ = {
+			isa = PBXGroup;
+			children = (
+				0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */,
+				0D5EA7D125D7FFE400729385 /* CreateRefocusView.swift */,
+				0D5EA7D625D7FFFF00729385 /* RefocusListRow.swift */,
+			);
+			path = Refocus;
+			sourceTree = "<group>";
+		};
+		0DF3B9ED25B0E4170014D04C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DD3E9B225B35BCF003B3A50 /* Worry.swift */,
+				0DA4DEE825B4AAB800A74129 /* WorryType.swift */,
+				0DE78F8525CF14BC0027B121 /* Refocus.swift */,
+				0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */,
+				0D5EA7E625D811E000729385 /* Category.swift */,
+				0DC68ED225D8190C00DCDABC /* Technique.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0DF3B9EE25B0E4220014D04C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DC68F0125D94B6C00DCDABC /* About */,
+				0DC68EE625D81DC300DCDABC /* Settings */,
+				0D5EA7E225D80CA600729385 /* Techniques */,
+				0D5EA7E125D80CA000729385 /* Categories */,
+				0D91BAFC25D056B40063AC00 /* Gratitude */,
+				0DE78FA425D035CC0027B121 /* Refocus */,
+				0DE78F9B25D035300027B121 /* Worry */,
+				0D03517E25CB383800B660A4 /* Menu */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0DF3B9EF25B0E4320014D04C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0D03516425CB2B5D00B660A4 /* WorryViewModel.swift */,
+				0D03516C25CB2B9300B660A4 /* WorryTypeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D14C4D125AD0FAA00FAB2E6 /* Worrybook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D14C4F725AD0FAD00FAB2E6 /* Build configuration list for PBXNativeTarget "Worrybook" */;
+			buildPhases = (
+				0D14C4CE25AD0FAA00FAB2E6 /* Sources */,
+				0D14C4CF25AD0FAA00FAB2E6 /* Frameworks */,
+				0D14C4D025AD0FAA00FAB2E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Worrybook;
+			productName = WorryBook;
+			productReference = 0D14C4D225AD0FAA00FAB2E6 /* Worrybook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D14C4E225AD0FAD00FAB2E6 /* WorrybookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D14C4FA25AD0FAD00FAB2E6 /* Build configuration list for PBXNativeTarget "WorrybookTests" */;
+			buildPhases = (
+				0D14C4DF25AD0FAD00FAB2E6 /* Sources */,
+				0D14C4E025AD0FAD00FAB2E6 /* Frameworks */,
+				0D14C4E125AD0FAD00FAB2E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D14C4E525AD0FAD00FAB2E6 /* PBXTargetDependency */,
+			);
+			name = WorrybookTests;
+			productName = WorryBookTests;
+			productReference = 0D14C4E325AD0FAD00FAB2E6 /* WorrybookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0D14C4ED25AD0FAD00FAB2E6 /* WorrybookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D14C4FD25AD0FAD00FAB2E6 /* Build configuration list for PBXNativeTarget "WorrybookUITests" */;
+			buildPhases = (
+				0D14C4EA25AD0FAD00FAB2E6 /* Sources */,
+				0D14C4EB25AD0FAD00FAB2E6 /* Frameworks */,
+				0D14C4EC25AD0FAD00FAB2E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D14C4F025AD0FAD00FAB2E6 /* PBXTargetDependency */,
+			);
+			name = WorrybookUITests;
+			productName = WorryBookUITests;
+			productReference = 0D14C4EE25AD0FAD00FAB2E6 /* WorrybookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D14C4CA25AD0FAA00FAB2E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					0D14C4D125AD0FAA00FAB2E6 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					0D14C4E225AD0FAD00FAB2E6 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 0D14C4D125AD0FAA00FAB2E6;
+					};
+					0D14C4ED25AD0FAD00FAB2E6 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 0D14C4D125AD0FAA00FAB2E6;
+					};
+				};
+			};
+			buildConfigurationList = 0D14C4CD25AD0FAA00FAB2E6 /* Build configuration list for PBXProject "Worrybook" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D14C4C925AD0FAA00FAB2E6;
+			productRefGroup = 0D14C4D325AD0FAA00FAB2E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D14C4D125AD0FAA00FAB2E6 /* Worrybook */,
+				0D14C4E225AD0FAD00FAB2E6 /* WorrybookTests */,
+				0D14C4ED25AD0FAD00FAB2E6 /* WorrybookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D14C4D025AD0FAA00FAB2E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D14C4DD25AD0FAC00FAB2E6 /* Preview Assets.xcassets in Resources */,
+				0D14C4DA25AD0FAC00FAB2E6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D14C4E125AD0FAD00FAB2E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D14C4EC25AD0FAD00FAB2E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D14C4CE25AD0FAA00FAB2E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D5EA7F125D815A700729385 /* CreateCategoryView.swift in Sources */,
+				0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */,
+				0D03516D25CB2B9300B660A4 /* WorryTypeViewModel.swift in Sources */,
+				0DC68EDD25D819DB00DCDABC /* TechniqueListRow.swift in Sources */,
+				0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */,
+				0D14C4D825AD0FAA00FAB2E6 /* HomeView.swift in Sources */,
+				0D5EA7FE25D8161000729385 /* CategoriesController.swift in Sources */,
+				0D14C4D625AD0FAA00FAB2E6 /* WorrybookApp.swift in Sources */,
+				0D03518025CB384600B660A4 /* MenuContentView.swift in Sources */,
+				0DF3B9FC25B342F10014D04C /* BrowseWorryView.swift in Sources */,
+				0DE78FC325D0392C0027B121 /* GratitudeDiaryListRow.swift in Sources */,
+				0DE78FC825D039680027B121 /* DetailGratitudeDiaryView.swift in Sources */,
+				0DB2F59B25B4E30D00D85384 /* DetailWorryView.swift in Sources */,
+				0DC68EE225D81A1300DCDABC /* CreateTechniqueView.swift in Sources */,
+				0DD3E9B325B35BCF003B3A50 /* Worry.swift in Sources */,
+				0D5EA7E725D811E000729385 /* Category.swift in Sources */,
+				0D2440CF25C22188003FF569 /* ColorHelper.swift in Sources */,
+				0DF3B9F425B0E4F30014D04C /* CreateWorryView.swift in Sources */,
+				0DE78F9325D024740027B121 /* DateHelper.swift in Sources */,
+				0D5EA7EC25D8159500729385 /* BrowseCategoriesView.swift in Sources */,
+				0DC68ECE25D818EF00DCDABC /* TechniquesController.swift in Sources */,
+				0DE78FB625D0368F0027B121 /* WorryController.swift in Sources */,
+				0DB2F5A025B4E5C000D85384 /* WorryListRow.swift in Sources */,
+				0D91BB0325D058960063AC00 /* GratitudeDiaryController.swift in Sources */,
+				0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */,
+				0DC68EE825D81DD200DCDABC /* SettingsView.swift in Sources */,
+				0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */,
+				0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */,
+				0DC68EED25D81DE200DCDABC /* SettingsController.swift in Sources */,
+				0D03518525CB385A00B660A4 /* MenuView.swift in Sources */,
+				0DE78FAE25D036170027B121 /* BrowseGratitudeView.swift in Sources */,
+				0D5EA7C825D7FFC700729385 /* BrowseRefocusView.swift in Sources */,
+				0DC68EF225D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift in Sources */,
+				0D21247D25B4F339009039FF /* StringExtension.swift in Sources */,
+				0DA4DEE925B4AAB800A74129 /* WorryType.swift in Sources */,
+				0D5EA7F625D815C900729385 /* CategoryListRow.swift in Sources */,
+				0DC68ED825D8198E00DCDABC /* BrowseTechniquesView.swift in Sources */,
+				0DC68F0325D94B7700DCDABC /* AboutView.swift in Sources */,
+				0D03516525CB2B5D00B660A4 /* WorryViewModel.swift in Sources */,
+				0D94F55F25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift in Sources */,
+				0DE78F8625CF14BC0027B121 /* Refocus.swift in Sources */,
+				0D94F55725D06367008380B3 /* CreateGratitudeDiaryEntryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D14C4DF25AD0FAD00FAB2E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D14C4E825AD0FAD00FAB2E6 /* WorrybookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D14C4EA25AD0FAD00FAB2E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D14C4F325AD0FAD00FAB2E6 /* WorrybookUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D14C4E525AD0FAD00FAB2E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D14C4D125AD0FAA00FAB2E6 /* Worrybook */;
+			targetProxy = 0D14C4E425AD0FAD00FAB2E6 /* PBXContainerItemProxy */;
+		};
+		0D14C4F025AD0FAD00FAB2E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D14C4D125AD0FAA00FAB2E6 /* Worrybook */;
+			targetProxy = 0D14C4EF25AD0FAD00FAB2E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0D14C4F525AD0FAD00FAB2E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0D14C4F625AD0FAD00FAB2E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D14C4F825AD0FAD00FAB2E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WorryBook/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WorryBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D14C4F925AD0FAD00FAB2E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WorryBook/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WorryBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0D14C4FB25AD0FAD00FAB2E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WorryBookTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.WorryBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Worrybook.app/Worrybook";
+			};
+			name = Debug;
+		};
+		0D14C4FC25AD0FAD00FAB2E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WorryBookTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.WorryBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Worrybook.app/Worrybook";
+			};
+			name = Release;
+		};
+		0D14C4FE25AD0FAD00FAB2E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WorryBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.WorryBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WorryBook;
+			};
+			name = Debug;
+		};
+		0D14C4FF25AD0FAD00FAB2E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WorryBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.WorryBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WorryBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D14C4CD25AD0FAA00FAB2E6 /* Build configuration list for PBXProject "Worrybook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D14C4F525AD0FAD00FAB2E6 /* Debug */,
+				0D14C4F625AD0FAD00FAB2E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D14C4F725AD0FAD00FAB2E6 /* Build configuration list for PBXNativeTarget "Worrybook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D14C4F825AD0FAD00FAB2E6 /* Debug */,
+				0D14C4F925AD0FAD00FAB2E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D14C4FA25AD0FAD00FAB2E6 /* Build configuration list for PBXNativeTarget "WorrybookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D14C4FB25AD0FAD00FAB2E6 /* Debug */,
+				0D14C4FC25AD0FAD00FAB2E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D14C4FD25AD0FAD00FAB2E6 /* Build configuration list for PBXNativeTarget "WorrybookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D14C4FE25AD0FAD00FAB2E6 /* Debug */,
+				0D14C4FF25AD0FAD00FAB2E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D14C4CA25AD0FAA00FAB2E6 /* Project object */;
+}
