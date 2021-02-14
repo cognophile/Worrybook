@@ -1,3 +1,3 @@
 # Worrybook
 
-_Your in-pocket anxiety manager_
+## _Write more; Worry less_
