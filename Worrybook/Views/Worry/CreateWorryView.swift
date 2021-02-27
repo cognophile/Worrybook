@@ -12,11 +12,8 @@ struct CreateWorryView: View {
     
     @State private var nextStageActive = false
     @State private var showWorryTypeAlert = false
-    @State private var title = ""
-    @State private var description = ""
-    @State private var solution = ""
-    @State private var isPractical = false
-    @State private var worry = Worry(title: "", description: "", type: WorryType.practical, solution: "")
+    @State private var isPracticalWorry = false
+    @State private var viewModel: WorryViewModel = WorryViewModel(worry: nil)
     
     private let colorHelper = ColorHelper()
     private let controller = WorryController()
@@ -25,7 +22,7 @@ struct CreateWorryView: View {
         VStack {
             Group {
                 VStack{
-                    TextField("Summary", text: self.$title)
+                    TextField("Summary", text: self.$viewModel.worry.title)
                         .frame(minHeight: 50)
                         .foregroundColor(.gray)
                         .background(Color(UIColor.systemBackground))
@@ -38,7 +35,7 @@ struct CreateWorryView: View {
                         Text("Can you solve it?")
                             .foregroundColor(colorHelper.getTextColor())
                             .padding(10)
-                        Toggle(isOn: self.$isPractical) {
+                        Toggle(isOn: self.$isPracticalWorry) {
                             Button(action: {
                                 self.showWorryTypeAlert.toggle()
                             }) {
@@ -67,7 +64,7 @@ struct CreateWorryView: View {
                         .font(.headline)
                         .padding(10)
 
-                    TextEditor(text: self.$description)
+                    TextEditor(text: self.$viewModel.worry.description)
                         .frame(minHeight: 50)
                         .foregroundColor(.gray)
                         .background(Color(UIColor.systemBackground))
@@ -79,7 +76,7 @@ struct CreateWorryView: View {
                         .padding(10)
                 }
                 
-                if (self.isPractical) {
+                if (self.isPracticalWorry) {
                     VStack {
                         Text("What's your plan?")
                             .fontWeight(.medium)
@@ -87,7 +84,7 @@ struct CreateWorryView: View {
                             .font(.headline)
                             .padding(10)
 
-                        TextEditor(text: self.$solution)
+                        TextEditor(text: self.$viewModel.worry.solution ?? "")
                             .frame(minHeight: 50)
                             .foregroundColor(.gray)
                             .background(Color(UIColor.systemBackground))
@@ -103,8 +100,8 @@ struct CreateWorryView: View {
             
             Spacer()
             Button(action: {
-                let worryType = (self.isPractical) ? WorryType.practical : WorryType.hypothetical
-                self.worry = Worry(title: self.title, description: self.description, type: worryType, solution: self.solution)
+                let worryType = (self.isPracticalWorry) ? WorryType.practical : WorryType.hypothetical
+                self.viewModel.worry.setType(type: worryType)
                 self.nextStageActive = true
             }) {
                 HStack {
@@ -122,7 +119,7 @@ struct CreateWorryView: View {
                 .padding(10)
             }
             
-            NavigationLink (destination: WorryCategorisationAndRefocusView(worry: self.worry)
+            NavigationLink (destination: WorryCategorisationAndRefocusView(viewModel: self.viewModel)
                                     .navigationBarTitle("Categorise & Refocus")
                                     .navigationBarBackButtonHidden(true)
                                     .navigationBarItems(leading:

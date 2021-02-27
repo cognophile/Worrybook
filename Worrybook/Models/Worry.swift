@@ -24,10 +24,7 @@ class Worry : Identifiable {
         self.title = title
         self.description = description
         self.type = type
-        
-        if (solution != nil) {
-            self.solution = solution
-        }
+        self.solution = solution
     }
     
     func setTitle(title: String) {
@@ -124,6 +121,14 @@ class Worry : Identifiable {
     
     func getCreatedDate() -> String {
         return DateHelper.getDateAsString(date: self.created)
+    }
+    
+    func isPractical() -> Bool {
+        if (self.type == WorryType.practical) {
+            return true
+        }
+        
+        return false
     }
 }
 

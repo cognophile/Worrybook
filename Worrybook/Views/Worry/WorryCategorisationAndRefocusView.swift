@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WorryCategorisationAndRefocusView: View {
-    private var worry: Worry
+    private var viewModel: WorryViewModel
     
     @State private var selectedCategory = UUID()
     @State private var selectedRefocus = UUID()
@@ -19,8 +19,8 @@ struct WorryCategorisationAndRefocusView: View {
     private var categoryController = CategoriesController()
     private var refocusController = RefocusController()
 
-    init(worry: Worry) {
-        self.worry = worry
+    init(viewModel: WorryViewModel) {
+        self.viewModel = viewModel
         self.categories = categoryController.getAll()
         self.refocuses = refocusController.getAll()
     }

@@ -10,11 +10,11 @@ import SwiftUI
 struct WorryListRow: View {
     private let colorHelper = ColorHelper()
 
-    var worry: Worry
+    var viewModel: WorryViewModel
 
     var body: some View {
-        NavigationLink(destination: DetailWorryView(worry: self.worry)) {
-                Text(worry.getTitle())
+        NavigationLink(destination: DetailWorryView(viewModel: self.viewModel)) {
+            Text(viewModel.worry.getTitle())
                     .fontWeight(.regular)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.body)

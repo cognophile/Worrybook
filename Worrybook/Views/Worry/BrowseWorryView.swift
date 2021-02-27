@@ -9,16 +9,17 @@ import SwiftUI
 
 struct BrowseWorryView: View {
     @Binding var showReadModal: Bool
+    
     @State var selection = 0
     
-    var controller = WorryController()
-    let tabs: [String] = ["Unarchived", "Archived"]
+    public var controller = WorryController()
+    public let tabs: [String] = ["Unarchived", "Archived"]
 
     var body: some View {
         let entries = controller.getAll()
         
         let chosenTab = (self.selection == 0) ? false : true
-        let filteredEntries = entries.filter({$0.archived == chosenTab})
+        let filteredEntries = entries.filter({$0.worry.archived == chosenTab})
         
         VStack {
             HStack{
@@ -32,8 +33,8 @@ struct BrowseWorryView: View {
             Spacer()
                         
             HStack {
-                return List(filteredEntries) { worry in
-                    WorryListRow(worry: worry)
+                return List(filteredEntries) { viewModel in
+                    WorryListRow(viewModel: viewModel)
                 }
             }
         }

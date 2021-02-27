@@ -53,6 +53,7 @@
 		0DE78FC825D039680027B121 /* DetailGratitudeDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FC725D039680027B121 /* DetailGratitudeDiaryView.swift */; };
 		0DF3B9F425B0E4F30014D04C /* CreateWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3B9F325B0E4F30014D04C /* CreateWorryView.swift */; };
 		0DF3B9FC25B342F10014D04C /* BrowseWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3B9FB25B342F00014D04C /* BrowseWorryView.swift */; };
+		0DFE6DC225EA530500E9D67D /* BindingOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE6DC125EA530500E9D67D /* BindingOverload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		0DE78FC725D039680027B121 /* DetailGratitudeDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGratitudeDiaryView.swift; sourceTree = "<group>"; };
 		0DF3B9F325B0E4F30014D04C /* CreateWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorryView.swift; sourceTree = "<group>"; };
 		0DF3B9FB25B342F00014D04C /* BrowseWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseWorryView.swift; sourceTree = "<group>"; };
+		0DFE6DC125EA530500E9D67D /* BindingOverload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingOverload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		0D14C4D425AD0FAA00FAB2E6 /* Worrybook */ = {
 			isa = PBXGroup;
 			children = (
+				0DFE6DC025EA52ED00E9D67D /* Overloads */,
 				0DE78F9725D02E5E0027B121 /* Controllers */,
 				0D2440CD25C2217B003FF569 /* Helpers */,
 				0DD641EB25C216D0008BEDF3 /* Services */,
@@ -370,6 +373,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		0DFE6DC025EA52ED00E9D67D /* Overloads */ = {
+			isa = PBXGroup;
+			children = (
+				0DFE6DC125EA530500E9D67D /* BindingOverload.swift */,
+			);
+			path = Overloads;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,6 +537,7 @@
 				0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */,
 				0DC68EE825D81DD200DCDABC /* SettingsView.swift in Sources */,
 				0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */,
+				0DFE6DC225EA530500E9D67D /* BindingOverload.swift in Sources */,
 				0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */,
 				0DC68EED25D81DE200DCDABC /* SettingsController.swift in Sources */,
 				0D03518525CB385A00B660A4 /* MenuView.swift in Sources */,
