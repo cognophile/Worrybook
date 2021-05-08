@@ -7,128 +7,55 @@
 
 import Foundation
 import SwiftUI
+import SQLite
 
-class Worry : Identifiable {
-    public var id = UUID()
-    public var title: String
-    public var description: String
-    public var type: WorryType
-    public var solution: String? = nil
-    public var archived: Bool = false
-    public var created: Date = Date()
-    public var modified: Date? = nil
-    public var refocus: Refocus? = nil
-    public var category: Category? = nil
-        
-    init(title: String, description: String, type: WorryType, solution: String?) {
-        self.title = title
-        self.description = description
-        self.type = type
-        self.solution = solution
-    }
+class Worry {
+    var table: Table?
+    var record: Row?
     
-    func setTitle(title: String) {
-        self.title = title
-    }
+    var id = Expression<Int>("id")
+    let title = Expression<String>("title")
+    let description = Expression<String>("description")
+    let solution = Expression<String?>("solution")
+    let archived = Expression<Bool?>("archived")
+    let created = Expression<Date?>("created")
+    let modified = Expression<Date?>("modified")
     
-    func getTitle() -> String {
-        return self.title
-    }
-    
-    func setDescription(description: String) {
-        self.description = description
-    }
-    
-    func getDescription() -> String {
-        return self.description
-    }
-    
-    func setType(type: WorryType) {
-        self.type = type
-    }
-    
-    func getType() -> WorryType {
-        return self.type
-    }
-    
-    func getTypeString() -> String {
-        return self.type.rawValue.capitalized
-    }
-    
-    func getTypeColour() -> Color {
-        if (self.type == WorryType.hypothetical) {
-            return ColorHelper.getColor(r: 3, g: 96, b: 158)
-        }
-        
-        return ColorHelper.getColor(r: 96, g: 158, b: 3)
-    }
-    
-    func setSolution(solution: String) {
-        self.solution = solution
-    }
-    
-    func getSolution() -> String? {
-        if (self.solution != nil) {
-            return self.solution
-        }
-        
-        return nil
-    }
-    
-    func setRefocus(refocus: Refocus) {
-        self.refocus = refocus
-    }
-    
-    func getRefocus() -> Refocus? {
-        if (self.refocus != nil) {
-            return self.refocus
-        }
-        
-        return nil
-    }
-    
-    func setCategory(category: Category) {
-        self.category = category
-    }
-    
-    func getCategory() -> Category? {
-        if (self.category != nil) {
-            return self.category
-        }
-        
-        return nil
-    }
-    
-    func isArchived() -> Bool {
-        return (self.archived) ? true : false;
-    }
-    
-    func archive() {
-        self.archived = true;
-    }
-    
-    func unArchive() {
-        self.archived = false;
-    }
+    let worryTypeId = Expression<Int>("worry_type_id")
 
-    func setModifiedDate(date: Date) {
-        self.modified = date
-    }
-    
-    func getModifiedDate() -> Date? {
-        return self.modified ?? nil
-    }
-    
-    func getCreatedDate() -> String {
-        return DateHelper.getDateAsString(date: self.created)
-    }
-    
-    func isPractical() -> Bool {
-        if (self.type == WorryType.practical) {
-            return true
-        }
+//    public var type: WorryType? = nil
+//    public var refocus: Refocus? = nil
+//    public var category: Category? = nil
         
-        return false
+    init() {
+        self.table = Table("worries")
     }
+    
+    public func createTable() -> String {
+        return (self.table?.create(ifNotExists: true) {
+            t in
+                t.column(self.id, primaryKey: true)
+                t.column(self.title)
+                t.column(self.description)
+                t.column(self.solution)
+                t.column(self.archived)
+                t.column(self.created)
+                t.column(self.modified)
+            })!
+    }
+    
+//    public func getCategory() -> Category {
+//        Get the data for this worry, and transform it. These will be called from controllers and populated into an array on the ViewModel of usable Objects
+//        If the member isn't populated, retrieve the data and populate it, otherwise return the member
+//    }
+//
+//    public func getRefocus() -> Refocus {
+//        Get the data for this worry, and transform it. These will be called from controllers and populated into an array on the ViewModel of usable Objects
+//        If the member isn't populated, retrieve the data and populate it, otherwise return the member
+//    }
+//
+//    public func getWorryType() -> Refocus {
+//        Get the name for the worry type on this model, by ID
+//        If the member isn't populated, retrieve the data and populate it, otherwise return the member
+//    }
 }
-
