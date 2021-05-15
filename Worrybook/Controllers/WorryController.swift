@@ -15,19 +15,16 @@ class WorryController {
     }
     
     public func getAll() -> [WorryViewModel] {
-        var worries = self.repository?.getAll()
-        return [WorryViewModel(title: "", description: "", type: WorryTypeViewModel.hypothetical, solution: "")]
+        let records = self.repository?.getAll()
+        return WorryTranslationService.translateMultiple(rows: records!)
     }
     
     private func createWorry(title: String, description: String, type: WorryTypeViewModel, solution: String?) -> WorryViewModel {
-        var worry = self.repository?.create()
+        // var worry = self.repository?.create()
         
-        return
-            WorryViewModel(
-                title: title,
-                description: description,
-                type: type,
-                solution: solution
-            )
+        let model = WorryViewModel()
+        model.build(title: title, description: description, type: type)
+        
+        return model
     }
 }

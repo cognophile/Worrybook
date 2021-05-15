@@ -19,6 +19,9 @@
 		0D14C4F325AD0FAD00FAB2E6 /* WorrybookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C4F225AD0FAD00FAB2E6 /* WorrybookUITests.swift */; };
 		0D21247D25B4F339009039FF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D21247C25B4F339009039FF /* StringExtension.swift */; };
 		0D2440CF25C22188003FF569 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2440CE25C22188003FF569 /* ColorHelper.swift */; };
+		0D55CD692646A6FD0026F096 /* WorryModelTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD682646A6FD0026F096 /* WorryModelTranslationService.swift */; };
+		0D55CD7C264FD63E0026F096 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */; };
+		0D55CD82264FD7EE0026F096 /* BaseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD81264FD7EE0026F096 /* BaseModelProtocol.swift */; };
 		0D5EA7C825D7FFC700729385 /* BrowseRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */; };
 		0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7D125D7FFE400729385 /* CreateRefocusView.swift */; };
 		0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7D625D7FFFF00729385 /* RefocusListRow.swift */; };
@@ -94,6 +97,9 @@
 		0D14C4F425AD0FAD00FAB2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D21247C25B4F339009039FF /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0D2440CE25C22188003FF569 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		0D55CD682646A6FD0026F096 /* WorryModelTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryModelTranslationService.swift; sourceTree = "<group>"; };
+		0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		0D55CD81264FD7EE0026F096 /* BaseModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModelProtocol.swift; sourceTree = "<group>"; };
 		0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseRefocusView.swift; sourceTree = "<group>"; };
 		0D5EA7D125D7FFE400729385 /* CreateRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRefocusView.swift; sourceTree = "<group>"; };
 		0D5EA7D625D7FFFF00729385 /* RefocusListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusListRow.swift; sourceTree = "<group>"; };
@@ -195,6 +201,8 @@
 		0D14C4D425AD0FAA00FAB2E6 /* Worrybook */ = {
 			isa = PBXGroup;
 			children = (
+				0D55CD80264FD7DF0026F096 /* Protocols */,
+				0D55CD672646A6E40026F096 /* Services */,
 				0DFE6DC025EA52ED00E9D67D /* Overloads */,
 				0DE78F9725D02E5E0027B121 /* Controllers */,
 				0D2440CD25C2217B003FF569 /* Helpers */,
@@ -252,8 +260,25 @@
 			children = (
 				0D2440CE25C22188003FF569 /* ColorHelper.swift */,
 				0DE78F9225D024740027B121 /* DateHelper.swift */,
+				0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0D55CD672646A6E40026F096 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0D55CD682646A6FD0026F096 /* WorryModelTranslationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0D55CD80264FD7DF0026F096 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0D55CD81264FD7EE0026F096 /* BaseModelProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		0D5EA7E125D80CA000729385 /* Categories */ = {
@@ -587,6 +612,7 @@
 				0DC68EDD25D819DB00DCDABC /* TechniqueListRow.swift in Sources */,
 				0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */,
 				0D14C4D825AD0FAA00FAB2E6 /* HomeView.swift in Sources */,
+				0D55CD692646A6FD0026F096 /* WorryModelTranslationService.swift in Sources */,
 				0D5EA7FE25D8161000729385 /* CategoriesController.swift in Sources */,
 				0D14C4D625AD0FAA00FAB2E6 /* WorrybookApp.swift in Sources */,
 				0D03518025CB384600B660A4 /* MenuContentView.swift in Sources */,
@@ -608,6 +634,7 @@
 				0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */,
 				0DC68EE825D81DD200DCDABC /* SettingsView.swift in Sources */,
 				0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */,
+				0D55CD7C264FD63E0026F096 /* DatabaseHelper.swift in Sources */,
 				0DFE6DC225EA530500E9D67D /* BindingOverload.swift in Sources */,
 				0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */,
 				0DC68EED25D81DE200DCDABC /* SettingsController.swift in Sources */,
@@ -624,6 +651,7 @@
 				0D94F55F25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift in Sources */,
 				0DE78F8625CF14BC0027B121 /* Refocus.swift in Sources */,
 				0D94F55725D06367008380B3 /* CreateGratitudeDiaryEntryView.swift in Sources */,
+				0D55CD82264FD7EE0026F096 /* BaseModelProtocol.swift in Sources */,
 				0D7E788D26469CDD002AD048 /* WorryRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

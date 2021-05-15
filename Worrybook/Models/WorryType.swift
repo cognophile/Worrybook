@@ -8,7 +8,7 @@
 import Foundation
 import SQLite
 
-class WorryType {
+class WorryType: BaseModelProtocol {
     var table: Table?
     var record: Row?
     
@@ -16,10 +16,10 @@ class WorryType {
     let type = Expression<String>("type")
         
     init() {
-        self.table = Table("worry_types")
+        self.table = Table("worry_type")
     }
     
-    public func createTable() -> String {
+    public func instantiateTable() -> String {
         return (self.table?.create(ifNotExists: true) {
             t in
                 t.column(self.id, primaryKey: true)

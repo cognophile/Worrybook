@@ -6,15 +6,24 @@
 //
 
 import Foundation
+import SQLite
 
 class WorryRepository {
+    private var database = DatabaseHelper()
+    private var worry = Worry()
+    
     init() {
-        
+        self.database.instantiateTable(model: worry)
     }
     
-    public func getAll() -> [Worry] {
-        // Get all non-archived
-        return [Worry()]
+    public func getAll() -> [Row]? {
+        let records = self.database.selectAll(model: worry)
+        
+        if records != nil {
+            return Array(records!)
+        }
+        
+        return nil
     }
     
     public func getAllArchived() -> [Worry] {

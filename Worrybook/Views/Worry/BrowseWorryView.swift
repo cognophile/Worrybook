@@ -16,10 +16,10 @@ struct BrowseWorryView: View {
     public let tabs: [String] = ["Unarchived", "Archived"]
 
     var body: some View {
-        let entries = controller.getAll()
+        let entries: [WorryViewModel] = controller.getAll()
         
         let chosenTab = (self.selection == 0) ? false : true
-        let filteredEntries = entries.filter({$0.worry.archived == chosenTab})
+        let filteredEntries = entries.filter({$0.archived == chosenTab})
         
         VStack {
             HStack{

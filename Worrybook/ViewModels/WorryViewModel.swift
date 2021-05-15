@@ -10,54 +10,70 @@ import SwiftUI
 
 class WorryViewModel : Identifiable {
     public let id = UUID()
-    public var title: String
-    public var description: String
-    public var solution: String?
-    public var archived: Bool
-    public var created: Date
-    public var modified: Date?
-    public var type: WorryTypeViewModel
+    public var recordId: Int? = nil
+    public var title: String = ""
+    public var description: String = ""
+    public var solution: String? = nil
+    public var archived: Bool = false
+    public var created: Date = Date()
+    public var modified: Date? = nil
+    public var type: WorryTypeViewModel = WorryTypeViewModel.hypothetical
     public var refocus: Refocus? = nil
     public var category: Category? = nil
     
-    init(title: String, description: String, type: WorryTypeViewModel, solution: String?) {
+    init() {}
+    
+    public func build(title: String, description: String, type: WorryTypeViewModel) {
         self.title = title
         self.description = description
         self.type = type
-        self.solution = solution
-        self.archived = false
-        self.created = Date()
     }
     
-    func setTitle(title: String) {
+    public func setRecordId(id: Int) {
+        self.recordId = id
+    }
+    
+    public func getRecordId() -> Int? {
+        return self.recordId ?? nil
+    }
+    
+    public func setTitle(title: String) {
         self.title = title
     }
     
-    func getTitle() -> String {
+    public func getTitle() -> String {
         return self.title
     }
     
-    func setDescription(description: String) {
+    public func setDescription(description: String) {
         self.description = description
     }
     
-    func getDescription() -> String {
+    public func getDescription() -> String {
         return self.description
     }
     
-    func setType(type: WorryTypeViewModel) {
+    public func setType(type: WorryTypeViewModel) {
         self.type = type
     }
     
-    func getType() -> WorryTypeViewModel {
+    public func getType() -> WorryTypeViewModel {
         return self.type
     }
     
-    func getTypeString() -> String {
+    public func getTypeString() -> String {
         return self.type.rawValue.capitalized
     }
     
-    func getTypeColour() -> Color {
+    public func isPractical() -> Bool {
+        if (self.type == WorryTypeViewModel.practical) {
+            return true
+        }
+        
+        return false
+    }
+    
+    public func getTypeColour() -> Color {
         if (self.type == WorryTypeViewModel.hypothetical) {
             return ColorHelper.getColor(r: 3, g: 96, b: 158)
         }
@@ -65,11 +81,11 @@ class WorryViewModel : Identifiable {
         return ColorHelper.getColor(r: 96, g: 158, b: 3)
     }
     
-    func setSolution(solution: String) {
+    public func setSolution(solution: String) {
         self.solution = solution
     }
     
-    func getSolution() -> String? {
+    public func getSolution() -> String? {
         if (self.solution != nil) {
             return self.solution
         }
@@ -77,11 +93,11 @@ class WorryViewModel : Identifiable {
         return nil
     }
     
-    func setRefocus(refocus: Refocus) {
+    public func setRefocus(refocus: Refocus) {
         self.refocus = refocus
     }
     
-    func getRefocus() -> Refocus? {
+    public func getRefocus() -> Refocus? {
         if (self.refocus != nil) {
             return self.refocus
         }
@@ -89,11 +105,11 @@ class WorryViewModel : Identifiable {
         return nil
     }
     
-    func setCategory(category: Category) {
+    public func setCategory(category: Category) {
         self.category = category
     }
     
-    func getCategory() -> Category? {
+    public func getCategory() -> Category? {
         if (self.category != nil) {
             return self.category
         }
@@ -101,35 +117,27 @@ class WorryViewModel : Identifiable {
         return nil
     }
     
-    func isArchived() -> Bool {
+    public func isArchived() -> Bool {
         return (self.archived) ? true : false;
     }
     
-    func archive() {
+    public func archive() {
         self.archived = true;
     }
     
-    func unArchive() {
+    public func unArchive() {
         self.archived = false;
     }
 
-    func setModifiedDate(date: Date) {
+    public func setModifiedDate(date: Date) {
         self.modified = date
     }
     
-    func getModifiedDate() -> String? {
+    public func getModifiedDate() -> String? {
         return DateHelper.getDateAsString(date: self.modified!)
     }
     
-    func getCreatedDate() -> String {
+    public func getCreatedDate() -> String {
         return DateHelper.getDateAsString(date: self.created)
-    }
-    
-    func isPractical() -> Bool {
-        if (self.type == WorryTypeViewModel.practical) {
-            return true
-        }
-        
-        return false
     }
 }

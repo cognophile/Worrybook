@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import SwiftUI
 import SQLite
 
-class Worry {
+class Worry: BaseModelProtocol {
     var table: Table?
     var record: Row?
     
@@ -22,16 +21,14 @@ class Worry {
     let modified = Expression<Date?>("modified")
     
     let worryTypeId = Expression<Int>("worry_type_id")
-
-//    public var type: WorryType? = nil
-//    public var refocus: Refocus? = nil
-//    public var category: Category? = nil
+    let categoryId = Expression<Int>("category_id")
+    let refocusId = Expression<Int>("refocus_id")
         
     init() {
-        self.table = Table("worries")
+        self.table = Table("worry")
     }
     
-    public func createTable() -> String {
+    public func instantiateTable() -> String {
         return (self.table?.create(ifNotExists: true) {
             t in
                 t.column(self.id, primaryKey: true)
@@ -41,21 +38,9 @@ class Worry {
                 t.column(self.archived)
                 t.column(self.created)
                 t.column(self.modified)
+                t.column(self.worryTypeId)
+                t.column(self.categoryId)
+                t.column(self.refocusId)
             })!
     }
-    
-//    public func getCategory() -> Category {
-//        Get the data for this worry, and transform it. These will be called from controllers and populated into an array on the ViewModel of usable Objects
-//        If the member isn't populated, retrieve the data and populate it, otherwise return the member
-//    }
-//
-//    public func getRefocus() -> Refocus {
-//        Get the data for this worry, and transform it. These will be called from controllers and populated into an array on the ViewModel of usable Objects
-//        If the member isn't populated, retrieve the data and populate it, otherwise return the member
-//    }
-//
-//    public func getWorryType() -> Refocus {
-//        Get the name for the worry type on this model, by ID
-//        If the member isn't populated, retrieve the data and populate it, otherwise return the member
-//    }
 }

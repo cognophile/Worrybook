@@ -16,17 +16,17 @@ struct DetailWorryView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(self.viewModel.worry.getTitle())")
+                Text("\(self.viewModel.getTitle())")
                     .fontWeight(.medium)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.title3)
                     .padding(10)
                 
-                Text("\(self.viewModel.worry.getTypeString())")
+                Text("\(self.viewModel.getTypeString())")
                     .font(.caption)
                     .padding(8)
                     .foregroundColor(.white)
-                    .background(self.viewModel.worry.getTypeColour())
+                    .background(self.viewModel.getTypeColour())
                     .cornerRadius(50)
                     .padding(8)
             }
@@ -34,19 +34,19 @@ struct DetailWorryView: View {
             Divider()
                 .padding(10)
             
-            Text("\(self.viewModel.worry.getDescription())")
+            Text("\(self.viewModel.getDescription())")
                 .foregroundColor(.gray)
                 .padding(20)
                 .multilineTextAlignment(.center)
 
             
-            if (self.viewModel.worry.getType() == WorryType.practical) {
+            if (self.viewModel.getType() == WorryTypeViewModel.practical) {
                 Text("What you did about it")
                     .fontWeight(.medium)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.subheadline)
                     .padding(10)
-                Text("\(self.viewModel.worry.getSolution() ?? "")")
+                Text("\(self.viewModel.getSolution() ?? "")")
                     .foregroundColor(.gray)
                     .padding(20)
                     .multilineTextAlignment(.center)
@@ -57,7 +57,7 @@ struct DetailWorryView: View {
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.subheadline)
                     .padding(10)
-                Text("\(self.viewModel.worry.getRefocus()?.title ?? "") ")
+                Text("\(self.viewModel.getRefocus()?.title ?? "") ")
                     .foregroundColor(.gray)
                     .padding(20)
                     .multilineTextAlignment(.center)
@@ -69,7 +69,7 @@ struct DetailWorryView: View {
                 
             Button(action: {
                 // @todo: This will work once the controller wiring is there to archive, and reload the browse view when we go back.
-                self.viewModel.worry.archive()
+                self.viewModel.archive()
                 self.presentation.wrappedValue.dismiss()
             }) {
                 HStack {

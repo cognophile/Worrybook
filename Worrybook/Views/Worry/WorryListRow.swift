@@ -14,7 +14,7 @@ struct WorryListRow: View {
 
     var body: some View {
         NavigationLink(destination: DetailWorryView(viewModel: self.viewModel)) {
-            Text(viewModel.worry.getTitle())
+            Text(viewModel.getTitle())
                     .fontWeight(.regular)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.body)
