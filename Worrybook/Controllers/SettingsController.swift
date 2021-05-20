@@ -11,4 +11,8 @@ class SettingsController {
     init() {
         
     }
+    
+    public func scheduleWorryNotification() {
+        
+    }
 }
