@@ -15,14 +15,15 @@ class WorryTranslationService {
     
     public static func translateSingle(row: Row) -> WorryViewModel {
         let model = Worry()
-        
         let worry = WorryViewModel()
+        
+        let typeId = (try! row.get(model.worryTypeId))
+        worry.recordId = try! row.get(model.id)
         worry.build(
             title: try! row.get(model.title),
             description: try! row.get(model.description),
-            type: (try! row.get(model.worryTypeId) == 1) ? WorryTypeViewModel.hypothetical : WorryTypeViewModel.practical
+            type: WorryType.getTypeFromId(id: typeId)
         )
-
         worry.solution = try! row.get(model.solution)
         worry.archived = try! row.get(model.archived)!
         worry.created = try! row.get(model.created)!

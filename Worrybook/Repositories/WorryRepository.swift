@@ -35,8 +35,21 @@ class WorryRepository {
         return Worry()
     }
     
-    public func create() -> Worry {
-        return Worry()
+    public func create(viewModel: WorryViewModel) -> Worry {
+        let query = self.worry.table!.insert(
+            self.worry.title <- viewModel.title,
+            self.worry.description <- viewModel.description,
+            self.worry.solution <- viewModel.solution,
+            self.worry.archived <- viewModel.archived,
+            self.worry.created <- viewModel.created,
+            self.worry.modified <- viewModel.modified,
+            self.worry.worryTypeId <- viewModel.getTypeId(),
+            self.worry.categoryId <- 1,
+            self.worry.refocusId <- 1
+        )
+        
+        self.worry.record = self.database.insert(model: self.worry, query: query)
+        return self.worry
     }
     
     public func update(id: Int) -> Worry {

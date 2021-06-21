@@ -10,12 +10,15 @@ import SwiftUI
 struct WorryCategorisationAndRefocusView: View {
     private var viewModel: WorryViewModel
     
+    @Environment(\.presentationMode) private var presentationMode
+    
     @State private var selectedCategory = UUID()
     @State private var selectedRefocus = UUID()
     
     private let colorHelper = ColorHelper()
     private var categories: [Category]
     private var refocuses: [Refocus]
+    private var worryController = WorryController()
     private var categoryController = CategoriesController()
     private var refocusController = RefocusController()
 
@@ -137,7 +140,13 @@ struct WorryCategorisationAndRefocusView: View {
             Spacer()
             
             Button(action: {
-                
+//                self.viewModel.setCategory(category: <#T##Category#>)
+//                self.viewModel.setRefocus(refocus: <#T##Refocus#>)
+                let result = worryController.create(viewModel: self.viewModel)
+                if (result.recordId != nil) {
+                    self.presentationMode.wrappedValue.dismiss()
+                    NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "WorrySavedNotifciation")))
+                }
             }) {
                 HStack {
                     Image(systemName: "checkmark")

@@ -120,28 +120,28 @@ struct CreateWorryView: View {
             }
             
             NavigationLink (destination: WorryCategorisationAndRefocusView(viewModel: self.viewModel)
-                                    .navigationBarTitle("Categorise & Refocus")
-                                    .navigationBarBackButtonHidden(true)
-                                    .navigationBarItems(leading:
-                                        Button(action: {
-                                            self.showCreateModal.toggle()
-                                        }) {
-                                            HStack {
-                                                Image(systemName: "xmark")
-                                                    .font(.title2)
-                                                    .foregroundColor(.gray)
-                                                    .background(
-                                                        Circle()
-                                                            .frame(width: 32, height: 32)
-                                                    )
-                                            }
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(colorHelper.secondaryColor)
-                                            .padding(.top, 10)
-                                            .padding(.leading, 348)
-                                            .padding(.trailing, 10)
-                                            .cornerRadius(3.0)
-                                        }), isActive: self.$nextStageActive)
+                .navigationBarTitle("Categorise & Refocus")
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading:
+                    Button(action: {
+                        self.showCreateModal.toggle()
+                    }) {
+                        HStack {
+                            Image(systemName: "xmark")
+                                .font(.title2)
+                                .foregroundColor(.gray)
+                                .background(
+                                    Circle()
+                                        .frame(width: 32, height: 32)
+                                )
+                        }
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(colorHelper.secondaryColor)
+                        .padding(.top, 10)
+                        .padding(.leading, 348)
+                        .padding(.trailing, 10)
+                        .cornerRadius(3.0)
+                    }), isActive: self.$nextStageActive)
             {
                 EmptyView()
             }

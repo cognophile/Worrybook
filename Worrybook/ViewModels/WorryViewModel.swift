@@ -28,7 +28,7 @@ class WorryViewModel : Identifiable {
         self.description = description
         self.type = type
     }
-    
+        
     public func setRecordId(id: Int) {
         self.recordId = id
     }
@@ -59,6 +59,23 @@ class WorryViewModel : Identifiable {
     
     public func getType() -> WorryTypeViewModel {
         return self.type
+    }
+    
+    public func getType() -> String {
+        return self.type.rawValue
+    }
+    
+    public func getTypeId() -> Int {
+        var id: Int {
+            switch (self.type) {
+            case WorryTypeViewModel.hypothetical:
+                return 1
+            default:
+                return 2
+            }
+        }
+        
+        return id
     }
     
     public func getTypeString() -> String {

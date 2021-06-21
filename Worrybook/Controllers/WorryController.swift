@@ -19,12 +19,8 @@ class WorryController {
         return WorryTranslationService.translateMultiple(rows: records!)
     }
     
-    private func createWorry(title: String, description: String, type: WorryTypeViewModel, solution: String?) -> WorryViewModel {
-        // var worry = self.repository?.create()
-        
-        let model = WorryViewModel()
-        model.build(title: title, description: description, type: type)
-        
-        return model
+    public func create(viewModel: WorryViewModel) -> WorryViewModel {
+        let entity = self.repository?.create(viewModel: viewModel)
+        return WorryTranslationService.translateSingle(row: (entity?.record)!)
     }
 }

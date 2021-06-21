@@ -26,4 +26,8 @@ class WorryType: BaseModelProtocol {
                 t.column(self.type)
             })!
     }
+    
+    public static func getTypeFromId(id: Int) -> WorryTypeViewModel {
+        return id == 1 ? WorryTypeViewModel.hypothetical : WorryTypeViewModel.practical
+    }
 }
