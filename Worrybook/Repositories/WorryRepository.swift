@@ -71,6 +71,12 @@ class WorryRepository {
     }
     
     public func delete(id: Int) -> Bool {
-        return true
+        let deleted = self.database.delete(model: self.worry, index: id)
+        
+        if (deleted != nil) {
+            return true
+        }
+        
+        return false
     }
 }

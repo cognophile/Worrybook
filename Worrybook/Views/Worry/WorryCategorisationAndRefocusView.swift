@@ -15,6 +15,7 @@ struct WorryCategorisationAndRefocusView: View {
     @State private var selectedCategory = UUID()
     @State private var selectedRefocus = UUID()
     @State private var operationFailed = false
+    @State private var createdModel: WorryViewModel = WorryViewModel()
     
     private let colorHelper = ColorHelper()
     private var categories: [Category]
@@ -139,19 +140,21 @@ struct WorryCategorisationAndRefocusView: View {
             }
             
             Spacer()
-            
+
+
             Button(action: {
-//              self.viewModel.setCategory(category: <#T##Category#>)
-//              self.viewModel.setRefocus(refocus: <#T##Refocus#>)
-                let result = worryController.create(viewModel: self.viewModel)
-                if (result.recordId != nil) {
+//              self.viewModel.setCategory(category: T##Category)
+//              self.viewModel.setRefocus(refocus: T##Refocus)
+                self.createdModel = worryController.create(viewModel: self.viewModel)
+                
+                if (self.createdModel.recordId != nil) {
                     self.presentationMode.wrappedValue.dismiss()
                     NotificationCenter.default.post(
                         Notification.init(name: Notification.Name(rawValue: "WorrySavedNotifciation"))
                     )
                 }
                 else {
-                    
+                    self.operationFailed.toggle()
                 }
             }) {
                 HStack {
@@ -175,6 +178,7 @@ struct WorryCategorisationAndRefocusView: View {
                     dismissButton: .default(Text("Okay"))
                 )
             }
+            
         }
     }
 }

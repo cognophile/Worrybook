@@ -15,8 +15,12 @@ class WorryController {
     }
     
     public func getAll(id: Int) -> WorryViewModel {
-        let record = self.repository?.getOne(id: id)
-        return WorryTranslationService.translateSingle(row: record!)
+        if (id > 0) {
+            let record = self.repository?.getOne(id: id)
+            return WorryTranslationService.translateSingle(row: record!)
+        }
+        
+        return WorryViewModel()
     }
     
     public func getAll() -> [WorryViewModel] {
@@ -35,10 +39,12 @@ class WorryController {
     }
     
     public func delete(id: Int) -> Bool {
-        let entity = self.repository?.delete(id: id)
-        
-        if (entity != nil) {
-            return true
+        if (id > 0) {
+            let entity = self.repository?.delete(id: id)
+            
+            if (entity != nil) {
+                return true
+            }
         }
         
         return false

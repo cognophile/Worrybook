@@ -11,6 +11,7 @@ struct DetailWorryView: View {
     @Environment(\.presentationMode) var presentation
         
     @State private var operationFailed = false
+    @State private var confirmDeletion = false
     
     private let colorHelper = ColorHelper()
 
@@ -77,9 +78,8 @@ struct DetailWorryView: View {
                         
                         if (result != nil) {
                             NotificationCenter.default.post(
-                                Notification.init(name: Notification.Name(rawValue: "WorryUpdatedNotifciation"))
+                                Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotifciation"))
                             )
-                            
                             self.presentation.wrappedValue.dismiss()
                         }
                         else {
@@ -112,7 +112,7 @@ struct DetailWorryView: View {
             
             HStack {
                 Button(action: {
-                    
+                    self.confirmDeletion.toggle()
                 }) {
                     HStack {
                         Image(systemName: "trash")
@@ -128,8 +128,26 @@ struct DetailWorryView: View {
                     .cornerRadius(50)
                     .padding(10)
                 }
+                .alert(isPresented: self.$confirmDeletion) {
+                    Alert(
+                        title: Text("Wait..."),
+                        message: Text("Just checking - are you sure you wish to delete this worry?"),
+                        primaryButton: .destructive(Text("I'm sure")) {
+                            let result = self.controller.delete(id: self.viewModel.getRecordId() ?? 0)
+                            
+                            if (result) {
+                                NotificationCenter.default.post(
+                                    Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotifciation"))
+                                )
+                                self.presentation.wrappedValue.dismiss()
+                            }
+                        },
+                        secondaryButton: .cancel(Text("No, don\'t!"))
+                    )
+                }
             }
             
         }
     }
 }
+

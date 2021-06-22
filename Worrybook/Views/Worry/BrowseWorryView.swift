@@ -42,7 +42,7 @@ struct BrowseWorryView: View {
             }
         }
         .onAppear(perform: populate)
-        .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "WorryUpdatedNotifciation"))) { _ in
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "RefreshWorryListNotifciation"))) { _ in
             populate()
         }
     }
