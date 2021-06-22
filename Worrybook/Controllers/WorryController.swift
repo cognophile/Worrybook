@@ -14,7 +14,7 @@ class WorryController {
         self.repository = WorryRepository()
     }
     
-    public func getAll(id: Int) -> WorryViewModel {
+    public func getOne(id: Int) -> WorryViewModel {
         if (id > 0) {
             let record = self.repository?.getOne(id: id)
             return WorryTranslationService.translateSingle(row: record!)
