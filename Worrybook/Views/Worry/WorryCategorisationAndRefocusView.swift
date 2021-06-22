@@ -14,6 +14,7 @@ struct WorryCategorisationAndRefocusView: View {
     
     @State private var selectedCategory = UUID()
     @State private var selectedRefocus = UUID()
+    @State private var operationFailed = false
     
     private let colorHelper = ColorHelper()
     private var categories: [Category]
@@ -21,7 +22,7 @@ struct WorryCategorisationAndRefocusView: View {
     private var worryController = WorryController()
     private var categoryController = CategoriesController()
     private var refocusController = RefocusController()
-
+    
     init(viewModel: WorryViewModel) {
         self.viewModel = viewModel
         self.categories = categoryController.getAll()
@@ -140,12 +141,17 @@ struct WorryCategorisationAndRefocusView: View {
             Spacer()
             
             Button(action: {
-//                self.viewModel.setCategory(category: <#T##Category#>)
-//                self.viewModel.setRefocus(refocus: <#T##Refocus#>)
+//              self.viewModel.setCategory(category: <#T##Category#>)
+//              self.viewModel.setRefocus(refocus: <#T##Refocus#>)
                 let result = worryController.create(viewModel: self.viewModel)
                 if (result.recordId != nil) {
                     self.presentationMode.wrappedValue.dismiss()
-                    NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "WorrySavedNotifciation")))
+                    NotificationCenter.default.post(
+                        Notification.init(name: Notification.Name(rawValue: "WorrySavedNotifciation"))
+                    )
+                }
+                else {
+                    
                 }
             }) {
                 HStack {
@@ -161,6 +167,13 @@ struct WorryCategorisationAndRefocusView: View {
                 .background(colorHelper.primaryColor)
                 .cornerRadius(50)
                 .padding(10)
+            }
+            .alert(isPresented: self.$operationFailed) {
+                Alert(
+                    title: Text("Oops!"),
+                    message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
+                    dismissButton: .default(Text("Okay"))
+                )
             }
         }
     }

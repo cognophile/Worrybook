@@ -26,13 +26,14 @@ class WorryRepository {
         return nil
     }
     
-    public func getAllArchived() -> [Worry] {
-        // Get all archived
-        return [Worry()]
-    }
-    
-    public func getOne() -> Worry {
-        return Worry()
+    public func getOne(id: Int) -> Row? {
+        let record = self.database.selectOne(model: self.worry, index: id)
+        
+        if record != nil {
+            return record
+        }
+        
+        return nil
     }
     
     public func create(viewModel: WorryViewModel) -> Worry {
@@ -52,8 +53,21 @@ class WorryRepository {
         return self.worry
     }
     
-    public func update(id: Int) -> Worry {
-        return Worry()
+    public func update(viewModel: WorryViewModel) -> Worry {
+        let query = [
+            self.worry.title <- viewModel.title,
+            self.worry.description <- viewModel.description,
+            self.worry.solution <- viewModel.solution,
+            self.worry.archived <- viewModel.archived,
+            self.worry.created <- viewModel.created,
+            self.worry.modified <- viewModel.modified,
+            self.worry.worryTypeId <- viewModel.getTypeId(),
+            self.worry.categoryId <- 1,
+            self.worry.refocusId <- 1
+        ]
+         
+        self.worry.record = self.database.update(model: self.worry, index: viewModel.getRecordId()!, query: query)
+        return self.worry
     }
     
     public func delete(id: Int) -> Bool {

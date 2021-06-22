@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct WorryListRow: View {
-    private let colorHelper = ColorHelper()
+    public var viewModel: WorryViewModel
 
-    var viewModel: WorryViewModel
+    private let colorHelper = ColorHelper()
 
     var body: some View {
         NavigationLink(destination: DetailWorryView(viewModel: self.viewModel)) {

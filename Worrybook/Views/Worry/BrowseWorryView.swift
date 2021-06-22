@@ -11,13 +11,16 @@ struct BrowseWorryView: View {
     @Binding var showReadModal: Bool
     
     @State var selection = 0
+    @State var entries: [WorryViewModel] = []
     
     public var controller = WorryController()
     public let tabs: [String] = ["Unarchived", "Archived"]
-
+    
+    private func populate() {
+        self.entries = controller.getAll()
+    }
+    
     var body: some View {
-        let entries: [WorryViewModel] = controller.getAll()
-        
         let chosenTab = (self.selection == 0) ? false : true
         let filteredEntries = entries.filter({$0.archived == chosenTab})
         
@@ -33,10 +36,14 @@ struct BrowseWorryView: View {
             Spacer()
                         
             HStack {
-                return List(filteredEntries) { viewModel in
+                List(filteredEntries) { viewModel in
                     WorryListRow(viewModel: viewModel)
                 }
             }
+        }
+        .onAppear(perform: populate)
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "WorryUpdatedNotifciation"))) { _ in
+            populate()
         }
     }
 }
