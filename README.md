@@ -28,4 +28,4 @@ Anxiety is a normal part of human behaviour and everyone experiences it to a deg
  </p>
 
 ## Disclaimer
-This application has been designed and developed to support the practice of existing psycho-therapy methods, which vary in effectiveness per-person, but does not claim to resolve mental health issues. It has not been deigned,  developed, or consulted upon by or with medical professionals, but by an individual with personal experience of mental health management techniques and habit forming.   
+This application has been designed and developed to support the practice of existing psycho-therapy methods, which vary in effectiveness per-person, but does not claim to resolve mental health issues. It has not been deigned,  developed, or consulted upon by or with medical professionals, but by an individual with personal experience of mental health management techniques and habit forming and a desire to help others. 
