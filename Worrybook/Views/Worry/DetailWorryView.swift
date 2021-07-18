@@ -80,6 +80,7 @@ struct DetailWorryView: View {
                             NotificationCenter.default.post(
                                 Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotifciation"))
                             )
+                            
                             self.presentation.wrappedValue.dismiss()
                         }
                         else {
@@ -133,7 +134,7 @@ struct DetailWorryView: View {
                         title: Text("Wait..."),
                         message: Text("Just checking - are you sure you wish to delete this worry?"),
                         primaryButton: .destructive(Text("I'm sure")) {
-                            let result = self.controller.delete(id: self.viewModel.getRecordId() ?? 0)
+                            let result = self.controller.delete(id: self.viewModel.getId() ?? 0)
                             
                             if (result) {
                                 NotificationCenter.default.post(

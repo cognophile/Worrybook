@@ -18,7 +18,7 @@ class WorryTranslationService {
         let worry = WorryViewModel()
         
         let typeId = (try! row.get(model.worryTypeId))
-        worry.recordId = try! row.get(model.id)
+        worry.id = try! row.get(model.id)
         worry.build(
             title: try! row.get(model.title),
             description: try! row.get(model.description),

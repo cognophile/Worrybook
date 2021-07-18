@@ -8,7 +8,7 @@
 import Foundation
 import SQLite
 
-class WorryType: BaseModelProtocol {
+class WorryType: ModelProtocol {
     var table: Table?
     var record: Row?
     

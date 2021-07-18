@@ -23,11 +23,11 @@ class DatabaseHelper {
         self.connection = try! Connection("\(path)/worrybookdb.sqlite3")
     }
     
-    public func instantiateTable<T: BaseModelProtocol>(model: T) {
+    public func instantiateTable<T: ModelProtocol>(model: T) {
         try! self.connection?.run(model.instantiateTable())
     }
     
-    public func selectAll<T: BaseModelProtocol>(model: T, override: QueryType? = nil) -> AnySequence<Row>? {
+    public func selectAll<T: ModelProtocol>(model: T, override: QueryType? = nil) -> AnySequence<Row>? {
         if (override != nil) {
             if let records = try! self.connection?.prepare(override!) {
                 return records
@@ -41,7 +41,7 @@ class DatabaseHelper {
         return nil
     }
     
-    public func selectOne<T: BaseModelProtocol>(model: T, index: Int, override: QueryType? = nil) -> Row? {
+    public func selectOne<T: ModelProtocol>(model: T, index: Int, override: QueryType? = nil) -> Row? {
         if (override != nil) {
             if let record = try! self.connection?.pluck(override!) {
                 return record
@@ -57,7 +57,7 @@ class DatabaseHelper {
         return nil
     }
     
-    public func insert<T: BaseModelProtocol>(model: T, query: Insert) -> Row? {
+    public func insert<T: ModelProtocol>(model: T, query: Insert) -> Row? {
         try! self.connection?.run(query)
         guard let statement = model.table?.order(model.id.desc).limit(1) else { return nil }
         
@@ -68,7 +68,7 @@ class DatabaseHelper {
         return nil
     }
     
-    public func update<T: BaseModelProtocol>(model: T, index: Int, query: [Setter]) -> Row? {
+    public func update<T: ModelProtocol>(model: T, index: Int, query: [Setter]) -> Row? {
         guard let statement = model.table?.filter(model.id == index) else { return nil }
         
         if (try! self.connection?.run(statement.update(query))) != nil {
@@ -81,7 +81,7 @@ class DatabaseHelper {
     }
     
     
-    public func delete<T: BaseModelProtocol>(model: T, index: Int) -> Int? {
+    public func delete<T: ModelProtocol>(model: T, index: Int) -> Int? {
         guard let statement = model.table?.filter(model.id == index) else { return nil }
         
         if let record = try! self.connection?.run(statement.delete()) {
@@ -91,7 +91,7 @@ class DatabaseHelper {
         return nil
     }
     
-    public func deleteAll<T: BaseModelProtocol>(model: T, override: QueryType? = nil) -> Int? {
+    public func deleteAll<T: ModelProtocol>(model: T, override: QueryType? = nil) -> Int? {
         if (override != nil) {
             if let records = try! self.connection?.run((override?.delete())!) {
                 return records

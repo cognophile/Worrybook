@@ -8,7 +8,7 @@
 import Foundation
 import SQLite
 
-protocol BaseModelProtocol {
+protocol ModelProtocol {
     var table: Table? { get set }
     var record: Row? { get set }
     var id: Expression<Int> { get set }

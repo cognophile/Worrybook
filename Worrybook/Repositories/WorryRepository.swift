@@ -66,7 +66,7 @@ class WorryRepository {
             self.worry.refocusId <- 1
         ]
          
-        self.worry.record = self.database.update(model: self.worry, index: viewModel.getRecordId()!, query: query)
+        self.worry.record = self.database.update(model: self.worry, index: viewModel.getId()!, query: query)
         return self.worry
     }
     
