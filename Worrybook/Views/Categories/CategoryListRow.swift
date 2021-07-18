@@ -10,7 +10,7 @@ import SwiftUI
 struct CategoryListRow: View {
     private let colorHelper = ColorHelper()
 
-    var category: Category
+    var category: CategoryViewModel
 
     var body: some View {
         VStack {

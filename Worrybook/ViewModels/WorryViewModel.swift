@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 class WorryViewModel : Identifiable {
-    public let id = UUID()
-    public var recordId: Int? = nil
+    public var id: Int? = nil
+    public let uuid = UUID()
     public var title: String = ""
     public var description: String = ""
     public var solution: String? = nil
@@ -18,8 +18,8 @@ class WorryViewModel : Identifiable {
     public var created: Date = Date()
     public var modified: Date? = nil
     public var type: WorryTypeViewModel = WorryTypeViewModel.hypothetical
-    public var refocus: Refocus? = nil
-    public var category: Category? = nil
+    public var refocus: RefocusViewModel? = nil
+    public var category: CategoryViewModel? = nil
     
     init() {}
     
@@ -29,12 +29,20 @@ class WorryViewModel : Identifiable {
         self.type = type
     }
         
-    public func setRecordId(id: Int) {
-        self.recordId = id
+    public func setId(id: Int) {
+        self.id = id
     }
     
-    public func getRecordId() -> Int? {
-        return self.recordId ?? nil
+    public func getId() -> Int? {
+        return self.id ?? nil
+    }
+    
+    public func setUUID(id: Int) {
+        self.id = id
+    }
+    
+    public func getUUID() -> Int {
+        return self.uuid.hashValue
     }
     
     public func setTitle(title: String) {
@@ -51,6 +59,26 @@ class WorryViewModel : Identifiable {
     
     public func getDescription() -> String {
         return self.description
+    }
+    
+    public func setSolution(solution: String) {
+        self.solution = solution
+    }
+    
+    public func getSolution() -> String? {
+        return self.solution ?? nil
+    }
+    
+    public func isArchived() -> Bool {
+        return (self.archived) ? true : false;
+    }
+    
+    public func archive() {
+        self.archived = true;
+    }
+    
+    public func unArchive() {
+        self.archived = false;
     }
     
     public func setType(type: WorryTypeViewModel) {
@@ -98,23 +126,11 @@ class WorryViewModel : Identifiable {
         return ColorHelper.getColor(r: 96, g: 158, b: 3)
     }
     
-    public func setSolution(solution: String) {
-        self.solution = solution
-    }
-    
-    public func getSolution() -> String? {
-        if (self.solution != nil) {
-            return self.solution
-        }
-        
-        return nil
-    }
-    
-    public func setRefocus(refocus: Refocus) {
+    public func setRefocus(refocus: RefocusViewModel) {
         self.refocus = refocus
     }
     
-    public func getRefocus() -> Refocus? {
+    public func getRefocus() -> RefocusViewModel? {
         if (self.refocus != nil) {
             return self.refocus
         }
@@ -122,28 +138,16 @@ class WorryViewModel : Identifiable {
         return nil
     }
     
-    public func setCategory(category: Category) {
+    public func setCategory(category: CategoryViewModel) {
         self.category = category
     }
     
-    public func getCategory() -> Category? {
+    public func getCategory() -> CategoryViewModel? {
         if (self.category != nil) {
             return self.category
         }
         
         return nil
-    }
-    
-    public func isArchived() -> Bool {
-        return (self.archived) ? true : false;
-    }
-    
-    public func archive() {
-        self.archived = true;
-    }
-    
-    public func unArchive() {
-        self.archived = false;
     }
 
     public func setModifiedDate(date: Date) {

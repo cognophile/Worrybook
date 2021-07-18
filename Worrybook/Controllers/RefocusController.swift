@@ -6,19 +6,16 @@
 //
 
 import Foundation
+import SQLite
 
 class RefocusController {
-    init() {
-        
-    }
-    
-    public func getAll() -> [Refocus] {
+    public func getAll() -> [RefocusViewModel] {
         return [
-            Refocus(title: "Read"),
-            Refocus(title: "Exercise"),
-            Refocus(title: "Socialise"),
-            Refocus(title: "Meditate"),
-            Refocus(title: "Other"),
+            RefocusViewModel(title: "Read"),
+            RefocusViewModel(title: "Exercise"),
+            RefocusViewModel(title: "Socialise"),
+            RefocusViewModel(title: "Meditate"),
+            RefocusViewModel(title: "Other"),
         ]
     }
 }

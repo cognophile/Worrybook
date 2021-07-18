@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct RefocusListRow: View {
+    var refocus: RefocusViewModel
     private let colorHelper = ColorHelper()
-
-    var refocus: Refocus
 
     var body: some View {
         VStack {

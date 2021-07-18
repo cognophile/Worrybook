@@ -18,8 +18,8 @@ struct WorryCategorisationAndRefocusView: View {
     @State private var createdModel: WorryViewModel = WorryViewModel()
     
     private let colorHelper = ColorHelper()
-    private var categories: [Category]
-    private var refocuses: [Refocus]
+    private var categories: [CategoryViewModel]
+    private var refocuses: [RefocusViewModel]
     private var worryController = WorryController()
     private var categoryController = CategoriesController()
     private var refocusController = RefocusController()
@@ -41,8 +41,8 @@ struct WorryCategorisationAndRefocusView: View {
                         .padding(10)
                 }
                 
-                ForEach(self.categories, id: \.id) { category in
-                    if (self.selectedCategory == category.id) {
+                ForEach(self.categories, id: \.uuid) { category in
+                    if (self.selectedCategory == category.uuid) {
                         HStack {
                             Button(action: {
                                 self.selectedCategory = UUID()
@@ -66,7 +66,7 @@ struct WorryCategorisationAndRefocusView: View {
                     else {
                         HStack {
                             Button(action: {
-                                self.selectedCategory = category.id
+                                self.selectedCategory = category.uuid
                             }) {
                                 HStack {
                                     Text("\(category.getTitle())")
@@ -97,7 +97,7 @@ struct WorryCategorisationAndRefocusView: View {
                 }
                 
                 ForEach(self.refocuses, id: \.id) { refocus in
-                    if (self.selectedRefocus == refocus.id) {
+                    if (self.selectedRefocus == refocus.uuid) {
                         HStack {
                             Button(action: {
                                 self.selectedRefocus = UUID()
@@ -121,7 +121,7 @@ struct WorryCategorisationAndRefocusView: View {
                     else {
                         HStack {
                             Button(action: {
-                                self.selectedRefocus = refocus.id
+                                self.selectedRefocus = refocus.uuid
                             }) {
                                 HStack {
                                     Text("\(refocus.getTitle())")
@@ -147,7 +147,7 @@ struct WorryCategorisationAndRefocusView: View {
 //              self.viewModel.setRefocus(refocus: T##Refocus)
                 self.createdModel = worryController.create(viewModel: self.viewModel)
                 
-                if (self.createdModel.recordId != nil) {
+                if (self.createdModel.id != nil) {
                     self.presentationMode.wrappedValue.dismiss()
                     NotificationCenter.default.post(
                         Notification.init(name: Notification.Name(rawValue: "WorrySavedNotifciation"))
