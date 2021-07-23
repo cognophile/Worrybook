@@ -45,6 +45,7 @@
 		0DBF3EFB268BBDC5005529F8 /* RefocusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */; };
 		0DBF3EFD268BC2BA005529F8 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */; };
 		0DBF3EFF268BC3B1005529F8 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */; };
+		0DC6018626AB701D006E3327 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6018526AB701D006E3327 /* ViewModelProtocol.swift */; };
 		0DC68ECE25D818EF00DCDABC /* TechniquesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */; };
 		0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ED225D8190C00DCDABC /* Technique.swift */; };
 		0DC68ED825D8198E00DCDABC /* BrowseTechniquesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */; };
@@ -130,6 +131,7 @@
 		0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusViewModel.swift; sourceTree = "<group>"; };
 		0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
+		0DC6018526AB701D006E3327 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniquesController.swift; sourceTree = "<group>"; };
 		0DC68ED225D8190C00DCDABC /* Technique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technique.swift; sourceTree = "<group>"; };
 		0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTechniquesView.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			children = (
 				0D55CD81264FD7EE0026F096 /* ModelProtocol.swift */,
 				0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */,
+				0DC6018526AB701D006E3327 /* ViewModelProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				0D03516525CB2B5D00B660A4 /* WorryViewModel.swift in Sources */,
 				0D94F55F25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift in Sources */,
 				0DE78F8625CF14BC0027B121 /* Refocus.swift in Sources */,
+				0DC6018626AB701D006E3327 /* ViewModelProtocol.swift in Sources */,
 				0D94F55725D06367008380B3 /* CreateGratitudeDiaryEntryView.swift in Sources */,
 				0D55CD82264FD7EE0026F096 /* ModelProtocol.swift in Sources */,
 				0D7E788D26469CDD002AD048 /* WorryRepository.swift in Sources */,
