@@ -1,7 +1,7 @@
 <img src="Worrybook/Assets.xcassets/Worrybook_icon_light_large_transparent.imageset/Worrybook_icon_light_large_transparent.png" alt="worrybook-logo" width="160" height="160" align="right" hspace="0" vspace="10"/>
 
 # Worrybook
-[![Build Status](https://travis-ci.com/cognophile/Worrybook.svg?branch=master)](https://travis-ci.com/cognophile/NWorrybook) 
+[![Build Status](https://travis-ci.com/cognophile/Worrybook.svg?branch=master)](https://travis-ci.com/cognophile/Worrybook) 
 
 ### _Write more; Worry less_
 Worrybook was built to serve as a convenient in-your-pocket solution to help practice the popular Cognitive Behavioural Therapy (CBT) techniques Worry Time, Worry Diary, and Gratitude Diary. It aims to support you in forming and adhering to these mental wellbeing habits. By recording, reviewing, and addressing your worries at regular intervals, it can help reduce the intensity and frequency of anxiety.
