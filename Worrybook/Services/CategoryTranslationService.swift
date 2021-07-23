@@ -33,4 +33,10 @@ class CategoryTranslationService {
         
         return refocues
     }
+    
+    public static func hydrate(id: Int) -> CategoryViewModel {
+        let repository = CategoryRepository()
+        let row = repository.getOne(id: id)!
+        return CategoryTranslationService.translateSingle(row: row)
+    }
 }

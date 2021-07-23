@@ -45,8 +45,8 @@ class WorryRepository {
             self.worry.created <- viewModel.created,
             self.worry.modified <- viewModel.modified,
             self.worry.worryTypeId <- viewModel.getTypeId(),
-            self.worry.categoryId <- 1,
-            self.worry.refocusId <- 1
+            self.worry.categoryId <- viewModel.category?.id,
+            self.worry.refocusId <- viewModel.refocus?.id
         )
         
         self.worry.record = self.database.insert(model: self.worry, query: query)
@@ -62,8 +62,8 @@ class WorryRepository {
             self.worry.created <- viewModel.created,
             self.worry.modified <- viewModel.modified,
             self.worry.worryTypeId <- viewModel.getTypeId(),
-            self.worry.categoryId <- 1,
-            self.worry.refocusId <- 1
+            self.worry.categoryId <- viewModel.category?.id,
+            self.worry.refocusId <- viewModel.refocus?.id
         ]
          
         self.worry.record = self.database.update(model: self.worry, index: viewModel.getId()!, query: query)

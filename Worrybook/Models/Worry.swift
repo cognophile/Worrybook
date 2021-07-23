@@ -21,8 +21,8 @@ class Worry: ModelProtocol {
     let modified = Expression<Date?>("modified")
     
     let worryTypeId = Expression<Int>("worry_type_id")
-    let categoryId = Expression<Int>("category_id")
-    let refocusId = Expression<Int>("refocus_id")
+    let categoryId = Expression<Int?>("category_id")
+    let refocusId = Expression<Int?>("refocus_id")
         
     init() {
         self.table = Table("worry")

@@ -43,7 +43,16 @@ struct DetailWorryView: View {
                 .foregroundColor(.gray)
                 .padding(20)
                 .multilineTextAlignment(.center)
-
+            
+            Text("You categorised it as")
+                .fontWeight(.medium)
+                .foregroundColor(colorHelper.getTextColor())
+                .font(.subheadline)
+                .padding(10)
+            Text("\(self.viewModel.getCategory()?.title ?? "") ")
+                .foregroundColor(.gray)
+                .padding(20)
+                .multilineTextAlignment(.center)
             
             if (self.viewModel.getType() == WorryTypeViewModel.practical) {
                 Text("What you did about it")

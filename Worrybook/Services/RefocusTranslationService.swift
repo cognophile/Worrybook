@@ -33,4 +33,10 @@ class RefocusTranslationService {
         
         return refocues
     }
+    
+    public static func hydrate(id: Int) -> RefocusViewModel {
+        let repository = RefocusRepository()
+        let row = repository.getOne(id: id)!
+        return RefocusTranslationService.translateSingle(row: row)
+    }
 }

@@ -17,7 +17,10 @@ class WorryTranslationService {
         let model = Worry()
         let worry = WorryViewModel()
         
-        let typeId = (try! row.get(model.worryTypeId))
+        let refocusId = try! row.get(model.refocusId)
+        let categoryId = try! row.get(model.categoryId)
+        let typeId = try! row.get(model.worryTypeId)
+        
         worry.id = try! row.get(model.id)
         worry.build(
             title: try! row.get(model.title),
@@ -28,9 +31,8 @@ class WorryTranslationService {
         worry.archived = try! row.get(model.archived)!
         worry.created = try! row.get(model.created)!
         worry.modified = try! row.get(model.modified)
-        
-//      worry.refocus = try! row.get(model.refocusId)
-//      worry.category = try! row.get(model.categoryId)
+        worry.refocus = RefocusTranslationService.hydrate(id: refocusId!)
+        worry.category = CategoryTranslationService.hydrate(id: categoryId!)
         
         return worry
     }
