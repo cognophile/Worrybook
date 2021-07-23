@@ -9,24 +9,29 @@ import SwiftUI
 
 struct DetailWorryView: View {
     @Environment(\.presentationMode) var presentation
+        
+    @State private var operationFailed = false
+    @State private var confirmDeletion = false
     
     private let colorHelper = ColorHelper()
-    
+
+    public var controller = WorryController()
     var viewModel: WorryViewModel
+    
     var body: some View {
         VStack {
             HStack {
-                Text("\(self.viewModel.worry.getTitle())")
+                Text("\(self.viewModel.getTitle())")
                     .fontWeight(.medium)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.title3)
                     .padding(10)
                 
-                Text("\(self.viewModel.worry.getTypeString())")
+                Text("\(self.viewModel.getTypeString())")
                     .font(.caption)
                     .padding(8)
                     .foregroundColor(.white)
-                    .background(self.viewModel.worry.getTypeColour())
+                    .background(self.viewModel.getTypeColour())
                     .cornerRadius(50)
                     .padding(8)
             }
@@ -34,19 +39,28 @@ struct DetailWorryView: View {
             Divider()
                 .padding(10)
             
-            Text("\(self.viewModel.worry.getDescription())")
+            Text("\(self.viewModel.getDescription())")
                 .foregroundColor(.gray)
                 .padding(20)
                 .multilineTextAlignment(.center)
-
             
-            if (self.viewModel.worry.getType() == WorryType.practical) {
+            Text("You categorised it as")
+                .fontWeight(.medium)
+                .foregroundColor(colorHelper.getTextColor())
+                .font(.subheadline)
+                .padding(10)
+            Text("\(self.viewModel.getCategory()?.title ?? "") ")
+                .foregroundColor(.gray)
+                .padding(20)
+                .multilineTextAlignment(.center)
+            
+            if (self.viewModel.getType() == WorryTypeViewModel.practical) {
                 Text("What you did about it")
                     .fontWeight(.medium)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.subheadline)
                     .padding(10)
-                Text("\(self.viewModel.worry.getSolution() ?? "")")
+                Text("\(self.viewModel.getSolution() ?? "")")
                     .foregroundColor(.gray)
                     .padding(20)
                     .multilineTextAlignment(.center)
@@ -57,7 +71,7 @@ struct DetailWorryView: View {
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.subheadline)
                     .padding(10)
-                Text("\(self.viewModel.worry.getRefocus()?.title ?? "") ")
+                Text("\(self.viewModel.getRefocus()?.title ?? "") ")
                     .foregroundColor(.gray)
                     .padding(20)
                     .multilineTextAlignment(.center)
@@ -65,31 +79,50 @@ struct DetailWorryView: View {
         }
         Spacer()
         VStack {
-            HStack {
-                
-            Button(action: {
-                // @todo: This will work once the controller wiring is there to archive, and reload the browse view when we go back.
-                self.viewModel.worry.archive()
-                self.presentation.wrappedValue.dismiss()
-            }) {
+            if (!self.viewModel.isArchived()) {
                 HStack {
-                    Image(systemName: "archivebox")
-                        .font(.title2)
-                    Text("Archive")
-                        .fontWeight(.semibold)
-                        .font(.title2)
+                    Button(action: {
+                        self.viewModel.archive()
+                        let result = self.controller.update(viewModel: self.viewModel)
+                        
+                        if (result != nil) {
+                            NotificationCenter.default.post(
+                                Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotifciation"))
+                            )
+                            
+                            self.presentation.wrappedValue.dismiss()
+                        }
+                        else {
+                            self.operationFailed = true
+                        }
+                    }) {
+                        HStack {
+                            Image(systemName: "archivebox")
+                                .font(.title2)
+                            Text("Archive")
+                                .fontWeight(.semibold)
+                                .font(.title2)
+                        }
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(colorHelper.primaryColor)
+                        .cornerRadius(50)
+                        .padding(10)
+                    }
+                    .alert(isPresented: self.$operationFailed) {
+                        Alert(
+                            title: Text("Oops!"),
+                            message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
+                            dismissButton: .default(Text("Okay"))
+                        )
+                    }
                 }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding(10)
-                .foregroundColor(.white)
-                .background(colorHelper.primaryColor)
-                .cornerRadius(50)
-                .padding(10)
             }
-            }
+            
             HStack {
                 Button(action: {
-                    
+                    self.confirmDeletion.toggle()
                 }) {
                     HStack {
                         Image(systemName: "trash")
@@ -105,8 +138,26 @@ struct DetailWorryView: View {
                     .cornerRadius(50)
                     .padding(10)
                 }
+                .alert(isPresented: self.$confirmDeletion) {
+                    Alert(
+                        title: Text("Wait..."),
+                        message: Text("Just checking - are you sure you wish to delete this worry?"),
+                        primaryButton: .destructive(Text("I'm sure")) {
+                            let result = self.controller.delete(id: self.viewModel.getId() ?? 0)
+                            
+                            if (result) {
+                                NotificationCenter.default.post(
+                                    Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotifciation"))
+                                )
+                                self.presentation.wrappedValue.dismiss()
+                            }
+                        },
+                        secondaryButton: .cancel(Text("No, don\'t!"))
+                    )
+                }
             }
             
         }
     }
 }
+

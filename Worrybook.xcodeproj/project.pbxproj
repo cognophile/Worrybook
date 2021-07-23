@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,12 @@
 		0D14C4F325AD0FAD00FAB2E6 /* WorrybookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C4F225AD0FAD00FAB2E6 /* WorrybookUITests.swift */; };
 		0D21247D25B4F339009039FF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D21247C25B4F339009039FF /* StringExtension.swift */; };
 		0D2440CF25C22188003FF569 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2440CE25C22188003FF569 /* ColorHelper.swift */; };
+		0D52C26826A4C3A5008A69C9 /* RefocusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */; };
+		0D52C26A26AB414C008A69C9 /* RefocusTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */; };
+		0D52C26C26AB4463008A69C9 /* CategoryTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */; };
+		0D55CD692646A6FD0026F096 /* WorryTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD682646A6FD0026F096 /* WorryTranslationService.swift */; };
+		0D55CD7C264FD63E0026F096 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */; };
+		0D55CD82264FD7EE0026F096 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD81264FD7EE0026F096 /* ModelProtocol.swift */; };
 		0D5EA7C825D7FFC700729385 /* BrowseRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */; };
 		0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7D125D7FFE400729385 /* CreateRefocusView.swift */; };
 		0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7D625D7FFFF00729385 /* RefocusListRow.swift */; };
@@ -27,6 +33,7 @@
 		0D5EA7F125D815A700729385 /* CreateCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7F025D815A700729385 /* CreateCategoryView.swift */; };
 		0D5EA7F625D815C900729385 /* CategoryListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7F525D815C900729385 /* CategoryListRow.swift */; };
 		0D5EA7FE25D8161000729385 /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7FD25D8161000729385 /* CategoriesController.swift */; };
+		0D7E788D26469CDD002AD048 /* WorryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E788C26469CDD002AD048 /* WorryRepository.swift */; };
 		0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */; };
 		0D91BB0325D058960063AC00 /* GratitudeDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */; };
 		0D94F55725D06367008380B3 /* CreateGratitudeDiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94F55625D06367008380B3 /* CreateGratitudeDiaryEntryView.swift */; };
@@ -34,6 +41,11 @@
 		0DA4DEE925B4AAB800A74129 /* WorryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4DEE825B4AAB800A74129 /* WorryType.swift */; };
 		0DB2F59B25B4E30D00D85384 /* DetailWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2F59A25B4E30D00D85384 /* DetailWorryView.swift */; };
 		0DB2F5A025B4E5C000D85384 /* WorryListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2F59F25B4E5C000D85384 /* WorryListRow.swift */; };
+		0DBF3EF9268BBDB5005529F8 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EF8268BBDB5005529F8 /* CategoryViewModel.swift */; };
+		0DBF3EFB268BBDC5005529F8 /* RefocusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */; };
+		0DBF3EFD268BC2BA005529F8 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */; };
+		0DBF3EFF268BC3B1005529F8 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */; };
+		0DBF3F05268BCA67005529F8 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3F04268BCA67005529F8 /* ViewModelProtocol.swift */; };
 		0DC68ECE25D818EF00DCDABC /* TechniquesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */; };
 		0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ED225D8190C00DCDABC /* Technique.swift */; };
 		0DC68ED825D8198E00DCDABC /* BrowseTechniquesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */; };
@@ -54,6 +66,7 @@
 		0DF3B9F425B0E4F30014D04C /* CreateWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3B9F325B0E4F30014D04C /* CreateWorryView.swift */; };
 		0DF3B9FC25B342F10014D04C /* BrowseWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3B9FB25B342F00014D04C /* BrowseWorryView.swift */; };
 		0DFE6DC225EA530500E9D67D /* BindingOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE6DC125EA530500E9D67D /* BindingOverload.swift */; };
+		AC15DCEF214BFD60131D535B /* Pods_Worrybook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286649F38EA3745D7CA07785 /* Pods_Worrybook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +105,12 @@
 		0D14C4F425AD0FAD00FAB2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D21247C25B4F339009039FF /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0D2440CE25C22188003FF569 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusRepository.swift; sourceTree = "<group>"; };
+		0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusTranslationService.swift; sourceTree = "<group>"; };
+		0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTranslationService.swift; sourceTree = "<group>"; };
+		0D55CD682646A6FD0026F096 /* WorryTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryTranslationService.swift; sourceTree = "<group>"; };
+		0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		0D55CD81264FD7EE0026F096 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
 		0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseRefocusView.swift; sourceTree = "<group>"; };
 		0D5EA7D125D7FFE400729385 /* CreateRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRefocusView.swift; sourceTree = "<group>"; };
 		0D5EA7D625D7FFFF00729385 /* RefocusListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusListRow.swift; sourceTree = "<group>"; };
@@ -100,6 +119,7 @@
 		0D5EA7F025D815A700729385 /* CreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryView.swift; sourceTree = "<group>"; };
 		0D5EA7F525D815C900729385 /* CategoryListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRow.swift; sourceTree = "<group>"; };
 		0D5EA7FD25D8161000729385 /* CategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
+		0D7E788C26469CDD002AD048 /* WorryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryRepository.swift; sourceTree = "<group>"; };
 		0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryEntry.swift; sourceTree = "<group>"; };
 		0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryController.swift; sourceTree = "<group>"; };
 		0D94F55625D06367008380B3 /* CreateGratitudeDiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGratitudeDiaryEntryView.swift; sourceTree = "<group>"; };
@@ -107,6 +127,11 @@
 		0DA4DEE825B4AAB800A74129 /* WorryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryType.swift; sourceTree = "<group>"; };
 		0DB2F59A25B4E30D00D85384 /* DetailWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorryView.swift; sourceTree = "<group>"; };
 		0DB2F59F25B4E5C000D85384 /* WorryListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryListRow.swift; sourceTree = "<group>"; };
+		0DBF3EF8268BBDB5005529F8 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusViewModel.swift; sourceTree = "<group>"; };
+		0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
+		0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
+		0DBF3F04268BCA67005529F8 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelProtocol.swift; path = ../../../../../../.Trash/ViewModelProtocol.swift; sourceTree = "<group>"; };
 		0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniquesController.swift; sourceTree = "<group>"; };
 		0DC68ED225D8190C00DCDABC /* Technique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technique.swift; sourceTree = "<group>"; };
 		0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTechniquesView.swift; sourceTree = "<group>"; };
@@ -127,6 +152,9 @@
 		0DF3B9F325B0E4F30014D04C /* CreateWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorryView.swift; sourceTree = "<group>"; };
 		0DF3B9FB25B342F00014D04C /* BrowseWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseWorryView.swift; sourceTree = "<group>"; };
 		0DFE6DC125EA530500E9D67D /* BindingOverload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingOverload.swift; sourceTree = "<group>"; };
+		286649F38EA3745D7CA07785 /* Pods_Worrybook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Worrybook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C09859FB5F17317EA3A94DE /* Pods-Worrybook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Worrybook.debug.xcconfig"; path = "Target Support Files/Pods-Worrybook/Pods-Worrybook.debug.xcconfig"; sourceTree = "<group>"; };
+		BE99C13AD5C72E996C8D477F /* Pods-Worrybook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Worrybook.release.xcconfig"; path = "Target Support Files/Pods-Worrybook/Pods-Worrybook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC15DCEF214BFD60131D535B /* Pods_Worrybook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +199,8 @@
 				0D14C4E625AD0FAD00FAB2E6 /* WorrybookTests */,
 				0D14C4F125AD0FAD00FAB2E6 /* WorrybookUITests */,
 				0D14C4D325AD0FAA00FAB2E6 /* Products */,
+				B0D665B830EC1D2FC029E4AA /* Pods */,
+				BF3ACD2722A6D9F31B569842 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,10 +217,12 @@
 		0D14C4D425AD0FAA00FAB2E6 /* Worrybook */ = {
 			isa = PBXGroup;
 			children = (
+				0D55CD80264FD7DF0026F096 /* Protocols */,
+				0D55CD672646A6E40026F096 /* Services */,
 				0DFE6DC025EA52ED00E9D67D /* Overloads */,
 				0DE78F9725D02E5E0027B121 /* Controllers */,
 				0D2440CD25C2217B003FF569 /* Helpers */,
-				0DD641EB25C216D0008BEDF3 /* Services */,
+				0DD641EB25C216D0008BEDF3 /* Repositories */,
 				0D21247B25B4F328009039FF /* Extensions */,
 				0DF3B9EF25B0E4320014D04C /* ViewModels */,
 				0DF3B9EE25B0E4220014D04C /* Views */,
@@ -243,8 +276,29 @@
 			children = (
 				0D2440CE25C22188003FF569 /* ColorHelper.swift */,
 				0DE78F9225D024740027B121 /* DateHelper.swift */,
+				0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0D55CD672646A6E40026F096 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0D55CD682646A6FD0026F096 /* WorryTranslationService.swift */,
+				0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */,
+				0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0D55CD80264FD7DF0026F096 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0DBF3F04268BCA67005529F8 /* ViewModelProtocol.swift */,
+				0D55CD81264FD7EE0026F096 /* ModelProtocol.swift */,
+				0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		0D5EA7E125D80CA000729385 /* Categories */ = {
@@ -294,11 +348,14 @@
 			path = About;
 			sourceTree = "<group>";
 		};
-		0DD641EB25C216D0008BEDF3 /* Services */ = {
+		0DD641EB25C216D0008BEDF3 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				0D7E788C26469CDD002AD048 /* WorryRepository.swift */,
+				0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */,
+				0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */,
 			);
-			path = Services;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		0DE78F9725D02E5E0027B121 /* Controllers */ = {
@@ -369,6 +426,8 @@
 			children = (
 				0D03516425CB2B5D00B660A4 /* WorryViewModel.swift */,
 				0D03516C25CB2B9300B660A4 /* WorryTypeViewModel.swift */,
+				0DBF3EF8268BBDB5005529F8 /* CategoryViewModel.swift */,
+				0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -381,6 +440,23 @@
 			path = Overloads;
 			sourceTree = "<group>";
 		};
+		B0D665B830EC1D2FC029E4AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C09859FB5F17317EA3A94DE /* Pods-Worrybook.debug.xcconfig */,
+				BE99C13AD5C72E996C8D477F /* Pods-Worrybook.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF3ACD2722A6D9F31B569842 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				286649F38EA3745D7CA07785 /* Pods_Worrybook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,9 +464,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D14C4F725AD0FAD00FAB2E6 /* Build configuration list for PBXNativeTarget "Worrybook" */;
 			buildPhases = (
+				9439E0B7276CCF3EC05BC885 /* [CP] Check Pods Manifest.lock */,
 				0D14C4CE25AD0FAA00FAB2E6 /* Sources */,
 				0D14C4CF25AD0FAA00FAB2E6 /* Frameworks */,
 				0D14C4D025AD0FAA00FAB2E6 /* Resources */,
+				8937AEFAF4ECF6647E64F5AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -505,6 +583,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8937AEFAF4ECF6647E64F5AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Worrybook/Pods-Worrybook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Worrybook/Pods-Worrybook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Worrybook/Pods-Worrybook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9439E0B7276CCF3EC05BC885 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Worrybook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D14C4CE25AD0FAA00FAB2E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -514,14 +634,18 @@
 				0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */,
 				0D03516D25CB2B9300B660A4 /* WorryTypeViewModel.swift in Sources */,
 				0DC68EDD25D819DB00DCDABC /* TechniqueListRow.swift in Sources */,
+				0DBF3F05268BCA67005529F8 /* ViewModelProtocol.swift in Sources */,
 				0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */,
 				0D14C4D825AD0FAA00FAB2E6 /* HomeView.swift in Sources */,
+				0D55CD692646A6FD0026F096 /* WorryTranslationService.swift in Sources */,
 				0D5EA7FE25D8161000729385 /* CategoriesController.swift in Sources */,
 				0D14C4D625AD0FAA00FAB2E6 /* WorrybookApp.swift in Sources */,
 				0D03518025CB384600B660A4 /* MenuContentView.swift in Sources */,
 				0DF3B9FC25B342F10014D04C /* BrowseWorryView.swift in Sources */,
 				0DE78FC325D0392C0027B121 /* GratitudeDiaryListRow.swift in Sources */,
+				0D52C26C26AB4463008A69C9 /* CategoryTranslationService.swift in Sources */,
 				0DE78FC825D039680027B121 /* DetailGratitudeDiaryView.swift in Sources */,
+				0DBF3EFB268BBDC5005529F8 /* RefocusViewModel.swift in Sources */,
 				0DB2F59B25B4E30D00D85384 /* DetailWorryView.swift in Sources */,
 				0DC68EE225D81A1300DCDABC /* CreateTechniqueView.swift in Sources */,
 				0DD3E9B325B35BCF003B3A50 /* Worry.swift in Sources */,
@@ -531,15 +655,21 @@
 				0DE78F9325D024740027B121 /* DateHelper.swift in Sources */,
 				0D5EA7EC25D8159500729385 /* BrowseCategoriesView.swift in Sources */,
 				0DC68ECE25D818EF00DCDABC /* TechniquesController.swift in Sources */,
+				0DBF3EFD268BC2BA005529F8 /* CategoryRepository.swift in Sources */,
 				0DE78FB625D0368F0027B121 /* WorryController.swift in Sources */,
 				0DB2F5A025B4E5C000D85384 /* WorryListRow.swift in Sources */,
 				0D91BB0325D058960063AC00 /* GratitudeDiaryController.swift in Sources */,
 				0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */,
 				0DC68EE825D81DD200DCDABC /* SettingsView.swift in Sources */,
 				0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */,
+				0DBF3EF9268BBDB5005529F8 /* CategoryViewModel.swift in Sources */,
+				0D55CD7C264FD63E0026F096 /* DatabaseHelper.swift in Sources */,
+				0D52C26A26AB414C008A69C9 /* RefocusTranslationService.swift in Sources */,
 				0DFE6DC225EA530500E9D67D /* BindingOverload.swift in Sources */,
+				0D52C26826A4C3A5008A69C9 /* RefocusRepository.swift in Sources */,
 				0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */,
 				0DC68EED25D81DE200DCDABC /* SettingsController.swift in Sources */,
+				0DBF3EFF268BC3B1005529F8 /* RepositoryProtocol.swift in Sources */,
 				0D03518525CB385A00B660A4 /* MenuView.swift in Sources */,
 				0DE78FAE25D036170027B121 /* BrowseGratitudeView.swift in Sources */,
 				0D5EA7C825D7FFC700729385 /* BrowseRefocusView.swift in Sources */,
@@ -553,6 +683,8 @@
 				0D94F55F25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift in Sources */,
 				0DE78F8625CF14BC0027B121 /* Refocus.swift in Sources */,
 				0D94F55725D06367008380B3 /* CreateGratitudeDiaryEntryView.swift in Sources */,
+				0D55CD82264FD7EE0026F096 /* ModelProtocol.swift in Sources */,
+				0D7E788D26469CDD002AD048 /* WorryRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +838,7 @@
 		};
 		0D14C4F825AD0FAD00FAB2E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C09859FB5F17317EA3A94DE /* Pods-Worrybook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -718,6 +851,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.6.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -727,6 +861,7 @@
 		};
 		0D14C4F925AD0FAD00FAB2E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE99C13AD5C72E996C8D477F /* Pods-Worrybook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -739,6 +874,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.6.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

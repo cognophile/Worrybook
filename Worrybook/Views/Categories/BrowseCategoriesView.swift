@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BrowseCategoriesView: View {
     @Binding var show: Bool
-    @State private var categories: [Category]
+    @State private var categories: [CategoryViewModel]
     
     var controller = CategoriesController()
     private let colorHelper = ColorHelper()

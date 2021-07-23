@@ -10,15 +10,20 @@ import SwiftUI
 struct WorryCategorisationAndRefocusView: View {
     private var viewModel: WorryViewModel
     
-    @State private var selectedCategory = UUID()
-    @State private var selectedRefocus = UUID()
+    @Environment(\.presentationMode) private var presentationMode
+    
+    @State private var selectedCategory = 0
+    @State private var selectedRefocus = 0
+    @State private var operationFailed = false
+    @State private var createdModel: WorryViewModel = WorryViewModel()
     
     private let colorHelper = ColorHelper()
-    private var categories: [Category]
-    private var refocuses: [Refocus]
+    private var categories: [CategoryViewModel]
+    private var refocuses: [RefocusViewModel]
+    private var worryController = WorryController()
     private var categoryController = CategoriesController()
     private var refocusController = RefocusController()
-
+    
     init(viewModel: WorryViewModel) {
         self.viewModel = viewModel
         self.categories = categoryController.getAll()
@@ -40,7 +45,7 @@ struct WorryCategorisationAndRefocusView: View {
                     if (self.selectedCategory == category.id) {
                         HStack {
                             Button(action: {
-                                self.selectedCategory = UUID()
+                                self.selectedCategory = category.id ?? 1
                             }) {
                                 HStack {
                                     Text("\(category.getTitle())")
@@ -61,7 +66,7 @@ struct WorryCategorisationAndRefocusView: View {
                     else {
                         HStack {
                             Button(action: {
-                                self.selectedCategory = category.id
+                                self.selectedCategory = category.id ?? 1
                             }) {
                                 HStack {
                                     Text("\(category.getTitle())")
@@ -95,7 +100,7 @@ struct WorryCategorisationAndRefocusView: View {
                     if (self.selectedRefocus == refocus.id) {
                         HStack {
                             Button(action: {
-                                self.selectedRefocus = UUID()
+                                self.selectedRefocus = refocus.id ?? 1
                             }) {
                                 HStack {
                                     Text("\(refocus.getTitle())")
@@ -116,7 +121,7 @@ struct WorryCategorisationAndRefocusView: View {
                     else {
                         HStack {
                             Button(action: {
-                                self.selectedRefocus = refocus.id
+                                self.selectedRefocus = refocus.id ?? 1
                             }) {
                                 HStack {
                                     Text("\(refocus.getTitle())")
@@ -135,9 +140,25 @@ struct WorryCategorisationAndRefocusView: View {
             }
             
             Spacer()
-            
+
+
             Button(action: {
+                let refocusViewModel = refocusController.getOne(id: self.selectedRefocus)
+                let categoryViewModel = categoryController.getOne(id: self.selectedCategory)
                 
+                self.viewModel.setRefocus(refocus: refocusViewModel)
+                self.viewModel.setCategory(category: categoryViewModel)
+                self.createdModel = worryController.create(viewModel: self.viewModel)
+                
+                if (self.createdModel.id != nil) {
+                    self.presentationMode.wrappedValue.dismiss()
+                    NotificationCenter.default.post(
+                        Notification.init(name: Notification.Name(rawValue: "WorrySavedNotifciation"))
+                    )
+                }
+                else {
+                    self.operationFailed.toggle()
+                }
             }) {
                 HStack {
                     Image(systemName: "checkmark")
@@ -153,6 +174,14 @@ struct WorryCategorisationAndRefocusView: View {
                 .cornerRadius(50)
                 .padding(10)
             }
+            .alert(isPresented: self.$operationFailed) {
+                Alert(
+                    title: Text("Oops!"),
+                    message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
+                    dismissButton: .default(Text("Okay"))
+                )
+            }
+            
         }
     }
 }

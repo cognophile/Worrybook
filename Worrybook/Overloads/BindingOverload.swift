@@ -2,7 +2,7 @@
 //  BindingOverload.swift
 //  Worrybook
 //
-//  Created by Alex Boggis on 27/02/2021.
+//  Created by cognophile
 //
 
 import Foundation

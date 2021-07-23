@@ -103,8 +103,10 @@ struct HomeView: View {
                                         .cornerRadius(3.0)
                                     })
                         }
-                        
                     })
+                    .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "WorrySavedNotifciation"))) { _ in
+                        self.showCreateModal.toggle()
+                    }
                     
                     Button(action: {
                         self.showReadModal.toggle()

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BrowseRefocusView: View {
     @Binding var show: Bool
-    @State private var refocuses: [Refocus]
+    @State private var refocuses: [RefocusViewModel]
     
     var controller = RefocusController()
     private let colorHelper = ColorHelper()
@@ -22,7 +22,7 @@ struct BrowseRefocusView: View {
     var body: some View {
         HStack {
             List {
-                ForEach(self.refocuses, id: \.id) { refocus in
+                ForEach(self.refocuses, id: \.uuid) { refocus in
                     RefocusListRow(refocus: refocus)
                 }
                 .onDelete { $0.forEach {
