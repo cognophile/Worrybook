@@ -45,7 +45,6 @@
 		0DBF3EFB268BBDC5005529F8 /* RefocusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */; };
 		0DBF3EFD268BC2BA005529F8 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */; };
 		0DBF3EFF268BC3B1005529F8 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */; };
-		0DBF3F05268BCA67005529F8 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF3F04268BCA67005529F8 /* ViewModelProtocol.swift */; };
 		0DC68ECE25D818EF00DCDABC /* TechniquesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */; };
 		0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ED225D8190C00DCDABC /* Technique.swift */; };
 		0DC68ED825D8198E00DCDABC /* BrowseTechniquesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */; };
@@ -131,7 +130,6 @@
 		0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusViewModel.swift; sourceTree = "<group>"; };
 		0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
-		0DBF3F04268BCA67005529F8 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModelProtocol.swift; path = ../../../../../../.Trash/ViewModelProtocol.swift; sourceTree = "<group>"; };
 		0DC68ECD25D818EF00DCDABC /* TechniquesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniquesController.swift; sourceTree = "<group>"; };
 		0DC68ED225D8190C00DCDABC /* Technique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technique.swift; sourceTree = "<group>"; };
 		0DC68ED725D8198E00DCDABC /* BrowseTechniquesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTechniquesView.swift; sourceTree = "<group>"; };
@@ -294,7 +292,6 @@
 		0D55CD80264FD7DF0026F096 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				0DBF3F04268BCA67005529F8 /* ViewModelProtocol.swift */,
 				0D55CD81264FD7EE0026F096 /* ModelProtocol.swift */,
 				0DBF3EFE268BC3B1005529F8 /* RepositoryProtocol.swift */,
 			);
@@ -634,7 +631,6 @@
 				0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */,
 				0D03516D25CB2B9300B660A4 /* WorryTypeViewModel.swift in Sources */,
 				0DC68EDD25D819DB00DCDABC /* TechniqueListRow.swift in Sources */,
-				0DBF3F05268BCA67005529F8 /* ViewModelProtocol.swift in Sources */,
 				0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */,
 				0D14C4D825AD0FAA00FAB2E6 /* HomeView.swift in Sources */,
 				0D55CD692646A6FD0026F096 /* WorryTranslationService.swift in Sources */,
