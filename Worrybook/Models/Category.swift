@@ -15,7 +15,6 @@ class Category : ModelProtocol {
     var id = Expression<Int>("id")
     let title = Expression<String>("title")
     let created = Expression<Date?>("created")
-    let modified = Expression<Date?>("modified")
     
     init() {
         self.table = Table("category")
@@ -27,7 +26,6 @@ class Category : ModelProtocol {
                 t.column(self.id, primaryKey: true)
                 t.column(self.title)
                 t.column(self.created)
-                t.column(self.modified)
             })!
     }
 }

@@ -19,7 +19,10 @@
 		0D14C4F325AD0FAD00FAB2E6 /* WorrybookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C4F225AD0FAD00FAB2E6 /* WorrybookUITests.swift */; };
 		0D21247D25B4F339009039FF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D21247C25B4F339009039FF /* StringExtension.swift */; };
 		0D2440CF25C22188003FF569 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2440CE25C22188003FF569 /* ColorHelper.swift */; };
-		0D55CD692646A6FD0026F096 /* WorryModelTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD682646A6FD0026F096 /* WorryModelTranslationService.swift */; };
+		0D52C26826A4C3A5008A69C9 /* RefocusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */; };
+		0D52C26A26AB414C008A69C9 /* RefocusTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */; };
+		0D52C26C26AB4463008A69C9 /* CategoryTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */; };
+		0D55CD692646A6FD0026F096 /* WorryTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD682646A6FD0026F096 /* WorryTranslationService.swift */; };
 		0D55CD7C264FD63E0026F096 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */; };
 		0D55CD82264FD7EE0026F096 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55CD81264FD7EE0026F096 /* ModelProtocol.swift */; };
 		0D5EA7C825D7FFC700729385 /* BrowseRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */; };
@@ -102,7 +105,10 @@
 		0D14C4F425AD0FAD00FAB2E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D21247C25B4F339009039FF /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0D2440CE25C22188003FF569 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
-		0D55CD682646A6FD0026F096 /* WorryModelTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryModelTranslationService.swift; sourceTree = "<group>"; };
+		0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusRepository.swift; sourceTree = "<group>"; };
+		0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusTranslationService.swift; sourceTree = "<group>"; };
+		0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTranslationService.swift; sourceTree = "<group>"; };
+		0D55CD682646A6FD0026F096 /* WorryTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryTranslationService.swift; sourceTree = "<group>"; };
 		0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		0D55CD81264FD7EE0026F096 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
 		0D5EA7C725D7FFC700729385 /* BrowseRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseRefocusView.swift; sourceTree = "<group>"; };
@@ -278,7 +284,9 @@
 		0D55CD672646A6E40026F096 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				0D55CD682646A6FD0026F096 /* WorryModelTranslationService.swift */,
+				0D55CD682646A6FD0026F096 /* WorryTranslationService.swift */,
+				0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */,
+				0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 			children = (
 				0D7E788C26469CDD002AD048 /* WorryRepository.swift */,
 				0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */,
+				0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -628,12 +637,13 @@
 				0DBF3F05268BCA67005529F8 /* ViewModelProtocol.swift in Sources */,
 				0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */,
 				0D14C4D825AD0FAA00FAB2E6 /* HomeView.swift in Sources */,
-				0D55CD692646A6FD0026F096 /* WorryModelTranslationService.swift in Sources */,
+				0D55CD692646A6FD0026F096 /* WorryTranslationService.swift in Sources */,
 				0D5EA7FE25D8161000729385 /* CategoriesController.swift in Sources */,
 				0D14C4D625AD0FAA00FAB2E6 /* WorrybookApp.swift in Sources */,
 				0D03518025CB384600B660A4 /* MenuContentView.swift in Sources */,
 				0DF3B9FC25B342F10014D04C /* BrowseWorryView.swift in Sources */,
 				0DE78FC325D0392C0027B121 /* GratitudeDiaryListRow.swift in Sources */,
+				0D52C26C26AB4463008A69C9 /* CategoryTranslationService.swift in Sources */,
 				0DE78FC825D039680027B121 /* DetailGratitudeDiaryView.swift in Sources */,
 				0DBF3EFB268BBDC5005529F8 /* RefocusViewModel.swift in Sources */,
 				0DB2F59B25B4E30D00D85384 /* DetailWorryView.swift in Sources */,
@@ -654,7 +664,9 @@
 				0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */,
 				0DBF3EF9268BBDB5005529F8 /* CategoryViewModel.swift in Sources */,
 				0D55CD7C264FD63E0026F096 /* DatabaseHelper.swift in Sources */,
+				0D52C26A26AB414C008A69C9 /* RefocusTranslationService.swift in Sources */,
 				0DFE6DC225EA530500E9D67D /* BindingOverload.swift in Sources */,
+				0D52C26826A4C3A5008A69C9 /* RefocusRepository.swift in Sources */,
 				0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */,
 				0DC68EED25D81DE200DCDABC /* SettingsController.swift in Sources */,
 				0DBF3EFF268BC3B1005529F8 /* RepositoryProtocol.swift in Sources */,

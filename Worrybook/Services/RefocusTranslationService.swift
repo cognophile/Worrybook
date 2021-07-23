@@ -1,0 +1,36 @@
+//
+//  RefocusModelTranslationService.swift
+//  Worrybook
+//
+//  Created by Alex Boggis on 23/07/2021.
+//
+
+import Foundation
+import SQLite
+
+class RefocusTranslationService {
+    init() {
+        
+    }
+    
+    public static func translateSingle(row: Row) -> RefocusViewModel {
+        let model = Refocus()
+        let refocus = RefocusViewModel(title: nil)
+        
+        refocus.id = try! row.get(model.id)
+        refocus.title = try! row.get(model.title)
+        refocus.created = try! row.get(model.created)!
+        
+        return refocus
+    }
+    
+    public static func translateMultiple(rows: [Row]) -> [RefocusViewModel] {
+        var refocues = [RefocusViewModel]()
+        
+        for row in rows {
+            refocues.append(self.translateSingle(row: row))
+        }
+        
+        return refocues
+    }
+}

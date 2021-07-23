@@ -13,8 +13,8 @@ class RefocusViewModel : Identifiable {
     public var title: String
     public var created: Date = Date()
     
-    init(title: String) {
-        self.title = title
+    init(title: String?) {
+        self.title = title ?? ""
     }
     
     public func getTitle() -> String {

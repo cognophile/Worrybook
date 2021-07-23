@@ -9,13 +9,23 @@ import Foundation
 import SQLite
 
 class RefocusController {
+    var repository: RefocusRepository?
+    
+    init() {
+        self.repository = RefocusRepository()
+    }
+    
+    public func getOne(id: Int) -> RefocusViewModel {
+        if (id > 0) {
+            let record = self.repository?.getOne(id: id)
+            return RefocusTranslationService.translateSingle(row: record!)
+        }
+        
+        return RefocusViewModel(title: nil)
+    }
+    
     public func getAll() -> [RefocusViewModel] {
-        return [
-            RefocusViewModel(title: "Read"),
-            RefocusViewModel(title: "Exercise"),
-            RefocusViewModel(title: "Socialise"),
-            RefocusViewModel(title: "Meditate"),
-            RefocusViewModel(title: "Other"),
-        ]
+        let records = self.repository?.getAll()
+        return RefocusTranslationService.translateMultiple(rows: records!)
     }
 }

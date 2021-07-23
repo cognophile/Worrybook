@@ -27,6 +27,14 @@ class DatabaseHelper {
         try! self.connection?.run(model.instantiateTable())
     }
     
+    public func count<T: ModelProtocol>(model: T) -> Int? {
+        if let count = try! self.connection?.scalar(model.table!.count) {
+            return count
+        }
+        
+        return nil
+    }
+    
     public func selectAll<T: ModelProtocol>(model: T, override: QueryType? = nil) -> AnySequence<Row>? {
         if (override != nil) {
             if let records = try! self.connection?.prepare(override!) {

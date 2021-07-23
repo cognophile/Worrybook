@@ -12,10 +12,9 @@ class CategoryViewModel : Identifiable {
     public let uuid = UUID()
     public var title: String
     public var created: Date = Date()
-    public var modified: Date = Date()
     
-    init(title: String) {
-        self.title = title
+    init(title: String?) {
+        self.title = title ?? ""
     }
     
     public func getTitle() -> String {
