@@ -3,7 +3,7 @@ language: swift
 osx_image: xcode12.5	
 
 xcode_workspace: Worrybook.xcworkspace 
-xcode_scheme: WorrybookTests
+xcode_scheme: Worrybook
 xcode_destination: platform=iOS Simulator,OS=14.5,name=iPhone 12 Pro
 
 before_install:
