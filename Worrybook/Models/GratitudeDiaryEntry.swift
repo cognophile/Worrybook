@@ -6,33 +6,34 @@
 //
 
 import Foundation
+import SQLite
 
-class GratitudeDiaryEntry : Identifiable {
-    public var id = UUID()
-    public var title: String
-    public var items: [String] = []
-    public var created: Date = Date()
-
-    init (title: String, items: [String]) {
-        self.title = title
-        self.items = items
+class GratitudeDiaryEntry : ModelProtocol {
+    var table: Table?
+    var record: Row?
+    
+    var id = Expression<Int>("id")
+    let title = Expression<String>("title")
+    let firstItem = Expression<String>("first_item")
+    let secondItem = Expression<String?>("second_item")
+    let thirdItem = Expression<String?>("third_item")
+    let archived = Expression<Bool?>("archived")
+    let created = Expression<Date?>("created")
+    
+    init() {
+        self.table = Table("gratitude_diary")
     }
     
-    func getTitle() -> String {
-        return self.title
-    }
-    
-    func getItems() -> [String] {
-        return self.items
-    }
-    
-    func addItem(entry: String) {
-        if (self.items.count < 3) {
-            self.items.append(entry)
-        }
-    }
-    
-    func getCreatedDate() -> String {
-        return DateHelper.getDateAsString(date: self.created)
+    public func instantiateTable() -> String {
+        return (self.table?.create(ifNotExists: true) {
+            t in
+                t.column(self.id, primaryKey: true)
+                t.column(self.title)
+                t.column(self.firstItem)
+                t.column(self.secondItem)
+                t.column(self.thirdItem)
+                t.column(self.archived)
+                t.column(self.created)
+            })!
     }
 }

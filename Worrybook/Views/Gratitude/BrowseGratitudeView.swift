@@ -9,17 +9,42 @@ import SwiftUI
 
 struct BrowseGratitudeDiaryView: View {
     @Binding var show: Bool
-
+    
+    @State var selection = 0
+    @State var entries: [GratitudeDiaryEntryViewModel] = []
+    
     var controller = GratitudeDiaryController()
+    public let tabs: [String] = ["Unarchived", "Archived"]
     private let colorHelper = ColorHelper()
-        
+    
+    private func populate() {
+        self.entries = controller.getAll()
+    }
+    
     var body: some View {
-        let entries = controller.getAll()
-
-        HStack {
-            return List(entries, id: \.id) { entry in
-                GratitudeDiaryListRow(entry: entry)
+        let chosenTab = (self.selection == 0) ? false : true
+        let filteredEntries = entries.filter({$0.archived == chosenTab})
+        
+        VStack {
+            HStack{
+                Picker(selection: $selection, label: Text("")) {
+                    ForEach(0..<tabs.count, id: \.self) { index in
+                        Text(self.tabs[index]).tag(index)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
             }
+            .padding(10)
+            Spacer()
+                        
+            HStack {
+                List(filteredEntries) { viewModel in
+                    GratitudeDiaryListRow(entry: viewModel)
+                }
+            }
+        }
+        .onAppear(perform: populate)
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "DiaryEntryRefreshNotifciation"))) { _ in
+            populate()
         }
         
         Spacer()

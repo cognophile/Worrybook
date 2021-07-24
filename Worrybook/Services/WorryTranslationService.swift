@@ -9,9 +9,7 @@ import Foundation
 import SQLite
 
 class WorryTranslationService {
-    init() {
-        
-    }
+    init() { }
     
     public static func translateSingle(row: Row) -> WorryViewModel {
         let model = Worry()

@@ -10,7 +10,7 @@ import SwiftUI
 
 class WorryViewModel : Identifiable {
     public var id: Int? = nil
-    public let uuid = UUID()
+    public var uuid = UUID()
     public var title: String = ""
     public var description: String = ""
     public var solution: String? = nil
@@ -37,8 +37,8 @@ class WorryViewModel : Identifiable {
         return self.id ?? nil
     }
     
-    public func setUUID(id: Int) {
-        self.id = id
+    public func setUUID(uuid: UUID) {
+        self.uuid = uuid
     }
     
     public func getUUID() -> Int {
