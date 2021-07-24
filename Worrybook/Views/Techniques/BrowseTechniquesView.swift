@@ -9,7 +9,8 @@ import SwiftUI
 
 struct BrowseTechniquesView: View {
     @Binding var show: Bool
-    @State private var techniques: [Technique]
+    
+    @State private var techniques: [TechniqueViewModel]
     
     var controller = TechniquesController()
     private let colorHelper = ColorHelper()
