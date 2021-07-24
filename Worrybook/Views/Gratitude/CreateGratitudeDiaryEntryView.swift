@@ -9,11 +9,17 @@ import SwiftUI
 
 struct CreateGratitudeDiaryEntryView: View {
     let colorHelper = ColorHelper()
+    var entry: GratitudeDiaryEntryViewModel = GratitudeDiaryEntryViewModel()
+    let controller: GratitudeDiaryController = GratitudeDiaryController()
+    
+    @Environment(\.presentationMode) private var presentationMode
     
     @State private var title: String = ""
     @State private var itemOne: String = ""
     @State private var itemTwo: String = ""
     @State private var itemThree: String = ""
+    @State private var operationFailed = false
+    @State private var createdModel: GratitudeDiaryEntryViewModel = GratitudeDiaryEntryViewModel()
     
     var body: some View {
         VStack {
@@ -105,7 +111,23 @@ struct CreateGratitudeDiaryEntryView: View {
             Spacer()
             
             Button(action: {
+                self.entry.title = self.title
+                self.entry.firstItem = self.itemOne
+                self.entry.secondItem = self.itemTwo
+                self.entry.thirdItem = self.itemThree
+                self.entry.created = Date()
                 
+                self.createdModel = controller.create(viewModel: self.entry)
+                
+                if (self.createdModel.id != nil) {
+                    self.presentationMode.wrappedValue.dismiss()
+                    NotificationCenter.default.post(
+                        Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotifciation"))
+                    )
+                }
+                else {
+                    self.operationFailed.toggle()
+                }
             }) {
                 HStack {
                     Image(systemName: "checkmark")
@@ -120,6 +142,13 @@ struct CreateGratitudeDiaryEntryView: View {
                 .background(colorHelper.primaryColor)
                 .cornerRadius(50)
                 .padding(10)
+            }
+            .alert(isPresented: self.$operationFailed) {
+                Alert(
+                    title: Text("Oops!"),
+                    message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
+                    dismissButton: .default(Text("Okay"))
+                )
             }
         }
     }

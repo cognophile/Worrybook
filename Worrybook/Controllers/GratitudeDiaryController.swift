@@ -8,15 +8,45 @@
 import Foundation
 
 class GratitudeDiaryController {
+    var repository: GratitudeDiaryRepository?
+    
     init() {
-        
+        self.repository = GratitudeDiaryRepository()
     }
     
-    public func getAll() -> [GratitudeDiaryEntry] {
-        return [
-            GratitudeDiaryEntry(title: "Home life", items: ["My health", "My home", "My partner and dog"]),
-            GratitudeDiaryEntry(title: "Work", items: ["Starting my new job!", "Meeting my new colleagues", "Progressing on my first project"]),
-            GratitudeDiaryEntry(title: "Family", items: ["My familites health", "Being able to safely visit family", "Rollout of the vaccines!"])
-        ]
+    public func getOne(id: Int) -> GratitudeDiaryEntryViewModel {
+        if (id > 0) {
+            let record = self.repository?.getOne(id: id)
+            return GratitudeDiaryTranslationService.translateSingle(row: record!)
+        }
+        
+        return GratitudeDiaryEntryViewModel()
+    }
+    
+    public func getAll() -> [GratitudeDiaryEntryViewModel] {
+        let records = self.repository?.getAll()
+        return GratitudeDiaryTranslationService.translateMultiple(rows: records!)
+    }
+    
+    public func create(viewModel: GratitudeDiaryEntryViewModel) -> GratitudeDiaryEntryViewModel {
+        let entity = self.repository?.create(viewModel: viewModel)
+        return GratitudeDiaryTranslationService.translateSingle(row: (entity?.record)!)
+    }
+    
+    public func update(viewModel: GratitudeDiaryEntryViewModel) -> GratitudeDiaryEntryViewModel {
+        let entity = self.repository?.update(viewModel: viewModel)
+        return GratitudeDiaryTranslationService.translateSingle(row: (entity?.record)!)
+    }
+    
+    public func delete(id: Int) -> Bool {
+        if (id > 0) {
+            let entity = self.repository?.delete(id: id)
+            
+            if (entity != nil) {
+                return true
+            }
+        }
+        
+        return false
     }
 }

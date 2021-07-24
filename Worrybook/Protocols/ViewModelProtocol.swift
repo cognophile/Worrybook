@@ -2,7 +2,7 @@
 //  ViewModelProtocol.swift
 //  Worrybook
 //
-//  Created by Alex Boggis on 23/07/2021.
+//  Created by cognophile
 //
 
 import Foundation

@@ -10,7 +10,7 @@ import SwiftUI
 struct GratitudeDiaryListRow: View {
     private let colorHelper = ColorHelper()
 
-    var entry: GratitudeDiaryEntry
+    var entry: GratitudeDiaryEntryViewModel
 
     var body: some View {
         NavigationLink(destination: DetailGratitudeDiaryView(entry: self.entry)) {

@@ -36,6 +36,12 @@ struct DetailWorryView: View {
                     .padding(8)
             }
             
+            Text("\(self.viewModel.getCreatedDate())")
+                .fontWeight(.light)
+                .foregroundColor(colorHelper.getTextColor())
+                .font(.caption)
+                .padding(10)
+            
             Divider()
                 .padding(10)
             

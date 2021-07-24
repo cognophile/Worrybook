@@ -2,16 +2,14 @@
 //  RefocusModelTranslationService.swift
 //  Worrybook
 //
-//  Created by Alex Boggis on 23/07/2021.
+//  Created by cognophile
 //
 
 import Foundation
 import SQLite
 
 class RefocusTranslationService {
-    init() {
-        
-    }
+    init() { }
     
     public static func translateSingle(row: Row) -> RefocusViewModel {
         let model = Refocus()

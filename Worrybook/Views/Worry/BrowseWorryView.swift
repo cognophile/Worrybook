@@ -11,18 +11,18 @@ struct BrowseWorryView: View {
     @Binding var showReadModal: Bool
     
     @State var selection = 0
-    @State var entries: [WorryViewModel] = []
+    @State var worries: [WorryViewModel] = []
     
     public var controller = WorryController()
     public let tabs: [String] = ["Unarchived", "Archived"]
     
     private func populate() {
-        self.entries = controller.getAll()
+        self.worries = controller.getAll()
     }
     
     var body: some View {
         let chosenTab = (self.selection == 0) ? false : true
-        let filteredEntries = entries.filter({$0.archived == chosenTab})
+        let filteredEntries = worries.filter({$0.archived == chosenTab})
         
         VStack {
             HStack{
@@ -37,7 +37,7 @@ struct BrowseWorryView: View {
                         
             HStack {
                 List(filteredEntries) { viewModel in
-                    WorryListRow(viewModel: viewModel)
+                    WorryListRow(worry: viewModel)
                 }
             }
         }
