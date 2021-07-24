@@ -59,7 +59,7 @@ struct DetailGratitudeDiaryView: View {
                         
                         if (result != nil) {
                             NotificationCenter.default.post(
-                                Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotifciation"))
+                                Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotification"))
                             )
                             
                             self.presentation.wrappedValue.dismiss()
@@ -119,7 +119,7 @@ struct DetailGratitudeDiaryView: View {
                             
                             if (result) {
                                 NotificationCenter.default.post(
-                                    Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotifciation"))
+                                    Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotification"))
                                 )
                                 self.presentation.wrappedValue.dismiss()
                             }

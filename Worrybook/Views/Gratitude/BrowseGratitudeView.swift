@@ -43,7 +43,7 @@ struct BrowseGratitudeDiaryView: View {
             }
         }
         .onAppear(perform: populate)
-        .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "DiaryEntryRefreshNotifciation"))) { _ in
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "DiaryEntryRefreshNotification"))) { _ in
             populate()
         }
         

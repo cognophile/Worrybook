@@ -83,11 +83,15 @@ class TechniqueRepository {
     
     public func delete(id: Int) -> Bool {
         let deleted = self.database.delete(model: self.technique, index: id)
-        
+
         if (deleted != nil) {
             return true
         }
-        
+
         return false
+    }
+    
+    public func deleteAll() {
+        self.database.deleteAll(model: self.technique)
     }
 }

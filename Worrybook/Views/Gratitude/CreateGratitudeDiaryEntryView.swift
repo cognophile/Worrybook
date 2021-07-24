@@ -122,7 +122,7 @@ struct CreateGratitudeDiaryEntryView: View {
                 if (self.createdModel.id != nil) {
                     self.presentationMode.wrappedValue.dismiss()
                     NotificationCenter.default.post(
-                        Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotifciation"))
+                        Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotification"))
                     )
                 }
                 else {

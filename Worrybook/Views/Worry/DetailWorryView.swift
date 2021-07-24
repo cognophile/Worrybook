@@ -93,7 +93,7 @@ struct DetailWorryView: View {
                         
                         if (result != nil) {
                             NotificationCenter.default.post(
-                                Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotifciation"))
+                                Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotification"))
                             )
                             
                             self.presentation.wrappedValue.dismiss()
@@ -153,7 +153,7 @@ struct DetailWorryView: View {
                             
                             if (result) {
                                 NotificationCenter.default.post(
-                                    Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotifciation"))
+                                    Notification.init(name: Notification.Name(rawValue: "RefreshWorryListNotification"))
                                 )
                                 self.presentation.wrappedValue.dismiss()
                             }

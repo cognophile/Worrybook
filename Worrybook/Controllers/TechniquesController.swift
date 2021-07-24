@@ -49,4 +49,8 @@ class TechniquesController {
         
         return false
     }
+    
+    public func deleteAll() {
+        ((self.repository?.deleteAll()) != nil)
+    }
 }
