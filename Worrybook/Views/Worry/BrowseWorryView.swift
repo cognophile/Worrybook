@@ -37,7 +37,7 @@ struct BrowseWorryView: View {
                         
             HStack {
                 List(filteredEntries) { viewModel in
-                    WorryListRow(viewModel: viewModel)
+                    WorryListRow(worry: viewModel)
                 }
             }
         }
