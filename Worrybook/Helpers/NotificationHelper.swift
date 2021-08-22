@@ -17,6 +17,7 @@ struct NotificationHelper {
         content.title = NSString.localizedUserNotificationString(forKey: title, arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey: message, arguments: nil)
         content.sound = UNNotificationSound.default
+        content.badge = 0
         
         // Receive with date
         var dateInfo = DateComponents()
