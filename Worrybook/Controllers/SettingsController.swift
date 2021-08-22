@@ -12,7 +12,15 @@ class SettingsController {
         
     }
     
+    public func save() {
+        
+    }
+    
     public func scheduleWorryNotification() {
         
+    }
+    
+    public func getWorryTimeNotificationState() -> Bool {
+        return true
     }
 }

@@ -15,7 +15,13 @@ struct SettingsView: View {
     @State private var worryTime = Date()
     
     private let colorHelper = ColorHelper()
+    public var controller = SettingsController()
 
+    init(show: Binding<Bool>) {
+        self._show = show
+        self.enableWorryTime = controller.getWorryTimeNotificationState()
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -56,7 +62,9 @@ struct SettingsView: View {
         
         Button(action: {
             // Save setting
+            
             // Set-up notifications
+            
             // Close modal
             self.show.toggle()
         }) {

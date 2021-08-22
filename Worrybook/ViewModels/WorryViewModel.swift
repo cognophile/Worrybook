@@ -155,10 +155,10 @@ class WorryViewModel : Identifiable {
     }
     
     public func getModifiedDate() -> String? {
-        return DateHelper.getDateAsString(date: self.modified!)
+        return DateTimeHelper.getDateAsString(date: self.modified!)
     }
     
     public func getCreatedDate() -> String {
-        return DateHelper.getDateAsString(date: self.created)
+        return DateTimeHelper.getDateAsString(date: self.created)
     }
 }

@@ -63,7 +63,7 @@ class GratitudeDiaryEntryViewModel : Identifiable {
     }
     
     public func getCreatedDate() -> String {
-        return DateHelper.getDateAsString(date: self.created)
+        return DateTimeHelper.getDateAsString(date: self.created)
     }
     
     public func isArchived() -> Bool {
