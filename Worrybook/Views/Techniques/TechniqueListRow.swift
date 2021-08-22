@@ -10,7 +10,7 @@ import SwiftUI
 struct TechniqueListRow: View {
     private let colorHelper = ColorHelper()
 
-    var technique: Technique
+    var technique: TechniqueViewModel
     @State private var showDescription = false
 
     var body: some View {

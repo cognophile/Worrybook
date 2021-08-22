@@ -9,9 +9,14 @@ import SwiftUI
 
 struct CreateTechniqueView: View {
     let colorHelper = ColorHelper()
+    var controller = TechniquesController ()
     
+    @Environment(\.presentationMode) var presentation
+
     @State private var title: String = ""
     @State private var description: String = ""
+    @State private var operationFailed = false
+    @State private var createdModel: TechniqueViewModel = TechniqueViewModel(title: nil, description: nil)
     
     var body: some View {
         VStack {
@@ -33,11 +38,23 @@ struct CreateTechniqueView: View {
             }
             
             HStack {
-                TextField("Description", text: self.$title)
+                Text("What is it?")
+                    .fontWeight(.medium)
+                    .foregroundColor(colorHelper.getTextColor())
+                    .font(.body)
+                    .padding(10)
+            }
+            
+            HStack {
+                TextEditor(text: self.$description)
                     .frame(minHeight: 50)
                     .foregroundColor(.gray)
                     .background(Color(UIColor.systemBackground))
-                    .textFieldStyle(RoundedCornerBorderTextFieldExtension())
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(colorHelper.secondaryColor, lineWidth: 1)
+                    )
                     .padding(10)
             }
         }
@@ -45,7 +62,18 @@ struct CreateTechniqueView: View {
         Spacer()
             
         Button(action: {
+            let technique = TechniqueViewModel(title: self.title, description: self.description)
+            self.createdModel = controller.create(viewModel: technique)
             
+            if (self.createdModel.id != nil) {
+                self.presentation.wrappedValue.dismiss()
+                NotificationCenter.default.post(
+                    Notification.init(name: Notification.Name(rawValue: "RefreshTechniqueListNotification"))
+                )
+            }
+            else {
+                self.operationFailed.toggle()
+            }
         }) {
             HStack {
                 Image(systemName: "checkmark")
@@ -60,6 +88,13 @@ struct CreateTechniqueView: View {
             .background(colorHelper.primaryColor)
             .cornerRadius(50)
             .padding(10)
+        }
+        .alert(isPresented: self.$operationFailed) {
+            Alert(
+                title: Text("Oops!"),
+                message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
+                dismissButton: .default(Text("Okay"))
+            )
         }
     }
 }

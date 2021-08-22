@@ -6,6 +6,13 @@
 ### _Write more; Worry less_
 Worrybook was built to serve as a convenient in-your-pocket solution to help practice the popular Cognitive Behavioural Therapy (CBT) techniques Worry Time, Worry Diary, and Gratitude Diary. It aims to support you in forming and adhering to these mental wellbeing habits. By recording, reviewing, and addressing your worries at regular intervals, it can help reduce the intensity and frequency of anxiety.
 
+### What can Worrybook do for you
+* Record, manage, and track your worries by practising the Worry Diary technique
+* Categorise your worries to identify patterns 
+* Practice gratuity with the Gratitude Diary
+* Set reminders for when to practice your Worry Time
+* Find techniques for managing anxiety and panic attacks in-the-moment (and add your own!) 
+
 ### Getting help
 Anxiety is a normal part of human behaviour and everyone experiences it to a degree, from time to time. However, some people experience it stronger and more frequently. The good news is there's an abundance of 1information, techniques, and support available for those suffering all types of anxiety. The links below are a great starting point to help you understand and manage anxiety, and best utilise Worrybook.
 

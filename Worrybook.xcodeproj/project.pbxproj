@@ -23,6 +23,9 @@
 		0D3EAB5026AB744800C9E9D7 /* GratitudeDiaryEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3EAB4F26AB744800C9E9D7 /* GratitudeDiaryEntryViewModel.swift */; };
 		0D3EAB5226AC557B00C9E9D7 /* GratitudeDiaryTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3EAB5126AC557B00C9E9D7 /* GratitudeDiaryTranslationService.swift */; };
 		0D3EAB5426AC559900C9E9D7 /* TranslationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3EAB5326AC559900C9E9D7 /* TranslationServiceProtocol.swift */; };
+		0D3EAB5626AC649800C9E9D7 /* TechniqueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3EAB5526AC649800C9E9D7 /* TechniqueViewModel.swift */; };
+		0D3EAB5826AC64F600C9E9D7 /* TechniqueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3EAB5726AC64F600C9E9D7 /* TechniqueRepository.swift */; };
+		0D3EAB5A26AC654400C9E9D7 /* TechniqueTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3EAB5926AC654400C9E9D7 /* TechniqueTranslationService.swift */; };
 		0D52C26826A4C3A5008A69C9 /* RefocusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */; };
 		0D52C26A26AB414C008A69C9 /* RefocusTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */; };
 		0D52C26C26AB4463008A69C9 /* CategoryTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */; };
@@ -113,6 +116,9 @@
 		0D3EAB4F26AB744800C9E9D7 /* GratitudeDiaryEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryEntryViewModel.swift; sourceTree = "<group>"; };
 		0D3EAB5126AC557B00C9E9D7 /* GratitudeDiaryTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryTranslationService.swift; sourceTree = "<group>"; };
 		0D3EAB5326AC559900C9E9D7 /* TranslationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationServiceProtocol.swift; sourceTree = "<group>"; };
+		0D3EAB5526AC649800C9E9D7 /* TechniqueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniqueViewModel.swift; sourceTree = "<group>"; };
+		0D3EAB5726AC64F600C9E9D7 /* TechniqueRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniqueRepository.swift; sourceTree = "<group>"; };
+		0D3EAB5926AC654400C9E9D7 /* TechniqueTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechniqueTranslationService.swift; sourceTree = "<group>"; };
 		0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusRepository.swift; sourceTree = "<group>"; };
 		0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusTranslationService.swift; sourceTree = "<group>"; };
 		0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTranslationService.swift; sourceTree = "<group>"; };
@@ -296,6 +302,7 @@
 				0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */,
 				0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */,
 				0D3EAB5126AC557B00C9E9D7 /* GratitudeDiaryTranslationService.swift */,
+				0D3EAB5926AC654400C9E9D7 /* TechniqueTranslationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -365,6 +372,7 @@
 				0DBF3EFC268BC2BA005529F8 /* CategoryRepository.swift */,
 				0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */,
 				0D3EAB4D26AB738B00C9E9D7 /* GratitudeDiaryRepository.swift */,
+				0D3EAB5726AC64F600C9E9D7 /* TechniqueRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -440,6 +448,7 @@
 				0DBF3EF8268BBDB5005529F8 /* CategoryViewModel.swift */,
 				0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */,
 				0D3EAB4F26AB744800C9E9D7 /* GratitudeDiaryEntryViewModel.swift */,
+				0D3EAB5526AC649800C9E9D7 /* TechniqueViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -648,6 +657,7 @@
 				0DC68EDD25D819DB00DCDABC /* TechniqueListRow.swift in Sources */,
 				0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */,
 				0D14C4D825AD0FAA00FAB2E6 /* HomeView.swift in Sources */,
+				0D3EAB5826AC64F600C9E9D7 /* TechniqueRepository.swift in Sources */,
 				0D55CD692646A6FD0026F096 /* WorryTranslationService.swift in Sources */,
 				0D5EA7FE25D8161000729385 /* CategoriesController.swift in Sources */,
 				0D14C4D625AD0FAA00FAB2E6 /* WorrybookApp.swift in Sources */,
@@ -659,6 +669,7 @@
 				0DE78FC825D039680027B121 /* DetailGratitudeDiaryView.swift in Sources */,
 				0DBF3EFB268BBDC5005529F8 /* RefocusViewModel.swift in Sources */,
 				0DB2F59B25B4E30D00D85384 /* DetailWorryView.swift in Sources */,
+				0D3EAB5626AC649800C9E9D7 /* TechniqueViewModel.swift in Sources */,
 				0DC68EE225D81A1300DCDABC /* CreateTechniqueView.swift in Sources */,
 				0DD3E9B325B35BCF003B3A50 /* Worry.swift in Sources */,
 				0D5EA7E725D811E000729385 /* Category.swift in Sources */,
@@ -692,6 +703,7 @@
 				0D5EA7F625D815C900729385 /* CategoryListRow.swift in Sources */,
 				0D3EAB5426AC559900C9E9D7 /* TranslationServiceProtocol.swift in Sources */,
 				0DC68ED825D8198E00DCDABC /* BrowseTechniquesView.swift in Sources */,
+				0D3EAB5A26AC654400C9E9D7 /* TechniqueTranslationService.swift in Sources */,
 				0DC68F0325D94B7700DCDABC /* AboutView.swift in Sources */,
 				0D03516525CB2B5D00B660A4 /* WorryViewModel.swift in Sources */,
 				0D94F55F25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift in Sources */,

@@ -8,15 +8,49 @@
 import Foundation
 
 class TechniquesController {
+    var repository: TechniqueRepository?
+    
     init() {
-        
+        self.repository = TechniqueRepository()
     }
     
-    public func getAll() -> [Technique] {
-        return [
-            Technique(title: "Box breathing", description: "Breath in for 4 seconds, hold for 4 seconds, out for 4 seconds."),
-            Technique(title: "Five senses", description: "Name 5 things you can see, 4 you can hear, 3 you can touch, 2 you can smell, and 1 you can taste."),
-            Technique(title: "Mindfulness", description: "Sit calmly, take two deep breaths then close your eyes. Then, focus your attention on where you most feel each breath. If your mind wanders, accept it, and refocus on your breathing.")
-        ]
+    public func getOne(id: Int) -> TechniqueViewModel {
+        if (id > 0) {
+            let record = self.repository?.getOne(id: id)
+            return TechniqueTranslationService.translateSingle(row: record!)
+        }
+        
+        return TechniqueViewModel(title: nil, description: nil)
+    }
+    
+    public func getAll() -> [TechniqueViewModel] {
+        let records = self.repository?.getAll()
+        return TechniqueTranslationService.translateMultiple(rows: records!)
+    }
+    
+    public func create(viewModel: TechniqueViewModel) -> TechniqueViewModel {
+        let entity = self.repository?.create(viewModel: viewModel)
+        return TechniqueTranslationService.translateSingle(row: (entity?.record)!)
+    }
+    
+    public func update(viewModel: TechniqueViewModel) -> TechniqueViewModel {
+        let entity = self.repository?.update(viewModel: viewModel)
+        return TechniqueTranslationService.translateSingle(row: (entity?.record)!)
+    }
+    
+    public func delete(id: Int) -> Bool {
+        if (id > 0) {
+            let entity = self.repository?.delete(id: id)
+            
+            if (entity != nil) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    public func deleteAll() {
+        ((self.repository?.deleteAll()) != nil)
     }
 }

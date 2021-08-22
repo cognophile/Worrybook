@@ -104,7 +104,7 @@ struct HomeView: View {
                                     })
                         }
                     })
-                    .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "WorrySavedNotifciation"))) { _ in
+                    .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "WorrySavedNotification"))) { _ in
                         self.showCreateModal.toggle()
                     }
                     

@@ -6,28 +6,29 @@
 //
 
 import Foundation
+import SQLite
 
-class Technique : Identifiable {
-    public var id = UUID()
-    public var title: String
-    public var description: String
-    public var created: Date = Date()
+class Technique : ModelProtocol {
+    var table: Table?
+    var record: Row?
     
-    init(title: String, description: String) {
-        self.title = title
-        self.description = description
+    var id = Expression<Int>("id")
+    let title = Expression<String>("title")
+    let description = Expression<String>("description")
+    let created = Expression<Date?>("created")
+    
+    init() {
+        self.table = Table("technique")
     }
     
-    public func getTitle() -> String {
-        return self.title
-    }
-    
-    public func getDescription() -> String {
-        return self.description
-    }
-    
-    public func getCreatedDate() -> String {
-        return DateHelper.getDateAsString(date: self.created)
+    public func instantiateTable() -> String {
+        return (self.table?.create(ifNotExists: true) {
+            t in
+                t.column(self.id, primaryKey: true)
+                t.column(self.title)
+                t.column(self.description)
+                t.column(self.created)
+            })!
     }
 }
 
