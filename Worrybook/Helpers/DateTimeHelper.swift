@@ -19,8 +19,8 @@ struct DateTimeHelper {
         // var localTimeZoneAbbreviation: String { return TimeZone.current.abbreviation() ?? "" }
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
+        let minute = calendar.component(.minute, from: date)
 
-        return (hour, minutes)
+        return (hour, minute)
     }
 }

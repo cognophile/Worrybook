@@ -12,7 +12,7 @@ struct SettingsView: View {
     
     @State private var enableWorryTime = false
     @State private var worryTimeDescriptionAlert = false
-    @State private var worryTime = Date()
+    @State private var selectedWorryTime = Date()
     
     private let colorHelper = ColorHelper()
     public var controller = SettingsController()
@@ -51,7 +51,7 @@ struct SettingsView: View {
         
         if (self.enableWorryTime) {
             VStack {
-                DatePicker("Worry Time", selection: $worryTime, displayedComponents: .hourAndMinute)
+                DatePicker("Worry Time", selection: $selectedWorryTime, displayedComponents: .hourAndMinute)
                     .padding(.leading, 50)
                     .padding(.top, 5)
                     .padding(.trailing, 50)
@@ -61,11 +61,13 @@ struct SettingsView: View {
         Spacer()
         
         Button(action: {
-            // Save setting
+            var settings = Dictionary<String, Any>()
             
-            // Set-up notifications
+            let time = DateTimeHelper.getLocalTimeFromDate(date: self.selectedWorryTime)
+            settings["WorryTimeNotificationSchedule"] = (time.0, time.1)
             
-            // Close modal
+            _ = controller.save(settings: settings)
+            
             self.show.toggle()
         }) {
             HStack {
