@@ -122,7 +122,7 @@ struct CreateWorryView: View {
             NavigationLink (destination: WorryCategorisationAndRefocusView(viewModel: self.viewModel)
                 .navigationBarTitle("Categorise & Refocus")
                 .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading:
+                .navigationBarItems(trailing:
                     Button(action: {
                         self.showCreateModal.toggle()
                     }) {
@@ -131,15 +131,13 @@ struct CreateWorryView: View {
                                 .font(.title2)
                                 .foregroundColor(.gray)
                                 .background(
-                                    Circle()
-                                        .frame(width: 32, height: 32)
+                                    Circle().frame(width: 32, height: 32),
+                                    alignment: .center
                                 )
                         }
-                        .frame(width: 50, height: 50)
+                        .frame(width: .infinity, height: 50)
+                        .padding(5)
                         .foregroundColor(colorHelper.secondaryColor)
-                        .padding(.top, 10)
-                        .padding(.leading, 348)
-                        .padding(.trailing, 10)
                         .cornerRadius(3.0)
                     }), isActive: self.$nextStageActive)
             {

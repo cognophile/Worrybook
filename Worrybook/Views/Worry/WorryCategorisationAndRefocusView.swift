@@ -37,7 +37,7 @@ struct WorryCategorisationAndRefocusView: View {
                     Text("Categorise this worry")
                         .fontWeight(.medium)
                         .foregroundColor(colorHelper.getTextColor())
-                        .font(.headline)
+                        .font(.subheadline)
                         .padding(10)
                 }
                 
@@ -92,7 +92,7 @@ struct WorryCategorisationAndRefocusView: View {
                     Text("How will you refocus?")
                         .fontWeight(.medium)
                         .foregroundColor(colorHelper.getTextColor())
-                        .font(.headline)
+                        .font(.subheadline)
                         .padding(10)
                 }
                 

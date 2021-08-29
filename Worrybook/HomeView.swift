@@ -36,10 +36,12 @@ struct HomeView: View {
                             Image(systemName: "text.justify")
                                 .font(.title2)
                         }
-                        .frame(width: 50, height: 60)
+                        .frame(maxWidth: .infinity,
+                               maxHeight: 60,
+                               alignment: .topLeading)
                         .foregroundColor(.white)
+                        .padding(10)
                     }
-                    .padding(.trailing, 348)
                     
                     Spacer()
                     HStack {
@@ -82,7 +84,7 @@ struct HomeView: View {
                         NavigationView {
                             CreateWorryView(showCreateModal: self.$showCreateModal)
                                 .navigationBarTitle("What's up?")
-                                .navigationBarItems(leading:
+                                .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showCreateModal.toggle()
                                     }) {
@@ -91,15 +93,13 @@ struct HomeView: View {
                                                 .font(.title2)
                                                 .foregroundColor(.gray)
                                                 .background(
-                                                    Circle()
-                                                        .frame(width: 32, height: 32)
+                                                    Circle().frame(width: 32, height: 32),
+                                                    alignment: .center
                                                 )
                                         }
-                                        .frame(width: 50, height: 50)
+                                        .frame(width: .infinity, height: 50)
+                                        .padding(5)
                                         .foregroundColor(colorHelper.secondaryColor)
-                                        .padding(.top, 10)
-                                        .padding(.leading, 348)
-                                        .padding(.trailing, 10)
                                         .cornerRadius(3.0)
                                     })
                         }
@@ -129,7 +129,7 @@ struct HomeView: View {
                         NavigationView {
                             BrowseWorryView(showReadModal: self.$showReadModal)
                                 .navigationBarTitle("Past worries")
-                                .navigationBarItems(leading:
+                                .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showReadModal.toggle()
                                     }) {
@@ -138,21 +138,19 @@ struct HomeView: View {
                                                 .font(.title2)
                                                 .foregroundColor(.gray)
                                                 .background(
-                                                    Circle()
-                                                        .frame(width: 32, height: 32)
+                                                    Circle().frame(width: 32, height: 32),
+                                                    alignment: .center
                                                 )
                                         }
-                                        .frame(width: 50, height: 50)
+                                        .frame(width: .infinity, height: 50)
+                                        .padding(5)
                                         .foregroundColor(colorHelper.secondaryColor)
-                                        .padding(.top, 10)
-                                        .padding(.leading, 348)
-                                        .padding(.trailing, 10)
                                         .cornerRadius(3.0)
                                     }
                                 )
                         }
                     })
-                }
+                }.frame(width: UIScreen.main.bounds.width-10, alignment: .center)
                 .navigationBarHidden(true)
             }
         }
