@@ -16,6 +16,7 @@ class WorryRepository {
         self.database.instantiateTable(model: worry)
     }
     
+    // @todo: join worryType table
     public func getAll() -> [Row]? {
         let records = self.database.selectAll(model: worry)
         

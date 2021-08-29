@@ -43,6 +43,11 @@
 		0D6F93B526D27F3B001B8C38 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6F93B426D27F3B001B8C38 /* NotificationHelper.swift */; };
 		0D6F93B826D27FA0001B8C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6F93B726D27FA0001B8C38 /* AppDelegate.swift */; };
 		0D6F93BA26D280F1001B8C38 /* DateTimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6F93B926D280F1001B8C38 /* DateTimeHelper.swift */; };
+		0D740C3F26DA3E2D00491F25 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C3E26DA3E2D00491F25 /* SettingsRepository.swift */; };
+		0D740C4126DA3ED100491F25 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C4026DA3ED100491F25 /* Setting.swift */; };
+		0D740C4326DA3F4800491F25 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C4226DA3F4800491F25 /* SettingViewModel.swift */; };
+		0D740C4526DA41F300491F25 /* SettingsTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C4426DA41F300491F25 /* SettingsTranslationService.swift */; };
+		0D740C4726DA4C3B00491F25 /* SettingTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C4626DA4C3B00491F25 /* SettingTypeViewModel.swift */; };
 		0D7E788D26469CDD002AD048 /* WorryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E788C26469CDD002AD048 /* WorryRepository.swift */; };
 		0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */; };
 		0D91BB0325D058960063AC00 /* GratitudeDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */; };
@@ -138,6 +143,11 @@
 		0D6F93B426D27F3B001B8C38 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		0D6F93B726D27FA0001B8C38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D6F93B926D280F1001B8C38 /* DateTimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeHelper.swift; sourceTree = "<group>"; };
+		0D740C3E26DA3E2D00491F25 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
+		0D740C4026DA3ED100491F25 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		0D740C4226DA3F4800491F25 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		0D740C4426DA41F300491F25 /* SettingsTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTranslationService.swift; sourceTree = "<group>"; };
+		0D740C4626DA4C3B00491F25 /* SettingTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTypeViewModel.swift; sourceTree = "<group>"; };
 		0D7E788C26469CDD002AD048 /* WorryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryRepository.swift; sourceTree = "<group>"; };
 		0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryEntry.swift; sourceTree = "<group>"; };
 		0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryController.swift; sourceTree = "<group>"; };
@@ -309,6 +319,7 @@
 				0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */,
 				0D3EAB5126AC557B00C9E9D7 /* GratitudeDiaryTranslationService.swift */,
 				0D3EAB5926AC654400C9E9D7 /* TechniqueTranslationService.swift */,
+				0D740C4426DA41F300491F25 /* SettingsTranslationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -387,6 +398,7 @@
 				0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */,
 				0D3EAB4D26AB738B00C9E9D7 /* GratitudeDiaryRepository.swift */,
 				0D3EAB5726AC64F600C9E9D7 /* TechniqueRepository.swift */,
+				0D740C3E26DA3E2D00491F25 /* SettingsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -435,6 +447,7 @@
 				0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */,
 				0D5EA7E625D811E000729385 /* Category.swift */,
 				0DC68ED225D8190C00DCDABC /* Technique.swift */,
+				0D740C4026DA3ED100491F25 /* Setting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -463,6 +476,8 @@
 				0DBF3EFA268BBDC5005529F8 /* RefocusViewModel.swift */,
 				0D3EAB4F26AB744800C9E9D7 /* GratitudeDiaryEntryViewModel.swift */,
 				0D3EAB5526AC649800C9E9D7 /* TechniqueViewModel.swift */,
+				0D740C4226DA3F4800491F25 /* SettingViewModel.swift */,
+				0D740C4626DA4C3B00491F25 /* SettingTypeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -665,6 +680,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D740C4526DA41F300491F25 /* SettingsTranslationService.swift in Sources */,
+				0D740C4326DA3F4800491F25 /* SettingViewModel.swift in Sources */,
 				0D5EA7F125D815A700729385 /* CreateCategoryView.swift in Sources */,
 				0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */,
 				0D03516D25CB2B9300B660A4 /* WorryTypeViewModel.swift in Sources */,
@@ -699,6 +716,7 @@
 				0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */,
 				0DC68EE825D81DD200DCDABC /* SettingsView.swift in Sources */,
 				0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */,
+				0D740C3F26DA3E2D00491F25 /* SettingsRepository.swift in Sources */,
 				0D3EAB4E26AB738B00C9E9D7 /* GratitudeDiaryRepository.swift in Sources */,
 				0DBF3EF9268BBDB5005529F8 /* CategoryViewModel.swift in Sources */,
 				0D55CD7C264FD63E0026F096 /* DatabaseHelper.swift in Sources */,
@@ -708,12 +726,14 @@
 				0D6F93B826D27FA0001B8C38 /* AppDelegate.swift in Sources */,
 				0DC68ED325D8190C00DCDABC /* Technique.swift in Sources */,
 				0DC68EED25D81DE200DCDABC /* SettingsController.swift in Sources */,
+				0D740C4726DA4C3B00491F25 /* SettingTypeViewModel.swift in Sources */,
 				0DBF3EFF268BC3B1005529F8 /* RepositoryProtocol.swift in Sources */,
 				0D03518525CB385A00B660A4 /* MenuView.swift in Sources */,
 				0DE78FAE25D036170027B121 /* BrowseGratitudeView.swift in Sources */,
 				0D5EA7C825D7FFC700729385 /* BrowseRefocusView.swift in Sources */,
 				0DC68EF225D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift in Sources */,
 				0D21247D25B4F339009039FF /* StringExtension.swift in Sources */,
+				0D740C4126DA3ED100491F25 /* Setting.swift in Sources */,
 				0D6F93B526D27F3B001B8C38 /* NotificationHelper.swift in Sources */,
 				0DA4DEE925B4AAB800A74129 /* WorryType.swift in Sources */,
 				0D5EA7F625D815C900729385 /* CategoryListRow.swift in Sources */,

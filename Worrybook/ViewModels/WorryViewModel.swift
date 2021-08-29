@@ -99,7 +99,7 @@ class WorryViewModel : Identifiable {
             case WorryTypeViewModel.hypothetical:
                 return 1
             default:
-                return 2
+                return 0
             }
         }
         
