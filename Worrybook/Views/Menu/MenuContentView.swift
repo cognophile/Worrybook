@@ -47,7 +47,7 @@ struct MenuContentView: View {
                         NavigationView {
                             BrowseGratitudeDiaryView(show: self.$showGratitudeManager)
                                 .navigationBarTitle("Gratitude Diary")
-                                .navigationBarItems(leading:
+                                .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showGratitudeManager.toggle()
                                     }) {
@@ -56,15 +56,13 @@ struct MenuContentView: View {
                                                 .font(.title2)
                                                 .foregroundColor(.gray)
                                                 .background(
-                                                    Circle()
-                                                        .frame(width: 32, height: 32)
+                                                    Circle().frame(width: 32, height: 32),
+                                                    alignment: .center
                                                 )
                                         }
-                                        .frame(width: 50, height: 50)
+                                        .frame(width: .infinity, height: 50)
+                                        .padding(5)
                                         .foregroundColor(colorHelper.secondaryColor)
-                                        .padding(.top, 10)
-                                        .padding(.leading, 348)
-                                        .padding(.trailing, 10)
                                         .cornerRadius(3.0)
                                     }
                                 )
@@ -194,7 +192,7 @@ struct MenuContentView: View {
                         NavigationView {
                             BrowseTechniquesView(show: self.$showTechniquesList)
                                 .navigationBarTitle("Worry Techniques")
-                                .navigationBarItems(leading:
+                                .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showTechniquesList.toggle()
                                     }) {
@@ -203,15 +201,13 @@ struct MenuContentView: View {
                                                 .font(.title2)
                                                 .foregroundColor(.gray)
                                                 .background(
-                                                    Circle()
-                                                        .frame(width: 32, height: 32)
+                                                    Circle().frame(width: 32, height: 32),
+                                                    alignment: .center
                                                 )
                                         }
-                                        .frame(width: 50, height: 50)
+                                        .frame(width: .infinity, height: 50)
+                                        .padding(5)
                                         .foregroundColor(colorHelper.secondaryColor)
-                                        .padding(.top, 10)
-                                        .padding(.leading, 348)
-                                        .padding(.trailing, 10)
                                         .cornerRadius(3.0)
                                     }
                                 )
@@ -242,7 +238,7 @@ struct MenuContentView: View {
                         NavigationView {
                             AboutView(show: self.$showAboutView)
                                 .navigationBarTitle("About Worrybook")
-                                .navigationBarItems(leading:
+                                .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showAboutView.toggle()
                                     }) {
@@ -251,15 +247,13 @@ struct MenuContentView: View {
                                                 .font(.title2)
                                                 .foregroundColor(.gray)
                                                 .background(
-                                                    Circle()
-                                                        .frame(width: 32, height: 32)
+                                                    Circle().frame(width: 32, height: 32),
+                                                    alignment: .center
                                                 )
                                         }
-                                        .frame(width: 50, height: 50)
+                                        .frame(width: .infinity, height: 50)
+                                        .padding(5)
                                         .foregroundColor(colorHelper.secondaryColor)
-                                        .padding(.top, 10)
-                                        .padding(.leading, 348)
-                                        .padding(.trailing, 10)
                                         .cornerRadius(3.0)
                                     }
                                 )
@@ -291,7 +285,7 @@ struct MenuContentView: View {
                         NavigationView {
                             SettingsView(show: self.$showSettings)
                                 .navigationBarTitle("Settings")
-                                .navigationBarItems(leading:
+                                .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showSettings.toggle()
                                     }) {
@@ -300,15 +294,13 @@ struct MenuContentView: View {
                                                 .font(.title2)
                                                 .foregroundColor(.gray)
                                                 .background(
-                                                    Circle()
-                                                        .frame(width: 32, height: 32)
+                                                    Circle().frame(width: 32, height: 32),
+                                                    alignment: .center
                                                 )
                                         }
-                                        .frame(width: 50, height: 50)
+                                        .frame(width: .infinity, height: 50)
+                                        .padding(5)
                                         .foregroundColor(colorHelper.secondaryColor)
-                                        .padding(.top, 10)
-                                        .padding(.leading, 348)
-                                        .padding(.trailing, 10)
                                         .cornerRadius(3.0)
                                     }
                                 )

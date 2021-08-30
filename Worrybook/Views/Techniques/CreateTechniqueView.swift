@@ -16,6 +16,7 @@ struct CreateTechniqueView: View {
     @State private var title: String = ""
     @State private var description: String = ""
     @State private var operationFailed = false
+    @State private var invalidFields = false
     @State private var createdModel: TechniqueViewModel = TechniqueViewModel(title: nil, description: nil)
     
     var body: some View {
@@ -62,17 +63,22 @@ struct CreateTechniqueView: View {
         Spacer()
             
         Button(action: {
-            let technique = TechniqueViewModel(title: self.title, description: self.description)
-            self.createdModel = controller.create(viewModel: technique)
-            
-            if (self.createdModel.id != nil) {
-                self.presentation.wrappedValue.dismiss()
-                NotificationCenter.default.post(
-                    Notification.init(name: Notification.Name(rawValue: "RefreshTechniqueListNotification"))
-                )
+            if (!self.title.isEmpty && !self.description.isEmpty) {
+                let technique = TechniqueViewModel(title: self.title, description: self.description)
+                self.createdModel = controller.create(viewModel: technique)
+                
+                if (self.createdModel.id != nil) {
+                    self.presentation.wrappedValue.dismiss()
+                    NotificationCenter.default.post(
+                        Notification.init(name: Notification.Name(rawValue: "RefreshTechniqueListNotification"))
+                    )
+                }
+                else {
+                    self.operationFailed.toggle()
+                }
             }
             else {
-                self.operationFailed.toggle()
+                self.invalidFields = true
             }
         }) {
             HStack {
@@ -94,6 +100,13 @@ struct CreateTechniqueView: View {
                 title: Text("Oops!"),
                 message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
                 dismissButton: .default(Text("Okay"))
+            )
+        }
+        .alert(isPresented: self.$invalidFields) {
+            Alert(
+                title: Text("Hang on..."),
+                message: Text("You need to enter a title and description to proceed"),
+                dismissButton: .default(Text("Got it!"))
             )
         }
     }

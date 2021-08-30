@@ -12,10 +12,23 @@ struct SettingsView: View {
     
     @State private var enableWorryTime = false
     @State private var worryTimeDescriptionAlert = false
-    @State private var worryTime = Date()
+    @State private var selectedWorryTime = Date()
     
+    public var controller = SettingsController()
     private let colorHelper = ColorHelper()
 
+    init(show: Binding<Bool>) {
+        self._show = show
+        
+        let (scheduled, hour, minute) = controller.getWorryTimeNotificationState()
+        self._enableWorryTime = State(initialValue: scheduled)
+        
+        var dateInfo = DateComponents()
+        dateInfo.hour = hour
+        dateInfo.minute = minute
+        self._selectedWorryTime = State(initialValue: NSCalendar.current.date(from: dateInfo) ?? Date())
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -44,8 +57,9 @@ struct SettingsView: View {
         }
         
         if (self.enableWorryTime) {
+
             VStack {
-                DatePicker("Worry Time", selection: $worryTime, displayedComponents: .hourAndMinute)
+                DatePicker("Worry Time", selection: $selectedWorryTime, displayedComponents: .hourAndMinute)
                     .padding(.leading, 50)
                     .padding(.top, 5)
                     .padding(.trailing, 50)
@@ -55,9 +69,17 @@ struct SettingsView: View {
         Spacer()
         
         Button(action: {
-            // Save setting
-            // Set-up notifications
-            // Close modal
+            var settings = Dictionary<String, Any>()
+            
+            if (self.enableWorryTime) {
+                let time = DateTimeHelper.getLocalTimeFromDate(date: self.selectedWorryTime)
+                settings["WorryTimeNotificationSchedule"] = (time.0, time.1)
+            }
+            else {
+                _ = controller.removeWorryTimeNotification()
+            }
+            
+            _ = controller.save(settings: settings)
             self.show.toggle()
         }) {
             HStack {

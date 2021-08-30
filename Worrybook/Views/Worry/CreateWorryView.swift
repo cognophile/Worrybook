@@ -12,7 +12,9 @@ struct CreateWorryView: View {
     
     @State private var nextStageActive = false
     @State private var showWorryTypeAlert = false
+    @State private var invalidFields = false
     @State private var isPracticalWorry = false
+    @State private var validationMessage = ""
     @State private var viewModel: WorryViewModel = WorryViewModel()
     
     private let colorHelper = ColorHelper()
@@ -101,8 +103,15 @@ struct CreateWorryView: View {
             Spacer()
             Button(action: {
                 let worryType = (self.isPracticalWorry) ? WorryTypeViewModel.practical : WorryTypeViewModel.hypothetical
+                self.validationMessage = (self.isPracticalWorry) ? "You need to enter a summary, description, and plan to proceed" : "You need to enter a summary and description to proceed"
                 self.viewModel.setType(type: worryType)
-                self.nextStageActive = true
+                
+                if (self.viewModel.hasRequiredFields()) {
+                    self.nextStageActive = true
+                }
+                else {
+                    self.invalidFields = true
+                }
             }) {
                 HStack {
                     Text("Next")
@@ -118,11 +127,18 @@ struct CreateWorryView: View {
                 .cornerRadius(50)
                 .padding(10)
             }
+            .alert(isPresented: self.$invalidFields) {
+                Alert(
+                    title: Text("Hang on..."),
+                    message: Text("\(self.validationMessage)"),
+                    dismissButton: .default(Text("Got it!"))
+                )
+            }
             
             NavigationLink (destination: WorryCategorisationAndRefocusView(viewModel: self.viewModel)
                 .navigationBarTitle("Categorise & Refocus")
                 .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading:
+                .navigationBarItems(trailing:
                     Button(action: {
                         self.showCreateModal.toggle()
                     }) {
@@ -131,15 +147,13 @@ struct CreateWorryView: View {
                                 .font(.title2)
                                 .foregroundColor(.gray)
                                 .background(
-                                    Circle()
-                                        .frame(width: 32, height: 32)
+                                    Circle().frame(width: 32, height: 32),
+                                    alignment: .center
                                 )
                         }
-                        .frame(width: 50, height: 50)
+                        .frame(width: .infinity, height: 50)
+                        .padding(5)
                         .foregroundColor(colorHelper.secondaryColor)
-                        .padding(.top, 10)
-                        .padding(.leading, 348)
-                        .padding(.trailing, 10)
                         .cornerRadius(3.0)
                     }), isActive: self.$nextStageActive)
             {

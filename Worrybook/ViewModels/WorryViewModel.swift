@@ -99,7 +99,7 @@ class WorryViewModel : Identifiable {
             case WorryTypeViewModel.hypothetical:
                 return 1
             default:
-                return 2
+                return 0
             }
         }
         
@@ -138,6 +138,10 @@ class WorryViewModel : Identifiable {
         return nil
     }
     
+    public func hasRefocus() -> Bool {
+        return (self.refocus != nil)
+    }
+    
     public func setCategory(category: CategoryViewModel) {
         self.category = category
     }
@@ -149,16 +153,29 @@ class WorryViewModel : Identifiable {
         
         return nil
     }
+    
+    public func hasCategory() -> Bool {
+        return (self.category != nil)
+    }
 
     public func setModifiedDate(date: Date) {
         self.modified = date
     }
     
     public func getModifiedDate() -> String? {
-        return DateHelper.getDateAsString(date: self.modified!)
+        return DateTimeHelper.getDateAsString(date: self.modified!)
     }
     
     public func getCreatedDate() -> String {
-        return DateHelper.getDateAsString(date: self.created)
+        return DateTimeHelper.getDateAsString(date: self.created)
+    }
+    
+    public func hasRequiredFields() -> Bool {
+        if (self.type == WorryTypeViewModel.hypothetical) {
+            return (!self.title.isEmpty && !self.description.isEmpty)
+        }
+        else {
+            return (!self.title.isEmpty && !self.description.isEmpty && !(self.solution?.isEmpty ?? true))
+        }
     }
 }
