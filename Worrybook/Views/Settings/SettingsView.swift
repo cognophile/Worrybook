@@ -60,6 +60,7 @@ struct SettingsView: View {
 
             VStack {
                 DatePicker("Worry Time", selection: $selectedWorryTime, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(CompactDatePickerStyle())
                     .padding(.leading, 50)
                     .padding(.top, 5)
                     .padding(.trailing, 50)

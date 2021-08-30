@@ -49,7 +49,7 @@ struct CreateWorryView: View {
                             }
                             .alert(isPresented: self.$showWorryTypeAlert) {
                                 Alert(
-                                    title: Text("What's this mean?"),
+                                    title: Text("What does this mean?"),
                                     message: Text("A worry is practical if you can do something now to resolve it. \nIf not, or if it's a \"what if\" worry, then it's hypothetical"),
                                     dismissButton: .default(Text("Got it!"))
                                 )

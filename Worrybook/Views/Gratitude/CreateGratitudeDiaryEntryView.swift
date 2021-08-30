@@ -27,7 +27,7 @@ struct CreateGratitudeDiaryEntryView: View {
             Group {
                 VStack {
                     HStack {
-                        Text("What're you thankful for?")
+                        Text("What are you thankful for?")
                             .fontWeight(.medium)
                             .foregroundColor(colorHelper.getTextColor())
                             .font(.title)
