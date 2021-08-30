@@ -14,6 +14,7 @@ struct CreateWorryView: View {
     @State private var showWorryTypeAlert = false
     @State private var invalidFields = false
     @State private var isPracticalWorry = false
+    @State private var validationMessage = ""
     @State private var viewModel: WorryViewModel = WorryViewModel()
     
     private let colorHelper = ColorHelper()
@@ -102,6 +103,7 @@ struct CreateWorryView: View {
             Spacer()
             Button(action: {
                 let worryType = (self.isPracticalWorry) ? WorryTypeViewModel.practical : WorryTypeViewModel.hypothetical
+                self.validationMessage = (self.isPracticalWorry) ? "You need to enter a summary, description, and plan to proceed" : "You need to enter a summary and description to proceed"
                 self.viewModel.setType(type: worryType)
                 
                 if (self.viewModel.hasRequiredFields()) {
@@ -128,7 +130,7 @@ struct CreateWorryView: View {
             .alert(isPresented: self.$invalidFields) {
                 Alert(
                     title: Text("Hang on..."),
-                    message: Text("You need to enter a summary and description to proceed"),
+                    message: Text("\(self.validationMessage)"),
                     dismissButton: .default(Text("Got it!"))
                 )
             }

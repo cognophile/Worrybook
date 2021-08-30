@@ -16,6 +16,7 @@ struct WorryCategorisationAndRefocusView: View {
     @State private var selectedRefocus = 0
     @State private var operationFailed = false
     @State private var invalidFields = false
+    @State private var validationMessage = ""
     @State private var createdModel: WorryViewModel = WorryViewModel()
     
     private let colorHelper = ColorHelper()
@@ -84,56 +85,59 @@ struct WorryCategorisationAndRefocusView: View {
                     }
                 }
             }
-
-            Divider()
-                .padding(10)
+        
 
             Group {
-                HStack {
-                    Text("How will you refocus?")
-                        .fontWeight(.medium)
-                        .foregroundColor(colorHelper.getTextColor())
-                        .font(.subheadline)
+                if (self.viewModel.getType() == WorryTypeViewModel.hypothetical) {
+                    Divider()
                         .padding(10)
-                }
-                
-                ForEach(self.refocuses, id: \.id) { refocus in
-                    if (self.selectedRefocus == refocus.id) {
-                        HStack {
-                            Button(action: {
-                                self.selectedRefocus = refocus.id ?? 1
-                            }) {
-                                HStack {
-                                    Text("\(refocus.getTitle())")
-                                        .padding(5)
-                                        .font(.footnote)
-                                        .padding(5)
-                                        .foregroundColor(.white)
-                                        .background(colorHelper.primaryColor)
-                                        .cornerRadius(50)
+                    
+                    HStack {
+                        Text("How will you refocus?")
+                            .fontWeight(.medium)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .font(.subheadline)
+                            .padding(10)
+                    }
+                    
+                    ForEach(self.refocuses, id: \.id) { refocus in
+                        if (self.selectedRefocus == refocus.id) {
+                            HStack {
+                                Button(action: {
+                                    self.selectedRefocus = refocus.id ?? 1
+                                }) {
+                                    HStack {
+                                        Text("\(refocus.getTitle())")
+                                            .padding(5)
+                                            .font(.footnote)
+                                            .padding(5)
+                                            .foregroundColor(.white)
+                                            .background(colorHelper.primaryColor)
+                                            .cornerRadius(50)
+                                    }
+                                    .frame(minWidth: 20, maxWidth: .infinity)
+                                    .padding(0)
+                                    
+                                    Spacer()
                                 }
-                                .frame(minWidth: 20, maxWidth: .infinity)
-                                .padding(0)
-                                
-                                Spacer()
                             }
                         }
-                    }
-                    else {
-                        HStack {
-                            Button(action: {
-                                self.selectedRefocus = refocus.id ?? 1
-                            }) {
-                                HStack {
-                                    Text("\(refocus.getTitle())")
-                                        .padding(5)
-                                        .font(.footnote)
-                                        .foregroundColor(colorHelper.getTextColor())
+                        else {
+                            HStack {
+                                Button(action: {
+                                    self.selectedRefocus = refocus.id ?? 1
+                                }) {
+                                    HStack {
+                                        Text("\(refocus.getTitle())")
+                                            .padding(5)
+                                            .font(.footnote)
+                                            .foregroundColor(colorHelper.getTextColor())
+                                    }
+                                    .frame(minWidth: 20, maxWidth: .infinity)
+                                    .padding(0)
+                                    
+                                    Spacer()
                                 }
-                                .frame(minWidth: 20, maxWidth: .infinity)
-                                .padding(0)
-                                
-                                Spacer()
                             }
                         }
                     }
@@ -144,26 +148,53 @@ struct WorryCategorisationAndRefocusView: View {
 
 
             Button(action: {
-                if (self.selectedRefocus > 0 && self.selectedRefocus > 0) {
-                    let refocusViewModel = refocusController.getOne(id: self.selectedRefocus)
-                    let categoryViewModel = categoryController.getOne(id: self.selectedRefocus)
+                if (self.viewModel.getType() == WorryTypeViewModel.hypothetical) {
+                    self.validationMessage = "You need to select a category and something to refocus on"
                     
-                    self.viewModel.setRefocus(refocus: refocusViewModel)
-                    self.viewModel.setCategory(category: categoryViewModel)
-                    self.createdModel = worryController.create(viewModel: self.viewModel)
-                    
-                    if (self.createdModel.id != nil) {
-                        self.presentationMode.wrappedValue.dismiss()
-                        NotificationCenter.default.post(
-                            Notification.init(name: Notification.Name(rawValue: "WorrySavedNotification"))
-                        )
+                    if (self.selectedRefocus > 0 && self.selectedCategory > 0) {
+                        let refocusViewModel = refocusController.getOne(id: self.selectedRefocus)
+                        let categoryViewModel = categoryController.getOne(id: self.selectedCategory)
+                        
+                        self.viewModel.setRefocus(refocus: refocusViewModel)
+                        self.viewModel.setCategory(category: categoryViewModel)
+                        self.createdModel = worryController.create(viewModel: self.viewModel)
+                        
+                        if (self.createdModel.id != nil) {
+                            self.presentationMode.wrappedValue.dismiss()
+                            NotificationCenter.default.post(
+                                Notification.init(name: Notification.Name(rawValue: "WorrySavedNotification"))
+                            )
+                        }
+                        else {
+                            self.operationFailed.toggle()
+                        }
                     }
                     else {
-                        self.operationFailed.toggle()
+                        self.invalidFields = true
                     }
                 }
                 else {
-                    self.invalidFields = true
+                    self.validationMessage = "You need to select a category to proceed"
+                    
+                    if (self.selectedCategory > 0) {
+                        let categoryViewModel = categoryController.getOne(id: self.selectedCategory)
+                        
+                        self.viewModel.setCategory(category: categoryViewModel)
+                        self.createdModel = worryController.create(viewModel: self.viewModel)
+                        
+                        if (self.createdModel.id != nil) {
+                            self.presentationMode.wrappedValue.dismiss()
+                            NotificationCenter.default.post(
+                                Notification.init(name: Notification.Name(rawValue: "WorrySavedNotification"))
+                            )
+                        }
+                        else {
+                            self.operationFailed.toggle()
+                        }
+                    }
+                    else {
+                        self.invalidFields = true
+                    }
                 }
             }) {
                 HStack {
@@ -190,7 +221,7 @@ struct WorryCategorisationAndRefocusView: View {
             .alert(isPresented: self.$invalidFields) {
                 Alert(
                     title: Text("Hang on..."),
-                    message: Text("You need to select a category and something to refocus on"),
+                    message: Text("\(self.validationMessage)"),
                     dismissButton: .default(Text("Got it!"))
                 )
             }

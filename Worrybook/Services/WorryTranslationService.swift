@@ -29,8 +29,11 @@ class WorryTranslationService {
         worry.archived = try! row.get(model.archived)!
         worry.created = try! row.get(model.created)!
         worry.modified = try! row.get(model.modified)
-        worry.refocus = RefocusTranslationService.hydrate(id: refocusId!)
         worry.category = CategoryTranslationService.hydrate(id: categoryId!)
+        
+        if ((refocusId) != nil) {
+            worry.refocus = RefocusTranslationService.hydrate(id: refocusId!)
+        }
         
         return worry
     }

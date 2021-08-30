@@ -171,6 +171,11 @@ class WorryViewModel : Identifiable {
     }
     
     public func hasRequiredFields() -> Bool {
-        return (!self.title.isEmpty && !self.description.isEmpty)
+        if (self.type == WorryTypeViewModel.hypothetical) {
+            return (!self.title.isEmpty && !self.description.isEmpty)
+        }
+        else {
+            return (!self.title.isEmpty && !self.description.isEmpty && !(self.solution?.isEmpty ?? true))
+        }
     }
 }
