@@ -15,6 +15,7 @@ struct WorryCategorisationAndRefocusView: View {
     @State private var selectedCategory = 0
     @State private var selectedRefocus = 0
     @State private var operationFailed = false
+    @State private var invalidFields = false
     @State private var createdModel: WorryViewModel = WorryViewModel()
     
     private let colorHelper = ColorHelper()
@@ -143,21 +144,26 @@ struct WorryCategorisationAndRefocusView: View {
 
 
             Button(action: {
-                let refocusViewModel = refocusController.getOne(id: self.selectedRefocus)
-                let categoryViewModel = categoryController.getOne(id: self.selectedCategory)
-                
-                self.viewModel.setRefocus(refocus: refocusViewModel)
-                self.viewModel.setCategory(category: categoryViewModel)
-                self.createdModel = worryController.create(viewModel: self.viewModel)
-                
-                if (self.createdModel.id != nil) {
-                    self.presentationMode.wrappedValue.dismiss()
-                    NotificationCenter.default.post(
-                        Notification.init(name: Notification.Name(rawValue: "WorrySavedNotification"))
-                    )
+                if (self.selectedRefocus > 0 && self.selectedRefocus > 0) {
+                    let refocusViewModel = refocusController.getOne(id: self.selectedRefocus)
+                    let categoryViewModel = categoryController.getOne(id: self.selectedRefocus)
+                    
+                    self.viewModel.setRefocus(refocus: refocusViewModel)
+                    self.viewModel.setCategory(category: categoryViewModel)
+                    self.createdModel = worryController.create(viewModel: self.viewModel)
+                    
+                    if (self.createdModel.id != nil) {
+                        self.presentationMode.wrappedValue.dismiss()
+                        NotificationCenter.default.post(
+                            Notification.init(name: Notification.Name(rawValue: "WorrySavedNotification"))
+                        )
+                    }
+                    else {
+                        self.operationFailed.toggle()
+                    }
                 }
                 else {
-                    self.operationFailed.toggle()
+                    self.invalidFields = true
                 }
             }) {
                 HStack {
@@ -181,7 +187,13 @@ struct WorryCategorisationAndRefocusView: View {
                     dismissButton: .default(Text("Okay"))
                 )
             }
-            
+            .alert(isPresented: self.$invalidFields) {
+                Alert(
+                    title: Text("Hang on..."),
+                    message: Text("You need to select a category and something to refocus on"),
+                    dismissButton: .default(Text("Got it!"))
+                )
+            }
         }
     }
 }

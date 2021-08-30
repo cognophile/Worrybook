@@ -12,6 +12,7 @@ struct CreateWorryView: View {
     
     @State private var nextStageActive = false
     @State private var showWorryTypeAlert = false
+    @State private var invalidFields = false
     @State private var isPracticalWorry = false
     @State private var viewModel: WorryViewModel = WorryViewModel()
     
@@ -102,7 +103,13 @@ struct CreateWorryView: View {
             Button(action: {
                 let worryType = (self.isPracticalWorry) ? WorryTypeViewModel.practical : WorryTypeViewModel.hypothetical
                 self.viewModel.setType(type: worryType)
-                self.nextStageActive = true
+                
+                if (self.viewModel.hasRequiredFields()) {
+                    self.nextStageActive = true
+                }
+                else {
+                    self.invalidFields = true
+                }
             }) {
                 HStack {
                     Text("Next")
@@ -117,6 +124,13 @@ struct CreateWorryView: View {
                 .background(colorHelper.primaryColor)
                 .cornerRadius(50)
                 .padding(10)
+            }
+            .alert(isPresented: self.$invalidFields) {
+                Alert(
+                    title: Text("Hang on..."),
+                    message: Text("You need to enter a summary and description to proceed"),
+                    dismissButton: .default(Text("Got it!"))
+                )
             }
             
             NavigationLink (destination: WorryCategorisationAndRefocusView(viewModel: self.viewModel)

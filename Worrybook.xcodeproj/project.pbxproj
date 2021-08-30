@@ -48,6 +48,7 @@
 		0D740C4326DA3F4800491F25 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C4226DA3F4800491F25 /* SettingViewModel.swift */; };
 		0D740C4526DA41F300491F25 /* SettingsTranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C4426DA41F300491F25 /* SettingsTranslationService.swift */; };
 		0D740C4726DA4C3B00491F25 /* SettingTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C4626DA4C3B00491F25 /* SettingTypeViewModel.swift */; };
+		0D740C4926DCF0B600491F25 /* QuoteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D740C4826DCF0B600491F25 /* QuoteHelper.swift */; };
 		0D7E788D26469CDD002AD048 /* WorryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E788C26469CDD002AD048 /* WorryRepository.swift */; };
 		0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */; };
 		0D91BB0325D058960063AC00 /* GratitudeDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */; };
@@ -148,6 +149,7 @@
 		0D740C4226DA3F4800491F25 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		0D740C4426DA41F300491F25 /* SettingsTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTranslationService.swift; sourceTree = "<group>"; };
 		0D740C4626DA4C3B00491F25 /* SettingTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTypeViewModel.swift; sourceTree = "<group>"; };
+		0D740C4826DCF0B600491F25 /* QuoteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteHelper.swift; sourceTree = "<group>"; };
 		0D7E788C26469CDD002AD048 /* WorryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryRepository.swift; sourceTree = "<group>"; };
 		0D91BAFD25D0580D0063AC00 /* GratitudeDiaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryEntry.swift; sourceTree = "<group>"; };
 		0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryController.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				0D6F93B426D27F3B001B8C38 /* NotificationHelper.swift */,
 				0D2440CE25C22188003FF569 /* ColorHelper.swift */,
 				0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */,
+				0D740C4826DCF0B600491F25 /* QuoteHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				0D740C4326DA3F4800491F25 /* SettingViewModel.swift in Sources */,
 				0D5EA7F125D815A700729385 /* CreateCategoryView.swift in Sources */,
 				0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */,
+				0D740C4926DCF0B600491F25 /* QuoteHelper.swift in Sources */,
 				0D03516D25CB2B9300B660A4 /* WorryTypeViewModel.swift in Sources */,
 				0DC68EDD25D819DB00DCDABC /* TechniqueListRow.swift in Sources */,
 				0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */,

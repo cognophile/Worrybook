@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var showMenu: Bool = false
     
     private let colorHelper = ColorHelper()
+    private let quote = QuoteHelper.getRandomQuote()
 
     private func openMenu() {
         self.showMenu.toggle()
@@ -43,12 +44,11 @@ struct HomeView: View {
                         .padding(10)
                     }
                     
-                    Spacer()
                     HStack {
                         Image("Worrybook_title_colour_large")
                             .resizable()
                             .frame(width: 300, height: 100)
-                            .padding(10)
+                            .padding(5)
                     }
                     Spacer()
                     Image("Worrybook_icon_colour_xl")
@@ -56,7 +56,7 @@ struct HomeView: View {
                         .frame(width: 150, height: 150)
                     Spacer()
                     HStack {
-                        Text("Time heals all wounds\n")
+                        Text("\(self.quote)")
                             .fontWeight(.light)
                             .font(.title3)
                             .foregroundColor(.white)

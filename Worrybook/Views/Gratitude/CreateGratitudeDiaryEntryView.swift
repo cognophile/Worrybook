@@ -19,6 +19,7 @@ struct CreateGratitudeDiaryEntryView: View {
     @State private var itemTwo: String = ""
     @State private var itemThree: String = ""
     @State private var operationFailed = false
+    @State private var invalidFields = false
     @State private var createdModel: GratitudeDiaryEntryViewModel = GratitudeDiaryEntryViewModel()
     
     var body: some View {
@@ -111,22 +112,27 @@ struct CreateGratitudeDiaryEntryView: View {
             Spacer()
             
             Button(action: {
-                self.entry.title = self.title
-                self.entry.firstItem = self.itemOne
-                self.entry.secondItem = self.itemTwo
-                self.entry.thirdItem = self.itemThree
-                self.entry.created = Date()
-                
-                self.createdModel = controller.create(viewModel: self.entry)
-                
-                if (self.createdModel.id != nil) {
-                    self.presentationMode.wrappedValue.dismiss()
-                    NotificationCenter.default.post(
-                        Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotification"))
-                    )
+                if (!self.title.isEmpty && !self.itemOne.isEmpty && !self.itemTwo.isEmpty && !self.itemThree.isEmpty) {
+                    self.entry.title = self.title
+                    self.entry.firstItem = self.itemOne
+                    self.entry.secondItem = self.itemTwo
+                    self.entry.thirdItem = self.itemThree
+                    self.entry.created = Date()
+                    
+                    self.createdModel = controller.create(viewModel: self.entry)
+                    
+                    if (self.createdModel.id != nil) {
+                        self.presentationMode.wrappedValue.dismiss()
+                        NotificationCenter.default.post(
+                            Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotification"))
+                        )
+                    }
+                    else {
+                        self.operationFailed.toggle()
+                    }
                 }
                 else {
-                    self.operationFailed.toggle()
+                    self.invalidFields = true
                 }
             }) {
                 HStack {
@@ -148,6 +154,13 @@ struct CreateGratitudeDiaryEntryView: View {
                     title: Text("Oops!"),
                     message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
                     dismissButton: .default(Text("Okay"))
+                )
+            }
+            .alert(isPresented: self.$invalidFields) {
+                Alert(
+                    title: Text("Hang on..."),
+                    message: Text("You need to enter a title and three items to proceed"),
+                    dismissButton: .default(Text("Got it!"))
                 )
             }
         }

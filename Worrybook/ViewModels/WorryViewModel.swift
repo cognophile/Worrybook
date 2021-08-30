@@ -138,6 +138,10 @@ class WorryViewModel : Identifiable {
         return nil
     }
     
+    public func hasRefocus() -> Bool {
+        return (self.refocus != nil)
+    }
+    
     public func setCategory(category: CategoryViewModel) {
         self.category = category
     }
@@ -148,6 +152,10 @@ class WorryViewModel : Identifiable {
         }
         
         return nil
+    }
+    
+    public func hasCategory() -> Bool {
+        return (self.category != nil)
     }
 
     public func setModifiedDate(date: Date) {
@@ -160,5 +168,9 @@ class WorryViewModel : Identifiable {
     
     public func getCreatedDate() -> String {
         return DateTimeHelper.getDateAsString(date: self.created)
+    }
+    
+    public func hasRequiredFields() -> Bool {
+        return (!self.title.isEmpty && !self.description.isEmpty)
     }
 }
