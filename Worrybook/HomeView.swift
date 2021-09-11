@@ -150,7 +150,8 @@ struct HomeView: View {
                                 )
                         }
                     })
-                }.frame(width: UIScreen.main.bounds.width-10, alignment: .center)
+                }
+                .frame(width: UIScreen.main.bounds.width-10, alignment: .center)
                 .navigationBarHidden(true)
             }
         }

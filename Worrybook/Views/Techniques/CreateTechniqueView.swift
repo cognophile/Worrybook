@@ -20,48 +20,59 @@ struct CreateTechniqueView: View {
     @State private var createdModel: TechniqueViewModel = TechniqueViewModel(title: nil, description: nil)
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("What's your technique?")
-                    .fontWeight(.medium)
-                    .foregroundColor(colorHelper.getTextColor())
-                    .font(.title)
-                    .padding(10)
+        ScrollView {
+            VStack {
+                HStack {
+                    Text("What is your technique?")
+                        .fontWeight(.medium)
+                        .foregroundColor(colorHelper.getTextColor())
+                        .font(.title)
+                        .padding(10)
+                }
+                
+                VStack {
+                    HStack {
+                        Text("Give it a name")
+                            .fontWeight(.medium)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .font(.body)
+                            .padding(10)
+                    }
+                    HStack {
+                        TextField("", text: self.$title)
+                            .frame(minHeight: 50)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .background(Color(UIColor.systemBackground))
+                            .textFieldStyle(RoundedCornerBorderTextFieldExtension())
+                            .padding(10)
+                    }
+                }
+                Spacer()
+                VStack {
+                    HStack {
+                        Text("Describe how to do it")
+                            .fontWeight(.medium)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .font(.body)
+                            .padding(10)
+                    }
+                    HStack {
+                        TextEditor(text: self.$description)
+                            .frame(minHeight: 50, maxHeight: 50)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .background(Color(UIColor.systemBackground))
+                            .padding(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(colorHelper.secondaryColor, lineWidth: 1)
+                            )
+                            .padding(10)
+                    }
+                }
             }
-            
-            HStack {
-                TextField("Title", text: self.$title)
-                    .frame(minHeight: 50)
-                    .foregroundColor(.gray)
-                    .background(Color(UIColor.systemBackground))
-                    .textFieldStyle(RoundedCornerBorderTextFieldExtension())
-                    .padding(10)
-            }
-            
-            HStack {
-                Text("What is it?")
-                    .fontWeight(.medium)
-                    .foregroundColor(colorHelper.getTextColor())
-                    .font(.body)
-                    .padding(10)
-            }
-            
-            HStack {
-                TextEditor(text: self.$description)
-                    .frame(minHeight: 50)
-                    .foregroundColor(.gray)
-                    .background(Color(UIColor.systemBackground))
-                    .padding(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(colorHelper.secondaryColor, lineWidth: 1)
-                    )
-                    .padding(10)
-            }
-        }
+        
             
         Spacer()
-            
         Button(action: {
             if (!self.title.isEmpty && !self.description.isEmpty) {
                 let technique = TechniqueViewModel(title: self.title, description: self.description)
@@ -108,6 +119,8 @@ struct CreateTechniqueView: View {
                 message: Text("You need to enter a title and description to proceed"),
                 dismissButton: .default(Text("Got it!"))
             )
+        }
+            
         }
     }
 }

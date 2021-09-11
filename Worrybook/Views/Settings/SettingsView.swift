@@ -39,8 +39,8 @@ struct SettingsView: View {
                         self.worryTimeDescriptionAlert.toggle()
                     }) {
                         VStack (alignment: HorizontalAlignment.center) {
-                            Image(systemName: "info.circle")
-                                .foregroundColor(.gray)
+                            Image(systemName: "questionmark.circle")
+                                .foregroundColor(colorHelper.getTextColor())
                                 .imageScale(.small)
                         }
                     }
