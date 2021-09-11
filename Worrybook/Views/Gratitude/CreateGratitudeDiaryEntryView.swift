@@ -23,8 +23,8 @@ struct CreateGratitudeDiaryEntryView: View {
     @State private var createdModel: GratitudeDiaryEntryViewModel = GratitudeDiaryEntryViewModel()
     
     var body: some View {
-        ScrollView {
-            VStack {
+        VStack {
+            ScrollView {
                 Group {
                     VStack {
                         HStack {
@@ -35,6 +35,13 @@ struct CreateGratitudeDiaryEntryView: View {
                                 .padding(10)
                         }
                         
+                        HStack {
+                            Text("Give it a title")
+                                .fontWeight(.medium)
+                                .foregroundColor(colorHelper.getTextColor())
+                                .font(.body)
+                                .padding(5)
+                        }
                         HStack {
                             TextField("", text: self.$title)
                                 .frame(minHeight: 50)
@@ -50,7 +57,7 @@ struct CreateGratitudeDiaryEntryView: View {
                             Text("Firstly...")
                                 .fontWeight(.medium)
                                 .foregroundColor(colorHelper.getTextColor())
-                                .font(.headline)
+                                .font(.body)
                                 .padding(5)
                         }
                         
@@ -71,7 +78,7 @@ struct CreateGratitudeDiaryEntryView: View {
                             Text("Secondly...")
                                 .fontWeight(.medium)
                                 .foregroundColor(colorHelper.getTextColor())
-                                .font(.headline)
+                                .font(.body)
                                 .padding(5)
                         }
                         
@@ -92,7 +99,7 @@ struct CreateGratitudeDiaryEntryView: View {
                             Text("Lastly...")
                                 .fontWeight(.medium)
                                 .foregroundColor(colorHelper.getTextColor())
-                                .font(.headline)
+                                .font(.body)
                                 .padding(5)
                         }
                         
@@ -110,62 +117,62 @@ struct CreateGratitudeDiaryEntryView: View {
                         }
                     }
                 }
-                
-                Spacer()
-                Button(action: {
-                    if (!self.title.isEmpty && !self.itemOne.isEmpty && !self.itemTwo.isEmpty && !self.itemThree.isEmpty) {
-                        self.entry.title = self.title
-                        self.entry.firstItem = self.itemOne
-                        self.entry.secondItem = self.itemTwo
-                        self.entry.thirdItem = self.itemThree
-                        self.entry.created = Date()
-                        
-                        self.createdModel = controller.create(viewModel: self.entry)
-                        
-                        if (self.createdModel.id != nil) {
-                            self.presentationMode.wrappedValue.dismiss()
-                            NotificationCenter.default.post(
-                                Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotification"))
-                            )
-                        }
-                        else {
-                            self.operationFailed.toggle()
-                        }
+            }
+            
+            Spacer()
+            Button(action: {
+                if (!self.title.isEmpty && !self.itemOne.isEmpty && !self.itemTwo.isEmpty && !self.itemThree.isEmpty) {
+                    self.entry.title = self.title
+                    self.entry.firstItem = self.itemOne
+                    self.entry.secondItem = self.itemTwo
+                    self.entry.thirdItem = self.itemThree
+                    self.entry.created = Date()
+                    
+                    self.createdModel = controller.create(viewModel: self.entry)
+                    
+                    if (self.createdModel.id != nil) {
+                        self.presentationMode.wrappedValue.dismiss()
+                        NotificationCenter.default.post(
+                            Notification.init(name: Notification.Name(rawValue: "DiaryEntryRefreshNotification"))
+                        )
                     }
                     else {
-                        self.invalidFields = true
+                        self.operationFailed.toggle()
                     }
-                }) {
-                    HStack {
-                        Image(systemName: "checkmark")
-                            .font(.title2)
-                        Text("Create")
-                            .fontWeight(.semibold)
-                            .font(.title2)
-                    }
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding(10)
-                    .foregroundColor(.white)
-                    .background(colorHelper.primaryColor)
-                    .cornerRadius(50)
-                    .padding(10)
                 }
-                .alert(isPresented: self.$operationFailed) {
-                    Alert(
-                        title: Text("Oops!"),
-                        message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
-                        dismissButton: .default(Text("Okay"))
-                    )
+                else {
+                    self.invalidFields = true
                 }
-                .alert(isPresented: self.$invalidFields) {
-                    Alert(
-                        title: Text("Hang on..."),
-                        message: Text("You need to enter a title and three items to proceed"),
-                        dismissButton: .default(Text("Got it!"))
-                    )
+            }) {
+                HStack {
+                    Image(systemName: "checkmark")
+                        .font(.title2)
+                    Text("Create")
+                        .fontWeight(.semibold)
+                        .font(.title2)
                 }
-                
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding(10)
+                .foregroundColor(.white)
+                .background(colorHelper.primaryColor)
+                .cornerRadius(50)
+                .padding(10)
             }
+            .alert(isPresented: self.$operationFailed) {
+                Alert(
+                    title: Text("Oops!"),
+                    message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
+                    dismissButton: .default(Text("Okay"))
+                )
+            }
+            .alert(isPresented: self.$invalidFields) {
+                Alert(
+                    title: Text("Hang on..."),
+                    message: Text("You need to enter a title and three items to proceed"),
+                    dismissButton: .default(Text("Got it!"))
+                )
+            }
+            
         }
     }
 }

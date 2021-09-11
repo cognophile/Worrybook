@@ -145,8 +145,6 @@ struct WorryCategorisationAndRefocusView: View {
             }
             
             Spacer()
-
-
             Button(action: {
                 if (self.viewModel.getType() == WorryTypeViewModel.hypothetical) {
                     self.validationMessage = "You need to select a category and something to refocus on"

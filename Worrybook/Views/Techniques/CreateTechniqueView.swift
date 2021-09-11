@@ -70,6 +70,7 @@ struct CreateTechniqueView: View {
                     }
                 }
             }
+        }
         
             
         Spacer()
@@ -121,6 +122,5 @@ struct CreateTechniqueView: View {
             )
         }
             
-        }
     }
 }

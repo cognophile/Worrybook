@@ -72,6 +72,7 @@
 		0DC68EF225D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68EF125D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift */; };
 		0DC68F0325D94B7700DCDABC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68F0225D94B7700DCDABC /* AboutView.swift */; };
 		0DD3E9B325B35BCF003B3A50 /* Worry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD3E9B225B35BCF003B3A50 /* Worry.swift */; };
+		0DE332A226ECED70006071D4 /* DeviceDetailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE332A126ECED70006071D4 /* DeviceDetailHelper.swift */; };
 		0DE78F8625CF14BC0027B121 /* Refocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78F8525CF14BC0027B121 /* Refocus.swift */; };
 		0DE78FAE25D036170027B121 /* BrowseGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FAD25D036170027B121 /* BrowseGratitudeView.swift */; };
 		0DE78FB625D0368F0027B121 /* WorryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FB525D0368F0027B121 /* WorryController.swift */; };
@@ -173,6 +174,7 @@
 		0DC68EF125D8508A00DCDABC /* WorryCategorisationAndRefocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryCategorisationAndRefocusView.swift; sourceTree = "<group>"; };
 		0DC68F0225D94B7700DCDABC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0DD3E9B225B35BCF003B3A50 /* Worry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worry.swift; sourceTree = "<group>"; };
+		0DE332A126ECED70006071D4 /* DeviceDetailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailHelper.swift; sourceTree = "<group>"; };
 		0DE78F8525CF14BC0027B121 /* Refocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refocus.swift; sourceTree = "<group>"; };
 		0DE78FAD25D036170027B121 /* BrowseGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseGratitudeView.swift; sourceTree = "<group>"; };
 		0DE78FB525D0368F0027B121 /* WorryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				0D2440CE25C22188003FF569 /* ColorHelper.swift */,
 				0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */,
 				0D740C4826DCF0B600491F25 /* QuoteHelper.swift */,
+				0DE332A126ECED70006071D4 /* DeviceDetailHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				0D5EA7D725D7FFFF00729385 /* RefocusListRow.swift in Sources */,
 				0DC68EE825D81DD200DCDABC /* SettingsView.swift in Sources */,
 				0D91BAFE25D0580D0063AC00 /* GratitudeDiaryEntry.swift in Sources */,
+				0DE332A226ECED70006071D4 /* DeviceDetailHelper.swift in Sources */,
 				0D740C3F26DA3E2D00491F25 /* SettingsRepository.swift in Sources */,
 				0D3EAB4E26AB738B00C9E9D7 /* GratitudeDiaryRepository.swift in Sources */,
 				0DBF3EF9268BBDB5005529F8 /* CategoryViewModel.swift in Sources */,
@@ -920,7 +924,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.4;
+				MARKETING_VERSION = 0.7.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -944,7 +948,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.4;
+				MARKETING_VERSION = 0.7.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

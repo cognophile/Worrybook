@@ -12,7 +12,8 @@ struct AboutView: View {
     
     private let colorHelper = ColorHelper()
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
-        
+    private let feedbackEmail = "worrybook@gmail.com";
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -90,15 +91,41 @@ struct AboutView: View {
                 }
                 .padding(.bottom, 20)
                 
+                Group {
+                    VStack {
+                        HStack {
+                            Text("Diagnostics and Feedback")
+                                .font(.title3)
+                                .padding([.leading, .trailing], 10)
+                                .foregroundColor(colorHelper.getTextColor())
+                        }
+                        Divider()
+                            .padding([.leading, .trailing], 10)
+                        
+                        VStack {
+                            Text("App Version: \(self.appVersion)")
+                                .font(.footnote)
+                                .padding([.leading, .trailing, .bottom], 5)
+                            Text("\(DeviceDetailHelper.getDeviceDetails()) (\(DeviceDetailHelper.getMachineName()) - iOS \(DeviceDetailHelper.getOperatingSystemVersion())")
+                                .font(.footnote)
+                                .padding([.leading, .trailing, .bottom], 5)
+                        }
+                        
+                        Spacer()
+                        HStack {
+                            Link("Got feedback? Email us!", destination:
+                                    URL(string: "mailto:\(self.feedbackEmail)")!
+                            )
+                            .font(.caption)
+                            .padding([.leading, .trailing], 10)
+                        }
+                    }
+                }
+                
                 Spacer()
                 Group {
                     HStack {
                         Text("Thanks for choosing Worrybook ❤️")
-                            .font(.footnote)
-                            .padding([.leading, .trailing], 10)
-                    }
-                    HStack {
-                        Text("Version: \(self.appVersion)")
                             .font(.footnote)
                             .padding([.leading, .trailing], 10)
                     }

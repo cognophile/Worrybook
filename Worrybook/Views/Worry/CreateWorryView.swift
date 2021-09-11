@@ -27,7 +27,7 @@ struct CreateWorryView: View {
                         Group {
                             VStack {
                                 HStack {
-                                    Text("Title your worry")
+                                    Text("Give it a title")
                                         .fontWeight(.medium)
                                         .foregroundColor(colorHelper.getTextColor())
                                         .font(.headline)
@@ -105,77 +105,75 @@ struct CreateWorryView: View {
                                             .padding(10)
                                     }
                                 }
-                                
-
-                            }
-                        }
-                        
-                        Spacer()
-                        Group {
-                            VStack {
-                                Button(action: {
-                                    let worryType = (self.isPracticalWorry) ? WorryTypeViewModel.practical : WorryTypeViewModel.hypothetical
-                                    self.validationMessage = (self.isPracticalWorry) ? "You need to enter a title, description, and plan to proceed" : "You need to enter a title and description to proceed"
-                                    self.viewModel.setType(type: worryType)
-                                    
-                                    if (self.viewModel.hasRequiredFields()) {
-                                        self.nextStageActive = true
-                                    }
-                                    else {
-                                        self.invalidFields = true
-                                    }
-                                }) {
-                                    HStack {
-                                        Text("Next")
-                                            .fontWeight(.semibold)
-                                            .font(.title2)
-                                        Image(systemName: "chevron.right")
-                                            .font(.title2)
-                                    }
-                                    .frame(minWidth: 0, maxWidth: .infinity)
-                                    .padding(10)
-                                    .foregroundColor(.white)
-                                    .background(colorHelper.primaryColor)
-                                    .cornerRadius(50)
-                                    .padding(10)
-                                }
-                                .alert(isPresented: self.$invalidFields) {
-                                    Alert(
-                                        title: Text("Hang on..."),
-                                        message: Text("\(self.validationMessage)"),
-                                        dismissButton: .default(Text("Got it!"))
-                                    )
-                                }
                             }
                         }
                     }
                 }
-            }
-            
-            NavigationLink (destination: WorryCategorisationAndRefocusView(viewModel: self.viewModel)
-                .navigationBarTitle("Categorise & Refocus")
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(trailing:
-                    Button(action: {
-                        self.showCreateModal.toggle()
-                    }) {
-                        HStack {
-                            Image(systemName: "xmark")
-                                .font(.title2)
-                                .foregroundColor(.gray)
-                                .background(
-                                    Circle().frame(width: 32, height: 32),
-                                    alignment: .center
-                                )
+                        
+                Spacer()
+                Group {
+                    VStack {
+                        Button(action: {
+                            let worryType = (self.isPracticalWorry) ? WorryTypeViewModel.practical : WorryTypeViewModel.hypothetical
+                            self.validationMessage = (self.isPracticalWorry) ? "You need to enter a title, description, and plan to proceed" : "You need to enter a title and description to proceed"
+                            self.viewModel.setType(type: worryType)
+                            
+                            if (self.viewModel.hasRequiredFields()) {
+                                self.nextStageActive = true
+                            }
+                            else {
+                                self.invalidFields = true
+                            }
+                        }) {
+                            HStack {
+                                Text("Next")
+                                    .fontWeight(.semibold)
+                                    .font(.title2)
+                                Image(systemName: "chevron.right")
+                                    .font(.title2)
+                            }
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .padding(10)
+                            .foregroundColor(.white)
+                            .background(colorHelper.primaryColor)
+                            .cornerRadius(50)
+                            .padding(10)
                         }
-                        .frame(width: .infinity, height: 50)
-                        .padding(5)
-                        .foregroundColor(colorHelper.secondaryColor)
-                        .cornerRadius(3.0)
-                    }), isActive: self.$nextStageActive)
-            {
-                EmptyView()
-            }
+                        .alert(isPresented: self.$invalidFields) {
+                            Alert(
+                                title: Text("Hang on..."),
+                                message: Text("\(self.validationMessage)"),
+                                dismissButton: .default(Text("Got it!"))
+                            )
+                        }
+                    }
+                }
             
+            
+                NavigationLink (destination: WorryCategorisationAndRefocusView(viewModel: self.viewModel)
+                    .navigationBarTitle("Categorise & Refocus")
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarItems(trailing:
+                        Button(action: {
+                            self.showCreateModal.toggle()
+                        }) {
+                            HStack {
+                                Image(systemName: "xmark")
+                                    .font(.title2)
+                                    .foregroundColor(.gray)
+                                    .background(
+                                        Circle().frame(width: 32, height: 32),
+                                        alignment: .center
+                                    )
+                            }
+                            .frame(width: .infinity, height: 50)
+                            .padding(5)
+                            .foregroundColor(colorHelper.secondaryColor)
+                            .cornerRadius(3.0)
+                        }), isActive: self.$nextStageActive)
+                {
+                    EmptyView()
+                }
+        }
     }
 }
