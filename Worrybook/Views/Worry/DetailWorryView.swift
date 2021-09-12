@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct DetailWorryView: View {
     @Environment(\.presentationMode) var presentation
@@ -17,70 +18,90 @@ struct DetailWorryView: View {
 
     public var controller = WorryController()
     var viewModel: WorryViewModel
-    
+
     var body: some View {
         VStack {
-            HStack {
-                Text("\(self.viewModel.getTitle())")
-                    .fontWeight(.medium)
-                    .foregroundColor(colorHelper.getTextColor())
-                    .font(.title3)
-                    .padding(10)
+            ScrollView {
+                Group {
+                    HStack {
+                        Text("\(self.viewModel.getTitle())")
+                            .fontWeight(.bold)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .font(.title2)
+                    }
+                    
+                    HStack {
+                        Text("\(self.viewModel.getCreatedDate())")
+                            .fontWeight(.regular)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .font(.caption)
+                            .padding(10)
+                        
+                        Text("\(self.viewModel.getTypeString())")
+                            .font(.caption)
+                            .padding(10)
+                            .foregroundColor(.white)
+                            .background(self.viewModel.getTypeColour())
+                            .cornerRadius(50)
+                            .padding(10)
+                    }
+                }
                 
-                Text("\(self.viewModel.getTypeString())")
-                    .font(.caption)
-                    .padding(8)
-                    .foregroundColor(.white)
-                    .background(self.viewModel.getTypeColour())
-                    .cornerRadius(50)
-                    .padding(8)
-            }
-            
-            Text("\(self.viewModel.getCreatedDate())")
-                .fontWeight(.light)
-                .foregroundColor(colorHelper.getTextColor())
-                .font(.caption)
-                .padding(10)
-            
-            Divider()
-                .padding(10)
-            
-            Text("\(self.viewModel.getDescription())")
-                .foregroundColor(.gray)
-                .padding(20)
-                .multilineTextAlignment(.center)
-            
-            Text("You categorised it as")
-                .fontWeight(.medium)
-                .foregroundColor(colorHelper.getTextColor())
-                .font(.subheadline)
-            Text("\(self.viewModel.getCategory()?.title ?? "") ")
-                .foregroundColor(.gray)
-                .padding(20)
-                .multilineTextAlignment(.center)
-            
-            if (self.viewModel.getType() == WorryTypeViewModel.practical) {
-                Text("What you did about it")
-                    .fontWeight(.medium)
-                    .foregroundColor(colorHelper.getTextColor())
-                    .font(.subheadline)
-                Text("\(self.viewModel.getSolution() ?? "")")
-                    .foregroundColor(.gray)
-                    .padding(20)
-                    .multilineTextAlignment(.center)
-            }
-            else {
-                Text("You decided to refocus on")
-                    .fontWeight(.medium)
-                    .foregroundColor(colorHelper.getTextColor())
-                    .font(.subheadline)
-                Text("\(self.viewModel.getRefocus()?.title ?? "") ")
-                    .foregroundColor(.gray)
-                    .padding(20)
-                    .multilineTextAlignment(.center)
+                Divider()
+                    .padding([.leading, .trailing], 10)
+                
+                Group {
+                    Text("\(self.viewModel.getDescription())")
+                        .foregroundColor(colorHelper.getTextColor())
+                        .multilineTextAlignment(.center)
+                        .padding([.top, .bottom], 30)
+                        .padding([.leading, .trailing], 10)
+                    
+                    if (self.viewModel.getType() == WorryTypeViewModel.practical) {
+                        Text("Your plan")
+                            .fontWeight(.medium)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .font(.headline)
+                            .padding(5)
+                        Text("\(self.viewModel.getSolution() ?? "")")
+                            .foregroundColor(colorHelper.getTextColor())
+                            .multilineTextAlignment(.center)
+                            .padding([.leading, .trailing], 10)
+                    }
+                }
+                
+                Group {
+                    HStack {
+                        HStack {
+                            Text("Category")
+                                .fontWeight(.bold)
+                            Text("\(self.viewModel.getCategory()?.title ?? "") ")
+                        }
+                        .font(.caption)
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(Color(UIColor.lightGray))
+                        .cornerRadius(50)
+                        
+                        if (self.viewModel.getType() != WorryTypeViewModel.practical) {
+                            HStack {
+                                Text("Refocus")
+                                    .fontWeight(.bold)
+                                Text("\(self.viewModel.getRefocus()?.title ?? "") ")
+                            }
+                            .font(.caption)
+                            .padding(10)
+                            .foregroundColor(.white)
+                            .background(Color(UIColor.lightGray))
+                            .cornerRadius(50)
+                        }
+                    }.padding(40)
+                }
             }
         }
+        
         Spacer()
+        
         VStack {
             if (!self.viewModel.isArchived()) {
                 HStack {
@@ -111,7 +132,7 @@ struct DetailWorryView: View {
                         .foregroundColor(.white)
                         .background(colorHelper.primaryColor)
                         .cornerRadius(50)
-                        .padding(10)
+                        .padding(5)
                     }
                     .alert(isPresented: self.$operationFailed) {
                         Alert(
@@ -139,7 +160,7 @@ struct DetailWorryView: View {
                     .foregroundColor(.white)
                     .background(colorHelper.secondaryColorDark)
                     .cornerRadius(50)
-                    .padding(10)
+                    .padding(5)
                 }
                 .alert(isPresented: self.$confirmDeletion) {
                     Alert(

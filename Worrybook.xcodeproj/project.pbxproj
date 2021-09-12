@@ -73,6 +73,7 @@
 		0DC68F0325D94B7700DCDABC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC68F0225D94B7700DCDABC /* AboutView.swift */; };
 		0DD3E9B325B35BCF003B3A50 /* Worry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD3E9B225B35BCF003B3A50 /* Worry.swift */; };
 		0DE332A226ECED70006071D4 /* DeviceDetailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE332A126ECED70006071D4 /* DeviceDetailHelper.swift */; };
+		0DE332A526ED0D84006071D4 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE332A426ED0D84006071D4 /* KeyboardResponder.swift */; };
 		0DE78F8625CF14BC0027B121 /* Refocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78F8525CF14BC0027B121 /* Refocus.swift */; };
 		0DE78FAE25D036170027B121 /* BrowseGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FAD25D036170027B121 /* BrowseGratitudeView.swift */; };
 		0DE78FB625D0368F0027B121 /* WorryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FB525D0368F0027B121 /* WorryController.swift */; };
@@ -175,6 +176,7 @@
 		0DC68F0225D94B7700DCDABC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0DD3E9B225B35BCF003B3A50 /* Worry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worry.swift; sourceTree = "<group>"; };
 		0DE332A126ECED70006071D4 /* DeviceDetailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailHelper.swift; sourceTree = "<group>"; };
+		0DE332A426ED0D84006071D4 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		0DE78F8525CF14BC0027B121 /* Refocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refocus.swift; sourceTree = "<group>"; };
 		0DE78FAD25D036170027B121 /* BrowseGratitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseGratitudeView.swift; sourceTree = "<group>"; };
 		0DE78FB525D0368F0027B121 /* WorryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		0D14C4D425AD0FAA00FAB2E6 /* Worrybook */ = {
 			isa = PBXGroup;
 			children = (
+				0DE332A326ED0D6D006071D4 /* Observables */,
 				0D6F93B626D27F44001B8C38 /* Delegates */,
 				0D55CD80264FD7DF0026F096 /* Protocols */,
 				0D55CD672646A6E40026F096 /* Services */,
@@ -407,6 +410,14 @@
 				0D740C3E26DA3E2D00491F25 /* SettingsRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		0DE332A326ED0D6D006071D4 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				0DE332A426ED0D84006071D4 /* KeyboardResponder.swift */,
+			);
+			path = Observables;
 			sourceTree = "<group>";
 		};
 		0DE78F9725D02E5E0027B121 /* Controllers */ = {
@@ -691,6 +702,7 @@
 				0D5EA7F125D815A700729385 /* CreateCategoryView.swift in Sources */,
 				0D5EA7D225D7FFE400729385 /* CreateRefocusView.swift in Sources */,
 				0D740C4926DCF0B600491F25 /* QuoteHelper.swift in Sources */,
+				0DE332A526ED0D84006071D4 /* KeyboardResponder.swift in Sources */,
 				0D03516D25CB2B9300B660A4 /* WorryTypeViewModel.swift in Sources */,
 				0DC68EDD25D819DB00DCDABC /* TechniqueListRow.swift in Sources */,
 				0DE78FBB25D0379A0027B121 /* RefocusController.swift in Sources */,
@@ -924,7 +936,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.5;
+				MARKETING_VERSION = 0.7.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -948,7 +960,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.5;
+				MARKETING_VERSION = 0.7.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

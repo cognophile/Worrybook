@@ -78,7 +78,7 @@ struct HomeView: View {
                         .foregroundColor(.gray)
                         .background(Color.white)
                         .cornerRadius(50)
-                        .padding(10)
+                        .padding(5)
                     }
                     .sheet(isPresented: self.$showCreateModal, content: {
                         NavigationView {
@@ -114,7 +114,7 @@ struct HomeView: View {
                         HStack {
                             Image(systemName: "book")
                                 .font(.title2)
-                            Text("Past worries")
+                            Text("Worrybook")
                                 .fontWeight(.semibold)
                                 .font(.title2)
                         }
@@ -123,12 +123,12 @@ struct HomeView: View {
                         .foregroundColor(.white)
                         .background(Color.gray)
                         .cornerRadius(50)
-                        .padding(10)
+                        .padding(5)
                     }
                     .sheet(isPresented: self.$showReadModal, content: {
                         NavigationView {
                             BrowseWorryView(showReadModal: self.$showReadModal)
-                                .navigationBarTitle("Past worries")
+                                .navigationBarTitle("Worrybook")
                                 .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showReadModal.toggle()

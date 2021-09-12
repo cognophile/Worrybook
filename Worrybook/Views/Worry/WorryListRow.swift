@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct WorryListRow: View {
     public var worry: WorryViewModel
@@ -14,20 +15,23 @@ struct WorryListRow: View {
 
     var body: some View {
         NavigationLink(destination: DetailWorryView(viewModel: self.worry)) {
-            VStack {
-                Text("\(self.worry.getTitle())")
-                    .fontWeight(.regular)
-                    .foregroundColor(colorHelper.getTextColor())
-                    .font(.body)
-                    .padding(10)
-            }
-            Spacer()
-            VStack {
-                Text("\(self.worry.getCreatedDate())")
-                    .fontWeight(.light)
-                    .foregroundColor(colorHelper.getTextColor())
-                    .font(.caption)
-                    .padding(10)
+            HStack {
+                VStack {
+                    Text("\(self.worry.getTitle())")
+                        .fontWeight(.regular)
+                        .foregroundColor(colorHelper.getTextColor())
+                        .font(.body)
+                        .padding(10)
+                }
+                
+                Spacer()
+                VStack {
+                    Text("\(self.worry.getCreatedDate())")
+                        .fontWeight(.light)
+                        .foregroundColor(colorHelper.getTextColor())
+                        .font(.caption)
+                        .padding(10)
+                }
             }
         }
     }

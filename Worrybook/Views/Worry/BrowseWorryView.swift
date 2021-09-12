@@ -33,8 +33,9 @@ struct BrowseWorryView: View {
                 }.pickerStyle(SegmentedPickerStyle())
             }
             .padding(10)
+            
             Spacer()
-                        
+            
             HStack {
                 List(filteredEntries) { viewModel in
                     WorryListRow(worry: viewModel)
