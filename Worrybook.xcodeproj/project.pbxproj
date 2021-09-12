@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -74,6 +74,7 @@
 		0DD3E9B325B35BCF003B3A50 /* Worry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD3E9B225B35BCF003B3A50 /* Worry.swift */; };
 		0DE332A226ECED70006071D4 /* DeviceDetailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE332A126ECED70006071D4 /* DeviceDetailHelper.swift */; };
 		0DE332A526ED0D84006071D4 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE332A426ED0D84006071D4 /* KeyboardResponder.swift */; };
+		0DE332A826EE5AFB006071D4 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 0DE332A726EE5AFB006071D4 /* PartialSheet */; };
 		0DE78F8625CF14BC0027B121 /* Refocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78F8525CF14BC0027B121 /* Refocus.swift */; };
 		0DE78FAE25D036170027B121 /* BrowseGratitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FAD25D036170027B121 /* BrowseGratitudeView.swift */; };
 		0DE78FB625D0368F0027B121 /* WorryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE78FB525D0368F0027B121 /* WorryController.swift */; };
@@ -196,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE332A826EE5AFB006071D4 /* PartialSheet in Frameworks */,
 				AC15DCEF214BFD60131D535B /* Pods_Worrybook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +544,9 @@
 			dependencies = (
 			);
 			name = Worrybook;
+			packageProductDependencies = (
+				0DE332A726EE5AFB006071D4 /* PartialSheet */,
+			);
 			productName = WorryBook;
 			productReference = 0D14C4D225AD0FAA00FAB2E6 /* Worrybook.app */;
 			productType = "com.apple.product-type.application";
@@ -613,6 +618,9 @@
 				Base,
 			);
 			mainGroup = 0D14C4C925AD0FAA00FAB2E6;
+			packageReferences = (
+				0DE332A626EE5AFB006071D4 /* XCRemoteSwiftPackageReference "PartialSheet" */,
+			);
 			productRefGroup = 0D14C4D325AD0FAA00FAB2E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1088,6 +1096,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0DE332A626EE5AFB006071D4 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.12;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0DE332A726EE5AFB006071D4 /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DE332A626EE5AFB006071D4 /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0D14C4CA25AD0FAA00FAB2E6 /* Project object */;
 }
