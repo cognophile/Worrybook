@@ -35,8 +35,10 @@ struct DetailWorryView: View {
                             .fontWeight(.regular)
                             .foregroundColor(colorHelper.getTextColor())
                             .font(.caption)
-                            .padding(10)
-                        
+                            .padding(2)
+                    }
+                    
+                    HStack {
                         Text("\(self.viewModel.getTypeString())")
                             .font(.caption)
                             .padding(10)
@@ -80,7 +82,7 @@ struct DetailWorryView: View {
                         .font(.caption)
                         .padding(10)
                         .foregroundColor(.white)
-                        .background(Color(UIColor.lightGray))
+                        .background(ColorHelper.getColor(r: 51, g: 92, b: 129))
                         .cornerRadius(50)
                         
                         if (self.viewModel.getType() != WorryTypeViewModel.practical) {
@@ -92,10 +94,10 @@ struct DetailWorryView: View {
                             .font(.caption)
                             .padding(10)
                             .foregroundColor(.white)
-                            .background(Color(UIColor.lightGray))
+                            .background(ColorHelper.getColor(r: 51, g: 92, b: 129))
                             .cornerRadius(50)
                         }
-                    }.padding(40)
+                    }.padding(35)
                 }
             }
         }
