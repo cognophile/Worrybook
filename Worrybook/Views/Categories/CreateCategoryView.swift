@@ -29,7 +29,7 @@ struct CreateCategoryView: View {
             }
             
             HStack {
-                TextField("Name it", text: self.$title)
+                TextField("", text: self.$title)
                     .frame(minHeight: 50)
                     .foregroundColor(.gray)
                     .background(Color(UIColor.systemBackground))
