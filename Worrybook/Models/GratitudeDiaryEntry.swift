@@ -13,7 +13,6 @@ class GratitudeDiaryEntry : ModelProtocol {
     var record: Row?
     
     var id = Expression<Int>("id")
-    let title = Expression<String>("title")
     let firstItem = Expression<String>("first_item")
     let secondItem = Expression<String?>("second_item")
     let thirdItem = Expression<String?>("third_item")
@@ -28,7 +27,6 @@ class GratitudeDiaryEntry : ModelProtocol {
         return (self.table?.create(ifNotExists: true) {
             t in
                 t.column(self.id, primaryKey: true)
-                t.column(self.title)
                 t.column(self.firstItem)
                 t.column(self.secondItem)
                 t.column(self.thirdItem)

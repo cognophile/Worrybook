@@ -16,7 +16,6 @@ class GratitudeDiaryTranslationService {
         let entry = GratitudeDiaryEntryViewModel()
         
         entry.id = try! row.get(model.id)
-        entry.title = try! row.get(model.title)
         entry.firstItem = try! row.get(model.firstItem)
         entry.secondItem = try! row.get(model.secondItem)!
         entry.thirdItem = try! row.get(model.thirdItem)!

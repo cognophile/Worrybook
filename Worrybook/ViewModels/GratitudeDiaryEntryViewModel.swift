@@ -10,7 +10,6 @@ import Foundation
 class GratitudeDiaryEntryViewModel : Identifiable {
     public var id: Int? = nil
     public var uuid = UUID()
-    public var title: String = ""
     public var firstItem: String = ""
     public var secondItem: String = ""
     public var thirdItem: String = ""
@@ -25,10 +24,6 @@ class GratitudeDiaryEntryViewModel : Identifiable {
     
     public func getId() -> Int? {
         return self.id ?? nil
-    }
-    
-    public func getTitle() -> String {
-        return self.title
     }
     
     public func getItems() -> [String] {

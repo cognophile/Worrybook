@@ -41,7 +41,7 @@ struct DetailWorryView: View {
                     HStack {
                         Text("\(self.viewModel.getTypeString())")
                             .font(.caption)
-                            .padding(10)
+                            .padding(7.5)
                             .foregroundColor(.white)
                             .background(self.viewModel.getTypeColour())
                             .cornerRadius(50)
@@ -80,7 +80,7 @@ struct DetailWorryView: View {
                             Text("\(self.viewModel.getCategory()?.title ?? "") ")
                         }
                         .font(.caption)
-                        .padding(10)
+                        .padding(7.5)
                         .foregroundColor(.white)
                         .background(ColorHelper.getColor(r: 51, g: 92, b: 129))
                         .cornerRadius(50)
@@ -92,7 +92,7 @@ struct DetailWorryView: View {
                                 Text("\(self.viewModel.getRefocus()?.title ?? "") ")
                             }
                             .font(.caption)
-                            .padding(10)
+                            .padding(7.5)
                             .foregroundColor(.white)
                             .background(ColorHelper.getColor(r: 51, g: 92, b: 129))
                             .cornerRadius(50)

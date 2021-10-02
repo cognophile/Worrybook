@@ -22,7 +22,7 @@ struct DetailGratitudeDiaryView: View {
         
         VStack {
             HStack {
-                Text("\(entry.getTitle())")
+                Text("\(entry.getCreatedDate())")
                     .fontWeight(.medium)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.title3)

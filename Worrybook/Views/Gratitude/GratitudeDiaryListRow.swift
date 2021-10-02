@@ -15,18 +15,10 @@ struct GratitudeDiaryListRow: View {
     var body: some View {
         NavigationLink(destination: DetailGratitudeDiaryView(entry: self.entry)) {
             VStack {
-                Text("\(entry.getTitle())")
+                Text("\(entry.getCreatedDate())")
                     .fontWeight(.regular)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.body)
-                    .padding(10)
-            }
-            Spacer()
-            VStack {
-                Text("\(entry.getCreatedDate())")
-                    .fontWeight(.light)
-                    .foregroundColor(colorHelper.getTextColor())
-                    .font(.caption)
                     .padding(10)
             }
         }

@@ -36,7 +36,7 @@ struct WorryCategorisationAndRefocusView: View {
         VStack {
             Group {
                 HStack {
-                    Text("Categorise this worry")
+                    Text("Select a category")
                         .fontWeight(.medium)
                         .foregroundColor(colorHelper.getTextColor())
                         .font(.subheadline)
@@ -93,7 +93,7 @@ struct WorryCategorisationAndRefocusView: View {
                         .padding(10)
                     
                     HStack {
-                        Text("How will you refocus?")
+                        Text("Select how you'll refocus")
                             .fontWeight(.medium)
                             .foregroundColor(colorHelper.getTextColor())
                             .font(.subheadline)

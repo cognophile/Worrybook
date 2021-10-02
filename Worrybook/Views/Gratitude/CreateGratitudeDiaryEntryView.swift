@@ -14,7 +14,6 @@ struct CreateGratitudeDiaryEntryView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     
-    @State private var title: String = ""
     @State private var itemOne: String = ""
     @State private var itemTwo: String = ""
     @State private var itemThree: String = ""
@@ -27,37 +26,24 @@ struct CreateGratitudeDiaryEntryView: View {
             ScrollView {
                 Group {
                     VStack {
-                        HStack {
-                            Text("What are you thankful for?")
-                                .fontWeight(.medium)
-                                .foregroundColor(colorHelper.getTextColor())
-                                .font(.title)
-                                .padding(10)
-                        }
+                        Text("What are you thankful for?")
+                            .fontWeight(.medium)
+                            .foregroundColor(colorHelper.getTextColor())
+                            .font(.title)
+                            .padding(10)
                         
-                        HStack {
-                            Text("Give it a title")
-                                .fontWeight(.medium)
-                                .foregroundColor(colorHelper.getTextColor())
-                                .font(.body)
-                                .padding(5)
-                        }
-                        HStack {
-                            TextField("", text: self.$title)
-                                .frame(minHeight: 50)
-                                .foregroundColor(.gray)
-                                .background(Color(UIColor.systemBackground))
-                                .textFieldStyle(RoundedCornerBorderTextFieldExtension())
-                                .padding(10)
-                        }
+                        Text("Take a moment to consider three things you're grateful for. A gratuity diary is most effective when the entries are personal, specific, and detailed.")
+                            .foregroundColor(colorHelper.getTextColor())
+                            .font(.body)
+                            .padding(10)
                     }
                     
                     VStack {
                         HStack {
-                            Text("Firstly...")
+                            Text("First")
                                 .fontWeight(.medium)
                                 .foregroundColor(colorHelper.getTextColor())
-                                .font(.body)
+                                .font(.subheadline)
                                 .padding(5)
                         }
                         
@@ -75,10 +61,10 @@ struct CreateGratitudeDiaryEntryView: View {
                         }
                         
                         HStack {
-                            Text("Secondly...")
+                            Text("Second")
                                 .fontWeight(.medium)
                                 .foregroundColor(colorHelper.getTextColor())
-                                .font(.body)
+                                .font(.subheadline)
                                 .padding(5)
                         }
                         
@@ -96,10 +82,10 @@ struct CreateGratitudeDiaryEntryView: View {
                         }
                         
                         HStack {
-                            Text("Lastly...")
+                            Text("Third")
                                 .fontWeight(.medium)
                                 .foregroundColor(colorHelper.getTextColor())
-                                .font(.body)
+                                .font(.subheadline)
                                 .padding(5)
                         }
                         
@@ -121,8 +107,7 @@ struct CreateGratitudeDiaryEntryView: View {
             
             Spacer()
             Button(action: {
-                if (!self.title.isEmpty && !self.itemOne.isEmpty && !self.itemTwo.isEmpty && !self.itemThree.isEmpty) {
-                    self.entry.title = self.title
+                if (!self.itemOne.isEmpty && !self.itemTwo.isEmpty && !self.itemThree.isEmpty) {
                     self.entry.firstItem = self.itemOne
                     self.entry.secondItem = self.itemTwo
                     self.entry.thirdItem = self.itemThree
@@ -168,7 +153,7 @@ struct CreateGratitudeDiaryEntryView: View {
             .alert(isPresented: self.$invalidFields) {
                 Alert(
                     title: Text("Hang on..."),
-                    message: Text("You need to enter a title and three items to proceed"),
+                    message: Text("You need to enter three items to proceed"),
                     dismissButton: .default(Text("Got it!"))
                 )
             }

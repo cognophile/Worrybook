@@ -115,9 +115,11 @@ struct CreateWorryView: View {
                     VStack {
                         Button(action: {
                             let worryType = (self.isPracticalWorry) ? WorryTypeViewModel.practical : WorryTypeViewModel.hypothetical
-                            self.validationMessage = (self.isPracticalWorry) ? "You need to enter a title, description, and plan to proceed" : "You need to enter a title and description to proceed"
-                            self.viewModel.setType(type: worryType)
+                            self.validationMessage = (self.isPracticalWorry)
+                                ? "You need to enter a title, description, and plan to proceed"
+                                : "You need to enter a title and description to proceed"
                             
+                            self.viewModel.setType(type: worryType)
                             if (self.viewModel.hasRequiredFields()) {
                                 self.nextStageActive = true
                             }
@@ -151,7 +153,7 @@ struct CreateWorryView: View {
             
             
                 NavigationLink (destination: WorryCategorisationAndRefocusView(viewModel: self.viewModel)
-                    .navigationBarTitle("Categorise & Refocus")
+                    .navigationBarTitle("Categorise\(!self.isPracticalWorry ? " & Refocus" : "")")
                     .navigationBarBackButtonHidden(true)
                     .navigationBarItems(trailing:
                         Button(action: {

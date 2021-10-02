@@ -38,7 +38,6 @@ class GratitudeDiaryRepository {
     
     public func create(viewModel: GratitudeDiaryEntryViewModel) -> GratitudeDiaryEntry {
         let query = self.entry.table!.insert(
-            self.entry.title <- viewModel.title,
             self.entry.firstItem <- viewModel.firstItem,
             self.entry.secondItem <- viewModel.secondItem,
             self.entry.thirdItem <- viewModel.thirdItem,
@@ -52,7 +51,6 @@ class GratitudeDiaryRepository {
     
     public func update(viewModel: GratitudeDiaryEntryViewModel) -> GratitudeDiaryEntry {
         let query = [
-            self.entry.title <- viewModel.title,
             self.entry.firstItem <- viewModel.firstItem,
             self.entry.secondItem <- viewModel.secondItem,
             self.entry.thirdItem <- viewModel.thirdItem,
