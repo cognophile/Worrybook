@@ -20,7 +20,6 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationView {
             ZStack {
                 Color(red: 113 / 255, green: 173 / 255, blue: 174 / 255).edgesIgnoringSafeArea(.all)
 
@@ -37,12 +36,17 @@ struct HomeView: View {
                             Image(systemName: "text.justify")
                                 .font(.title2)
                         }
-                        .frame(maxWidth: .infinity,
-                               maxHeight: 60,
+                        .frame(maxWidth: 20,
+                               maxHeight: 20,
                                alignment: .topLeading)
                         .foregroundColor(.white)
                         .padding(10)
                     }
+                    .frame(maxWidth: .infinity,
+                           maxHeight: 20,
+                           alignment: .topLeading)
+                    .foregroundColor(.white)
+                    .padding(10)
                     
                     HStack {
                         Image("Worrybook_title_colour_large")
@@ -155,5 +159,4 @@ struct HomeView: View {
                 .navigationBarHidden(true)
             }
         }
-    }
 }

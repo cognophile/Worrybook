@@ -18,7 +18,6 @@ struct MenuContentView: View {
     private let colorHelper = ColorHelper()
 
     var body: some View {
-        NavigationView {
             VStack (alignment: .leading) {
                 HStack{
                     Image("Worrybook_transparent_title_banner")
@@ -94,7 +93,7 @@ struct MenuContentView: View {
                         NavigationView {
                             BrowseRefocusView(show: self.$showRefocusingList)
                                 .navigationBarTitle("Refocusing Methods")
-                                .navigationBarItems(leading:
+                                .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showRefocusingList.toggle()
                                     }) {
@@ -103,15 +102,13 @@ struct MenuContentView: View {
                                                 .font(.title2)
                                                 .foregroundColor(.gray)
                                                 .background(
-                                                    Circle()
-                                                        .frame(width: 32, height: 32)
+                                                    Circle().frame(width: 32, height: 32),
+                                                    alignment: .center
                                                 )
                                         }
-                                        .frame(width: 50, height: 50)
+                                        .frame(width: .infinity, height: 50)
+                                        .padding(5)
                                         .foregroundColor(colorHelper.secondaryColor)
-                                        .padding(.top, 10)
-                                        .padding(.leading, 348)
-                                        .padding(.trailing, 10)
                                         .cornerRadius(3.0)
                                     }
                                 )
@@ -143,7 +140,7 @@ struct MenuContentView: View {
                         NavigationView {
                             BrowseCategoriesView(show: self.$showCategoriesList)
                                 .navigationBarTitle("Worry Categories")
-                                .navigationBarItems(leading:
+                                .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showCategoriesList.toggle()
                                     }) {
@@ -152,15 +149,13 @@ struct MenuContentView: View {
                                                 .font(.title2)
                                                 .foregroundColor(.gray)
                                                 .background(
-                                                    Circle()
-                                                        .frame(width: 32, height: 32)
+                                                    Circle().frame(width: 32, height: 32),
+                                                    alignment: .center
                                                 )
                                         }
-                                        .frame(width: 50, height: 50)
+                                        .frame(width: .infinity, height: 50)
+                                        .padding(5)
                                         .foregroundColor(colorHelper.secondaryColor)
-                                        .padding(.top, 10)
-                                        .padding(.leading, 348)
-                                        .padding(.trailing, 10)
                                         .cornerRadius(3.0)
                                     }
                                 )
@@ -326,5 +321,4 @@ struct MenuContentView: View {
             .edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
         }
-    }
 }

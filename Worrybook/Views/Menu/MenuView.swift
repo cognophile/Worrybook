@@ -30,7 +30,7 @@ struct MenuView: View {
                 MenuContentView()
                     .frame(width: self.width)
                     .background(colorHelper.getSchemeColour())
-                    .offset(x: self.isOpen ? 0 : -self.width)
+                    .offset(x: self.isOpen ? 0 : -self.width - 10)
                     .animation(.default)
                 
                 Spacer()

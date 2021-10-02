@@ -132,6 +132,7 @@
 		0D52C26726A4C3A5008A69C9 /* RefocusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusRepository.swift; sourceTree = "<group>"; };
 		0D52C26926AB414C008A69C9 /* RefocusTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefocusTranslationService.swift; sourceTree = "<group>"; };
 		0D52C26B26AB4463008A69C9 /* CategoryTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTranslationService.swift; sourceTree = "<group>"; };
+		0D5530AD270892040039E210 /* Worrybook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Worrybook.entitlements; sourceTree = "<group>"; };
 		0D55CD682646A6FD0026F096 /* WorryTranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryTranslationService.swift; sourceTree = "<group>"; };
 		0D55CD7B264FD63E0026F096 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		0D55CD81264FD7EE0026F096 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
@@ -251,6 +252,7 @@
 		0D14C4D425AD0FAA00FAB2E6 /* Worrybook */ = {
 			isa = PBXGroup;
 			children = (
+				0D5530AD270892040039E210 /* Worrybook.entitlements */,
 				0D6F93B626D27F44001B8C38 /* Delegates */,
 				0D55CD80264FD7DF0026F096 /* Protocols */,
 				0D55CD672646A6E40026F096 /* Services */,
@@ -922,6 +924,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Worrybook/Worrybook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WorryBook/Preview Content\"";
 				DEVELOPMENT_TEAM = 6RMS3DUYWM;
@@ -932,11 +935,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.1;
+				MARKETING_VERSION = 0.8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -946,6 +950,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Worrybook/Worrybook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WorryBook/Preview Content\"";
 				DEVELOPMENT_TEAM = 6RMS3DUYWM;
@@ -956,11 +961,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.1;
+				MARKETING_VERSION = 0.8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -134,7 +134,7 @@ struct AboutView: View {
                     HStack {
                         Text("Thanks for choosing Worrybook ❤️")
                             .font(.footnote)
-                            .padding([.leading, .trailing], 10)
+                            .padding([.leading, .trailing, .bottom], 10)
                     }
                 }
             }
