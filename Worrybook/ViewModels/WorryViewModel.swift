@@ -120,7 +120,7 @@ class WorryViewModel : Identifiable {
     
     public func getTypeColour() -> Color {
         if (self.type == WorryTypeViewModel.hypothetical) {
-            return ColorHelper.getColor(r: 249, g: 199, b: 132)
+            return ColorHelper.getColor(r: 198, g: 161, b: 91)
         }
         
         return ColorHelper.getColor(r: 158, g: 118, b: 130)

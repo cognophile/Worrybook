@@ -48,10 +48,11 @@ struct BrowseTechniquesView: View {
                     }
                     .onDelete(perform: self.delete)
                 }
-                .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "RefreshTechniqueListNotification"))) { _ in
-                    populate()
-                }
             }
+            .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "RefreshTechniqueListNotification"))) { _ in
+                populate()
+            }
+            .onAppear(perform: self.populate)
             .alert(isPresented: self.$confirmDeletion) {
                 Alert(
                     title: Text("Wait..."),

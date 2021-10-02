@@ -13,6 +13,7 @@ struct AboutView: View {
     private let colorHelper = ColorHelper()
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     private let feedbackEmail = "worrybook@gmail.com";
+    private let websiteUrl = "https://worrybook.webflow.io";
     
     var body: some View {
         ScrollView {
@@ -21,7 +22,7 @@ struct AboutView: View {
                     HStack {
                         Text("What is Worrybook?")
                             .font(.title3)
-                            .padding([.leading, .trailing], 10)
+                            .padding([.leading, .trailing, .top], 10)
                             .foregroundColor(colorHelper.getTextColor())
                     }
                     Divider()
@@ -112,12 +113,18 @@ struct AboutView: View {
                         }
                         
                         Spacer()
-                        HStack {
+                        VStack {
                             Link("Got feedback? Email us!", destination:
                                     URL(string: "mailto:\(self.feedbackEmail)")!
                             )
-                            .font(.caption)
-                            .padding([.leading, .trailing], 10)
+                                .font(.caption)
+                                .padding([.leading, .trailing], 10)
+                            
+                            Link("Checkout the website!", destination:
+                                    URL(string: "\(self.websiteUrl)")!
+                            )
+                                .font(.caption)
+                            .padding([.leading, .trailing, .top], 10)
                         }
                     }
                 }
