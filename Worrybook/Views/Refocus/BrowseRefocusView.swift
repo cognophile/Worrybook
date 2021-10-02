@@ -44,6 +44,30 @@ struct BrowseRefocusView: View {
                 }
                 .onDelete(perform: self.delete)
             }
+            .modifier(EmptyDataModifier(
+                items: self.refocuses,
+                placeholder:
+                        VStack {
+                            Image(systemName: "questionmark.circle.fill")
+                                .font(.title2)
+                                .foregroundColor(self.colorHelper.getTextColor())
+                                .padding(.bottom, 10)
+                            Text("No refocus methods found!")
+                                .fontWeight(.semibold)
+                                .font(.title2)
+                                .padding(.bottom, 20)
+                                .foregroundColor(self.colorHelper.getTextColor())
+                            Text("Got something that calms you?\n You can add it below!")
+                                .font(.body)
+                                .foregroundColor(self.colorHelper.getTextColor())
+                                .multilineTextAlignment(.center)
+                            
+                            Spacer()
+                        }
+                        .padding([.top], 20)
+                        .padding([.bottom], 50)
+                        .padding([.leading, .trailing], 10)
+            ))
         }
         .onAppear(perform: self.populate)
         .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "RefreshRefocusListNotification"))) { _ in

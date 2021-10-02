@@ -24,7 +24,8 @@ struct BrowseGratitudeDiaryView: View {
     var body: some View {
         let chosenTab = (self.selection == 0) ? false : true
         let filteredEntries = entries.filter({$0.archived == chosenTab})
-        
+        let tabDescriptor = (self.selection == 0) ? "diary" : "archive"
+
         VStack {
             HStack{
                 Picker(selection: $selection, label: Text("")) {
@@ -40,6 +41,30 @@ struct BrowseGratitudeDiaryView: View {
                 List(filteredEntries) { viewModel in
                     GratitudeDiaryListRow(entry: viewModel)
                 }
+                .modifier(EmptyDataModifier(
+                    items: filteredEntries,
+                    placeholder:
+                            VStack {
+                                Image(systemName: "questionmark.circle.fill")
+                                    .font(.title2)
+                                    .foregroundColor(self.colorHelper.getTextColor())
+                                    .padding(.bottom, 10)
+                                Text("Your \(tabDescriptor) is empty!")
+                                    .fontWeight(.semibold)
+                                    .font(.title2)
+                                    .padding(.bottom, 20)
+                                    .foregroundColor(self.colorHelper.getTextColor())
+                                Text("We've all got something to be thankful for.\n Use the button below to add an entry each day!")
+                                    .font(.body)
+                                    .foregroundColor(self.colorHelper.getTextColor())
+                                    .multilineTextAlignment(.center)
+                                
+                                Spacer()
+                            }
+                            .padding([.top], 20)
+                            .padding([.bottom], 50)
+                            .padding([.leading, .trailing], 10)
+                ))
             }
         }
         .onAppear(perform: populate)

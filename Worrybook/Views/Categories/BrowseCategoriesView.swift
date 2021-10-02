@@ -44,6 +44,30 @@ struct BrowseCategoriesView: View {
                 }
                 .onDelete(perform: self.delete)
             }
+            .modifier(EmptyDataModifier(
+                items: self.categories,
+                placeholder:
+                        VStack {
+                            Image(systemName: "questionmark.circle.fill")
+                                .font(.title2)
+                                .foregroundColor(self.colorHelper.getTextColor())
+                                .padding(.bottom, 10)
+                            Text("No categories found!")
+                                .fontWeight(.semibold)
+                                .font(.title2)
+                                .padding(.bottom, 20)
+                                .foregroundColor(self.colorHelper.getTextColor())
+                            Text("Find yourself worrying about similar things? You can add one below!")
+                                .font(.body)
+                                .foregroundColor(self.colorHelper.getTextColor())
+                                .multilineTextAlignment(.center)
+                            
+                            Spacer()
+                        }
+                        .padding([.top], 20)
+                        .padding([.bottom], 50)
+                        .padding([.leading, .trailing], 10)
+            ))
         }
         .onAppear(perform: self.populate)
         .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "RefreshCategoryListNotification"))) { _ in

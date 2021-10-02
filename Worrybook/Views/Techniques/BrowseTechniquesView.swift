@@ -48,6 +48,30 @@ struct BrowseTechniquesView: View {
                     }
                     .onDelete(perform: self.delete)
                 }
+                .modifier(EmptyDataModifier(
+                    items: self.techniques,
+                    placeholder:
+                            VStack {
+                                Image(systemName: "questionmark.circle.fill")
+                                    .font(.title2)
+                                    .foregroundColor(self.colorHelper.getTextColor())
+                                    .padding(.bottom, 10)
+                                Text("No techniques found!")
+                                    .fontWeight(.semibold)
+                                    .font(.title2)
+                                    .padding(.bottom, 20)
+                                    .foregroundColor(self.colorHelper.getTextColor())
+                                Text("Got a useful technique? You can add one below!")
+                                    .font(.body)
+                                    .foregroundColor(self.colorHelper.getTextColor())
+                                    .multilineTextAlignment(.center)
+                                
+                                Spacer()
+                            }
+                            .padding([.top], 20)
+                            .padding([.bottom], 50)
+                            .padding([.leading, .trailing], 10)
+                ))
             }
             .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "RefreshTechniqueListNotification"))) { _ in
                 populate()

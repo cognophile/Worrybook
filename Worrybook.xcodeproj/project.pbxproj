@@ -54,6 +54,8 @@
 		0D91BB0325D058960063AC00 /* GratitudeDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */; };
 		0D94F55725D06367008380B3 /* CreateGratitudeDiaryEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94F55625D06367008380B3 /* CreateGratitudeDiaryEntryView.swift */; };
 		0D94F55F25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D94F55E25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift */; };
+		0D9959492708ADCE0049DED7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D9959482708ADCE0049DED7 /* Launch Screen.storyboard */; };
+		0D99594E2708BFD10049DED7 /* EmptyDataModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D99594D2708BFD10049DED7 /* EmptyDataModifier.swift */; };
 		0DA4DEE925B4AAB800A74129 /* WorryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4DEE825B4AAB800A74129 /* WorryType.swift */; };
 		0DB2F59B25B4E30D00D85384 /* DetailWorryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2F59A25B4E30D00D85384 /* DetailWorryView.swift */; };
 		0DB2F5A025B4E5C000D85384 /* WorryListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2F59F25B4E5C000D85384 /* WorryListRow.swift */; };
@@ -158,6 +160,8 @@
 		0D91BB0225D058960063AC00 /* GratitudeDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeDiaryController.swift; sourceTree = "<group>"; };
 		0D94F55625D06367008380B3 /* CreateGratitudeDiaryEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGratitudeDiaryEntryView.swift; sourceTree = "<group>"; };
 		0D94F55E25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerBorderTextFieldExtension.swift; sourceTree = "<group>"; };
+		0D9959482708ADCE0049DED7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0D99594D2708BFD10049DED7 /* EmptyDataModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataModifier.swift; sourceTree = "<group>"; };
 		0DA4DEE825B4AAB800A74129 /* WorryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryType.swift; sourceTree = "<group>"; };
 		0DB2F59A25B4E30D00D85384 /* DetailWorryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorryView.swift; sourceTree = "<group>"; };
 		0DB2F59F25B4E5C000D85384 /* WorryListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorryListRow.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 				0D14C4D925AD0FAC00FAB2E6 /* Assets.xcassets */,
 				0D14C4DE25AD0FAC00FAB2E6 /* Info.plist */,
 				0D14C4DB25AD0FAC00FAB2E6 /* Preview Content */,
+				0D9959482708ADCE0049DED7 /* Launch Screen.storyboard */,
 			);
 			path = Worrybook;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 			children = (
 				0D21247C25B4F339009039FF /* StringExtension.swift */,
 				0D94F55E25D06730008380B3 /* RoundedCornerBorderTextFieldExtension.swift */,
+				0D99594D2708BFD10049DED7 /* EmptyDataModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -628,6 +634,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9959492708ADCE0049DED7 /* Launch Screen.storyboard in Resources */,
 				0D14C4DD25AD0FAC00FAB2E6 /* Preview Assets.xcassets in Resources */,
 				0D14C4DA25AD0FAC00FAB2E6 /* Assets.xcassets in Resources */,
 			);
@@ -714,6 +721,7 @@
 				0D3EAB5026AB744800C9E9D7 /* GratitudeDiaryEntryViewModel.swift in Sources */,
 				0DE78FC325D0392C0027B121 /* GratitudeDiaryListRow.swift in Sources */,
 				0D52C26C26AB4463008A69C9 /* CategoryTranslationService.swift in Sources */,
+				0D99594E2708BFD10049DED7 /* EmptyDataModifier.swift in Sources */,
 				0DE78FC825D039680027B121 /* DetailGratitudeDiaryView.swift in Sources */,
 				0DBF3EFB268BBDC5005529F8 /* RefocusViewModel.swift in Sources */,
 				0DB2F59B25B4E30D00D85384 /* DetailWorryView.swift in Sources */,
@@ -935,7 +943,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.2;
+				MARKETING_VERSION = 0.8.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -961,7 +969,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.2;
+				MARKETING_VERSION = 0.8.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cognophile.Worrybook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;

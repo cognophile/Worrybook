@@ -21,7 +21,7 @@ struct HomeView: View {
     
     var body: some View {
             ZStack {
-                Color(red: 113 / 255, green: 173 / 255, blue: 174 / 255).edgesIgnoringSafeArea(.all)
+                colorHelper.getPrimaryColor().edgesIgnoringSafeArea(.all)
 
                 MenuView(width: 295,
                      isOpen: self.showMenu,
@@ -49,13 +49,13 @@ struct HomeView: View {
                     .padding(10)
                     
                     HStack {
-                        Image("Worrybook_title_colour_large")
+                        Image("Worrybook_title_colour_large-trans")
                             .resizable()
                             .frame(width: 300, height: 100)
                             .padding(5)
                     }
                     Spacer()
-                    Image("Worrybook_icon_colour_xl")
+                    Image("Worrybook_trans_logo_xl")
                         .resizable()
                         .frame(width: 150, height: 150)
                     Spacer()
