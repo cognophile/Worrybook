@@ -28,4 +28,21 @@ class RefocusController {
         let records = self.repository?.getAll()
         return RefocusTranslationService.translateMultiple(rows: records!)
     }
+    
+    public func create(viewModel: RefocusViewModel) -> RefocusViewModel {
+        let entity = self.repository?.create(viewModel: viewModel)
+        return RefocusTranslationService.translateSingle(row: (entity?.record)!)
+    }
+    
+    public func delete(id: Int) -> Bool {
+        if (id > 0) {
+            let entity = self.repository?.delete(id: id)
+            
+            if (entity != nil) {
+                return true
+            }
+        }
+        
+        return false
+    }
 }

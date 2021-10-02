@@ -17,8 +17,20 @@ class RefocusViewModel : Identifiable {
         self.title = title ?? ""
     }
     
+    public func getId() -> Int? {
+        return self.id
+    }
+    
+    public func setId(id: Int) {
+        self.id = id
+    }
+    
     public func getTitle() -> String {
         return self.title
+    }
+    
+    public func setTitle(title: String) {
+        self.title = title
     }
     
     public func getCreatedDate() -> String {

@@ -13,7 +13,6 @@ struct BrowseTechniquesView: View {
     
     @Environment(\.presentationMode) var presentation
 
-    @State private var deleteIndex: Int? = nil
     @State private var techniques: [TechniqueViewModel]
     @State private var confirmDeletion = false
     @State private var technique: TechniqueViewModel = TechniqueViewModel(title: nil, description: nil)
@@ -25,7 +24,7 @@ struct BrowseTechniquesView: View {
 
     init(show: Binding<Bool>) {
         self._show = show
-        self._techniques = .init(initialValue: controller.getAll())
+        self._techniques = .init(initialValue: [TechniqueViewModel]())
     }
     
     private func populate() {
@@ -47,7 +46,7 @@ struct BrowseTechniquesView: View {
                     ForEach(self.techniques) { t in
                         TechniqueListRow(technique: t)
                     }
-                    .onDelete(perform: delete)
+                    .onDelete(perform: self.delete)
                 }
                 .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: "RefreshTechniqueListNotification"))) { _ in
                     populate()

@@ -73,102 +73,102 @@ struct MenuContentView: View {
                 .padding(.leading, 10)
                 
                 // Refocusing methods
-//                HStack {
-//                    Button(action: {
-//                        self.showRefocusingList.toggle()
-//                    }) {
-//                        VStack (alignment: HorizontalAlignment.center) {
-//                            Image(systemName: "hand.raised")
-//                                .foregroundColor(colorHelper.getTextColor())
-//                                .imageScale(.large)
-//                        }
-//                        VStack (alignment: HorizontalAlignment.leading) {
-//                            Text("Refocusing")
-//                                .foregroundColor(colorHelper.getTextColor())
-//                                .font(.headline)
-//                        }
-//                        .padding(.leading, 7)
-//
-//                    }
-//                    .sheet(isPresented: self.$showRefocusingList, content: {
-//                        NavigationView {
-//                            BrowseRefocusView(show: self.$showRefocusingList)
-//                                .navigationBarTitle("Refocusing Methods")
-//                                .navigationBarItems(leading:
-//                                    Button(action: {
-//                                        self.showRefocusingList.toggle()
-//                                    }) {
-//                                        HStack {
-//                                            Image(systemName: "xmark")
-//                                                .font(.title2)
-//                                                .foregroundColor(.gray)
-//                                                .background(
-//                                                    Circle()
-//                                                        .frame(width: 32, height: 32)
-//                                                )
-//                                        }
-//                                        .frame(width: 50, height: 50)
-//                                        .foregroundColor(colorHelper.secondaryColor)
-//                                        .padding(.top, 10)
-//                                        .padding(.leading, 348)
-//                                        .padding(.trailing, 10)
-//                                        .cornerRadius(3.0)
-//                                    }
-//                                )
-//                        }
-//                    })
-//                }
-//                .padding(.top, 5)
-//                .padding(.leading, 10)
+                HStack {
+                    Button(action: {
+                        self.showRefocusingList.toggle()
+                    }) {
+                        VStack (alignment: HorizontalAlignment.center) {
+                            Image(systemName: "hand.raised")
+                                .foregroundColor(colorHelper.getTextColor())
+                                .imageScale(.large)
+                        }
+                        VStack (alignment: HorizontalAlignment.leading) {
+                            Text("Refocusing")
+                                .foregroundColor(colorHelper.getTextColor())
+                                .font(.headline)
+                        }
+                        .padding(.leading, 7)
+
+                    }
+                    .sheet(isPresented: self.$showRefocusingList, content: {
+                        NavigationView {
+                            BrowseRefocusView(show: self.$showRefocusingList)
+                                .navigationBarTitle("Refocusing Methods")
+                                .navigationBarItems(leading:
+                                    Button(action: {
+                                        self.showRefocusingList.toggle()
+                                    }) {
+                                        HStack {
+                                            Image(systemName: "xmark")
+                                                .font(.title2)
+                                                .foregroundColor(.gray)
+                                                .background(
+                                                    Circle()
+                                                        .frame(width: 32, height: 32)
+                                                )
+                                        }
+                                        .frame(width: 50, height: 50)
+                                        .foregroundColor(colorHelper.secondaryColor)
+                                        .padding(.top, 10)
+                                        .padding(.leading, 348)
+                                        .padding(.trailing, 10)
+                                        .cornerRadius(3.0)
+                                    }
+                                )
+                        }
+                    })
+                }
+                .padding(.top, 5)
+                .padding(.leading, 10)
                 
                 // Categories
-//                HStack {
-//                    Button(action: {
-//                        self.showCategoriesList.toggle()
-//                    }) {
-//                        VStack (alignment: HorizontalAlignment.center) {
-//                            Image(systemName: "tag")
-//                                .foregroundColor(colorHelper.getTextColor())
-//                                .imageScale(.large)
-//                        }
-//                        VStack (alignment: HorizontalAlignment.leading) {
-//                            Text("Categories")
-//                                .foregroundColor(colorHelper.getTextColor())
-//                                .font(.headline)
-//                        }
-//                        .padding(.leading, 5)
-//
-//                    }
-//                    .sheet(isPresented: self.$showCategoriesList, content: {
-//                        NavigationView {
-//                            BrowseCategoriesView(show: self.$showCategoriesList)
-//                                .navigationBarTitle("Worry Categories")
-//                                .navigationBarItems(leading:
-//                                    Button(action: {
-//                                        self.showCategoriesList.toggle()
-//                                    }) {
-//                                        HStack {
-//                                            Image(systemName: "xmark")
-//                                                .font(.title2)
-//                                                .foregroundColor(.gray)
-//                                                .background(
-//                                                    Circle()
-//                                                        .frame(width: 32, height: 32)
-//                                                )
-//                                        }
-//                                        .frame(width: 50, height: 50)
-//                                        .foregroundColor(colorHelper.secondaryColor)
-//                                        .padding(.top, 10)
-//                                        .padding(.leading, 348)
-//                                        .padding(.trailing, 10)
-//                                        .cornerRadius(3.0)
-//                                    }
-//                                )
-//                        }
-//                    })
-//                }
-//                .padding(.top, 5)
-//                .padding(.leading, 10)
+                HStack {
+                    Button(action: {
+                        self.showCategoriesList.toggle()
+                    }) {
+                        VStack (alignment: HorizontalAlignment.center) {
+                            Image(systemName: "tag")
+                                .foregroundColor(colorHelper.getTextColor())
+                                .imageScale(.large)
+                        }
+                        VStack (alignment: HorizontalAlignment.leading) {
+                            Text("Categories")
+                                .foregroundColor(colorHelper.getTextColor())
+                                .font(.headline)
+                        }
+                        .padding(.leading, 5)
+
+                    }
+                    .sheet(isPresented: self.$showCategoriesList, content: {
+                        NavigationView {
+                            BrowseCategoriesView(show: self.$showCategoriesList)
+                                .navigationBarTitle("Worry Categories")
+                                .navigationBarItems(leading:
+                                    Button(action: {
+                                        self.showCategoriesList.toggle()
+                                    }) {
+                                        HStack {
+                                            Image(systemName: "xmark")
+                                                .font(.title2)
+                                                .foregroundColor(.gray)
+                                                .background(
+                                                    Circle()
+                                                        .frame(width: 32, height: 32)
+                                                )
+                                        }
+                                        .frame(width: 50, height: 50)
+                                        .foregroundColor(colorHelper.secondaryColor)
+                                        .padding(.top, 10)
+                                        .padding(.leading, 348)
+                                        .padding(.trailing, 10)
+                                        .cornerRadius(3.0)
+                                    }
+                                )
+                        }
+                    })
+                }
+                .padding(.top, 5)
+                .padding(.leading, 10)
                 
                 // Techniques
                 HStack {

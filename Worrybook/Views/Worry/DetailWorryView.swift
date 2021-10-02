@@ -139,7 +139,7 @@ struct DetailWorryView: View {
                     .alert(isPresented: self.$operationFailed) {
                         Alert(
                             title: Text("Oops!"),
-                            message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via GitHub."),
+                            message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via the website."),
                             dismissButton: .default(Text("Okay"))
                         )
                     }

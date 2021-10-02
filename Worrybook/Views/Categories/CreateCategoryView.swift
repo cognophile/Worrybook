@@ -15,7 +15,7 @@ struct CreateCategoryView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Categorise your worries")
+                Text("Create a Category")
                     .fontWeight(.medium)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.title)
@@ -23,7 +23,7 @@ struct CreateCategoryView: View {
             }
             
             HStack {
-                TextField("Title", text: self.$title)
+                TextField("Name it", text: self.$title)
                     .frame(minHeight: 50)
                     .foregroundColor(.gray)
                     .background(Color(UIColor.systemBackground))
