@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct CreateCategoryView: View {
-    let colorHelper = ColorHelper()
+    @Environment(\.presentationMode) private var presentationMode
     
+    @State private var operationFailed = false
+    @State private var invalidFields = false
     @State private var title: String = ""
+    @State private var category: CategoryViewModel = CategoryViewModel(title: nil)
+
+    let controller = CategoriesController()
+    let colorHelper = ColorHelper()
     
     var body: some View {
         VStack {
             HStack {
-                Text("Categorise your worries")
+                Text("Create a Category")
                     .fontWeight(.medium)
                     .foregroundColor(colorHelper.getTextColor())
                     .font(.title)
@@ -23,7 +29,7 @@ struct CreateCategoryView: View {
             }
             
             HStack {
-                TextField("Title", text: self.$title)
+                TextField("Name it", text: self.$title)
                     .frame(minHeight: 50)
                     .foregroundColor(.gray)
                     .background(Color(UIColor.systemBackground))
@@ -33,9 +39,24 @@ struct CreateCategoryView: View {
         }
             
         Spacer()
-            
         Button(action: {
-            
+            if (!self.title.isEmpty) {
+                self.category.setTitle(title: self.title)
+                let created = self.controller.create(viewModel: self.category)
+                
+                if (created.id != nil) {
+                    self.presentationMode.wrappedValue.dismiss()
+                    NotificationCenter.default.post(
+                        Notification.init(name: Notification.Name(rawValue: "RefreshCategoryListNotification"))
+                    )
+                }
+                else {
+                    self.operationFailed.toggle()
+                }
+            }
+            else {
+                self.invalidFields = true
+            }
         }) {
             HStack {
                 Image(systemName: "checkmark")
@@ -50,6 +71,20 @@ struct CreateCategoryView: View {
             .background(colorHelper.primaryColor)
             .cornerRadius(50)
             .padding(10)
+        }
+        .alert(isPresented: self.$operationFailed) {
+            Alert(
+                title: Text("Oops!"),
+                message: Text("Looks like something went wrong - sorry about that :( \n\nPlease try again. If you continue to encounter issues, please report the issue via the website."),
+                dismissButton: .default(Text("Okay"))
+            )
+        }
+        .alert(isPresented: self.$invalidFields) {
+            Alert(
+                title: Text("Hang on..."),
+                message: Text("You need to enter a title for the category item."),
+                dismissButton: .default(Text("Got it!"))
+            )
         }
     }
 }

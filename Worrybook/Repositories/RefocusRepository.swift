@@ -63,4 +63,14 @@ class RefocusRepository {
         self.refocus.record = self.database.insert(model: self.refocus, query: query)
         return self.refocus
     }
+    
+    public func delete(id: Int) -> Bool {
+        let deleted = self.database.delete(model: self.refocus, index: id)
+        
+        if (deleted != nil) {
+            return true
+        }
+        
+        return false
+    }
 }

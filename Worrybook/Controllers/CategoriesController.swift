@@ -27,4 +27,21 @@ class CategoriesController {
         let records = self.repository?.getAll()
         return CategoryTranslationService.translateMultiple(rows: records!)
     }
+    
+    public func create(viewModel: CategoryViewModel) -> CategoryViewModel {
+        let entity = self.repository?.create(viewModel: viewModel)
+        return CategoryTranslationService.translateSingle(row: (entity?.record)!)
+    }
+    
+    public func delete(id: Int) -> Bool {
+        if (id > 0) {
+            let entity = self.repository?.delete(id: id)
+            
+            if (entity != nil) {
+                return true
+            }
+        }
+        
+        return false
+    }
 }
