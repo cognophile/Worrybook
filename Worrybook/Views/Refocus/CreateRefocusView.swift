@@ -42,7 +42,7 @@ struct CreateRefocusView: View {
         Button(action: {
             if (!self.title.isEmpty) {
                 self.refocus.setTitle(title: self.title)
-                let created = self.controller.create(viewModel: refocus)
+                let created = self.controller.create(viewModel: self.refocus)
                 
                 if (created.id != nil) {
                     self.presentationMode.wrappedValue.dismiss()

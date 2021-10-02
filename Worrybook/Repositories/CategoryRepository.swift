@@ -63,4 +63,14 @@ class CategoryRepository {
         self.category.record = self.database.insert(model: self.category, query: query)
         return self.category
     }
+    
+    public func delete(id: Int) -> Bool {
+        let deleted = self.database.delete(model: self.category, index: id)
+        
+        if (deleted != nil) {
+            return true
+        }
+        
+        return false
+    }
 }

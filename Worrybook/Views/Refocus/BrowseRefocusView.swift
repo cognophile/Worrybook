@@ -16,7 +16,7 @@ struct BrowseRefocusView: View {
     @State private var confirmDeletion = false
     @State private var refocus: RefocusViewModel = RefocusViewModel(title: nil)
 
-    var controller = RefocusController()
+    let controller = RefocusController()
     private let colorHelper = ColorHelper()
     
     init(show: Binding<Bool>) {
