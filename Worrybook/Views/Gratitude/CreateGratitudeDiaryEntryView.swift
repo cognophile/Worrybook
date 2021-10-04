@@ -50,7 +50,7 @@ struct CreateGratitudeDiaryEntryView: View {
                         HStack {
                             TextEditor(text: self.$itemOne)
                                 .frame(minHeight: 50, maxHeight: 50)
-                                .foregroundColor(.gray)
+                                .foregroundColor(colorHelper.getTextColor())
                                 .background(Color(UIColor.systemBackground))
                                 .padding(10)
                                 .overlay(
@@ -71,7 +71,7 @@ struct CreateGratitudeDiaryEntryView: View {
                         HStack {
                             TextEditor(text: self.$itemTwo)
                                 .frame(minHeight: 50, maxHeight: 50)
-                                .foregroundColor(.gray)
+                                .foregroundColor(colorHelper.getTextColor())
                                 .background(Color(UIColor.systemBackground))
                                 .padding(10)
                                 .overlay(
@@ -92,7 +92,7 @@ struct CreateGratitudeDiaryEntryView: View {
                         HStack {
                             TextEditor(text: self.$itemThree)
                                 .frame(minHeight: 50, maxHeight: 50)
-                                .foregroundColor(.gray)
+                                .foregroundColor(colorHelper.getTextColor())
                                 .background(Color(UIColor.systemBackground))
                                 .padding(10)
                                 .overlay(

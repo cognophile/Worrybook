@@ -60,7 +60,7 @@ struct DetailWorryView: View {
                         .padding([.leading, .trailing], 10)
                     
                     if (self.viewModel.getType() == WorryTypeViewModel.practical) {
-                        Text("Your plan")
+                        Text("What you did about it")
                             .fontWeight(.medium)
                             .foregroundColor(colorHelper.getTextColor())
                             .font(.headline)

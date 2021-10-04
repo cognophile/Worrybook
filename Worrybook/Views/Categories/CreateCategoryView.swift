@@ -31,7 +31,7 @@ struct CreateCategoryView: View {
             HStack {
                 TextField("", text: self.$title)
                     .frame(minHeight: 50)
-                    .foregroundColor(.gray)
+                    .foregroundColor(colorHelper.getTextColor())
                     .background(Color(UIColor.systemBackground))
                     .textFieldStyle(RoundedCornerBorderTextFieldExtension())
                     .padding(10)

@@ -87,7 +87,7 @@ struct HomeView: View {
                     .sheet(isPresented: self.$showCreateModal, content: {
                         NavigationView {
                             CreateWorryView(showCreateModal: self.$showCreateModal)
-                                .navigationBarTitle("What is your worry?")
+                                .navigationBarTitle("What's up?")
                                 .navigationBarItems(trailing:
                                     Button(action: {
                                         self.showCreateModal.toggle()

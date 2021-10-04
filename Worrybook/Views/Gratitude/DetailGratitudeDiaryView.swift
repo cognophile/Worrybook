@@ -44,6 +44,7 @@ struct DetailGratitudeDiaryView: View {
                         .fontWeight(.regular)
                         .foregroundColor(colorHelper.getTextColor())
                         .font(.body)
+                        .multilineTextAlignment(.center)
                         .padding(10)
                 }
             }
