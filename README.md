@@ -36,5 +36,3 @@ Anxiety is a normal part of human behaviour and everyone experiences it to a deg
 
 ## Disclaimer
 his application has been designed and developed to support the practice of existing psycho-therapy methods, which vary in effectiveness per-person, but does not claim to resolve mental health issues. It has not been designed, developed, or consulted upon by or with medical professionals, but by an individual with personal experience of mental health management techniques, habit forming, and a desire to help others. 
-
-If you're experiencing thoughts of self-harm or suicide, remember that though these can be complex and frightening, you're not alone and support is available. It's important to talk to someone such as family, your doctor, or mental crisis support services.
