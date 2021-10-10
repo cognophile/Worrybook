@@ -46,7 +46,7 @@ struct HomeView: View {
                            maxHeight: 20,
                            alignment: .topLeading)
                     .foregroundColor(.white)
-                    .padding(10)
+                    .padding([.leading, .trailing], 10)
                     
                     HStack {
                         Image("Worrybook_title_colour_large-trans")
@@ -155,7 +155,7 @@ struct HomeView: View {
                         }
                     })
                 }
-                .frame(width: UIScreen.main.bounds.width-10, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width-10, height: UIScreen.main.bounds.height-50, alignment: .center)
                 .navigationBarHidden(true)
             }
         }
