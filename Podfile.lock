@@ -1,18 +1,28 @@
 PODS:
-  - SQLite.swift (0.12.2):
-    - SQLite.swift/standard (= 0.12.2)
-  - SQLite.swift/standard (0.12.2)
+  - SQLCipher (4.5.0):
+    - SQLCipher/standard (= 4.5.0)
+  - SQLCipher/common (4.5.0)
+  - SQLCipher/standard (4.5.0):
+    - SQLCipher/common
+  - SQLite.swift (0.13.2):
+    - SQLite.swift/standard (= 0.13.2)
+  - SQLite.swift/SQLCipher (0.13.2):
+    - SQLCipher (>= 4.0.0)
+  - SQLite.swift/standard (0.13.2)
 
 DEPENDENCIES:
-  - SQLite.swift (~> 0.12.0)
+  - SQLite.swift (~> 0.13.2)
+  - SQLite.swift/SQLCipher (~> 0.13.2)
 
 SPEC REPOS:
   trunk:
+    - SQLCipher
     - SQLite.swift
 
 SPEC CHECKSUMS:
-  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  SQLCipher: 98dc22f27c0b1790d39e710d440f22a466ebdb59
+  SQLite.swift: 4fc2be46c36392e3b87afe6fe7f1801c1daa07ef
 
-PODFILE CHECKSUM: 55cb9fa4e65e95aa5c2b6d659bca68be4b153c3a
+PODFILE CHECKSUM: 145ca4284191d892c17712c425558da50fff7aa5
 
 COCOAPODS: 1.10.1

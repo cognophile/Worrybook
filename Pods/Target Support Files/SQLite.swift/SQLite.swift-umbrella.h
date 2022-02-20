@@ -12,6 +12,8 @@
 
 #import "SQLite.h"
 #import "SQLiteObjc.h"
+#import "SQLite.h"
+#import "SQLiteObjc.h"
 
 FOUNDATION_EXPORT double SQLiteVersionNumber;
 FOUNDATION_EXPORT const unsigned char SQLiteVersionString[];
