@@ -40,7 +40,8 @@ struct HomeView: View {
                                maxHeight: 20,
                                alignment: .topLeading)
                         .foregroundColor(.white)
-                        .padding(10)
+                        .padding([.top], 35)
+                        .padding([.leading, .bottom], 10)
                     }
                     .frame(maxWidth: .infinity,
                            maxHeight: 20,
