@@ -11,6 +11,7 @@ struct SettingsView: View {
     @Binding var show: Bool
     
     @State private var enableWorryTime = false
+    @State private var isSaving = false
     @State private var worryTimeDescriptionAlert = false
     @State private var selectedWorryTime = Date()
     
@@ -70,6 +71,7 @@ struct SettingsView: View {
         Spacer()
         
         Button(action: {
+            self.isSaving = true
             var settings = Dictionary<String, Any>()
             
             if (self.enableWorryTime) {
@@ -96,6 +98,7 @@ struct SettingsView: View {
             .background(colorHelper.primaryColor)
             .cornerRadius(50)
             .padding(10)
+            .disabled(self.isSaving)
         }
     }
 }
