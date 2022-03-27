@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MenuContentView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var showGratitudeManager = false
     @State private var showRefocusingList = false
     @State private var showCategoriesList = false
